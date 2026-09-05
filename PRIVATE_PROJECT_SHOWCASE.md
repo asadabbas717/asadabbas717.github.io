@@ -1,31 +1,32 @@
-# Private Project Showcase
+# Private Engineering Projects
 
-Selected software projects are intentionally kept private to protect source code, client/business information, and implementation details. This page documents the engineering outcomes and technologies without publishing proprietary code.
+Some of my strongest software projects are intentionally kept private to protect client/business information, proprietary implementation, and reusable business logic. This page documents verified product scope and engineering outcomes without publishing private source code, credentials, databases, invoices, logs, or customer data.
 
 ## Qashoryx POS
 
 **Offline-first wholesale point-of-sale and business operations application for Windows**
 
-**Status:** Advanced internal build / real-world business software
-
-**Role:** Software Engineer
-
+**Status:** Real-world business software / advanced production-oriented build  
+**Role:** Software Engineer  
 **Technology:** Python, PySide6, SQLite, ReportLab, PyInstaller, Inno Setup
 
-### What it demonstrates
+### Engineering scope
 
-- Desktop application architecture for a substantial business workflow
-- Inventory, customer, invoice, payment, expense, warranty, salesman, and reporting workflows
-- Transaction-safe sales and stock operations
-- Customer balances and account transaction handling
-- Role- and permission-aware application behavior
+- Product, inventory, customer, invoice, payment, expense, warranty, salesman, and reporting workflows
+- Transaction-safe sales, invoice editing, returns, payment replacement, and stock reconciliation
+- Customer balances and audited customer-account transactions
+- Owner/staff permissions and protected administrative actions
 - A4 and thermal invoice generation and printing
-- Reporting and dashboard workflows
-- Database migrations, verified backups, restore safeguards, and audit-oriented data handling
+- Sales, inventory, profitability, city, and best-selling-product reports
+- Verified database migrations, backup creation, restore validation, and rollback-oriented safeguards
 - Windows executable and installer packaging
-- Automated testing and release hardening
+- Automated regression suite covering database, authentication, transactions, balances, reports, restore, runtime paths, and packaging behavior
 
-**Why the repository is private:** The production-oriented source contains business-specific implementation and is not published publicly. Recruiters or collaborators can discuss the architecture, engineering decisions, workflows, and demonstrations with the developer without receiving unrestricted source access.
+### Portfolio value
+
+Qashoryx demonstrates the ability to turn real operational requirements into a substantial desktop product while protecting financial correctness, inventory integrity, recoverability, and operator usability.
+
+**Source policy:** Private. Architecture, workflows, engineering decisions, and sanitized demonstrations can be discussed without distributing unrestricted source code.
 
 ---
 
@@ -33,68 +34,77 @@ Selected software projects are intentionally kept private to protect source code
 
 **Offline-first repair workflow manager for Windows repair shops**
 
-**Status:** Feature-complete first-release implementation
+**Status:** Feature-complete first-release implementation  
+**Role:** Software Engineer  
+**Technology:** Python, PySide6, SQLite, SQLAlchemy 2.x, Alembic, ReportLab, pytest, Ruff, mypy, PyInstaller
 
-**Role:** Software Engineer
+### Engineering scope
 
-**Technology:** Python, PySide6, SQLite, SQLAlchemy, Alembic, ReportLab, pytest, Ruff, mypy, PyInstaller
+- Customer, device, technician, and guided repair-intake management
+- Controlled repair-state transitions with immutable status history
+- Exact monetary handling for charges, payments, and outstanding balances
+- Repair photographs and managed attachment workflows
+- Branded repair job sheets and customer receipt PDFs
+- Alembic schema migrations and compatibility handling
+- Checksummed backup/restore workflows with SQLite integrity verification
+- Automated tests, linting, static typing, dependency checks, and repeatable Windows packaging
 
-### What it demonstrates
+### Portfolio value
 
-- Structured desktop application architecture
-- Customer, device, technician, and repair-intake management
-- Controlled repair-state workflows with history tracking
-- Exact monetary handling for charges, payments, and balances
-- Repair photographs and document management
-- Job-sheet and receipt PDF generation
-- Database migrations and compatibility handling
-- Verified backup and restore workflows
-- Automated testing, linting, type checking, and reproducible Windows packaging
+Fixloom demonstrates structured application architecture, migration-managed persistence, workflow design, financial-record correctness, attachment management, recoverability, and disciplined release tooling.
 
-**Why the repository is private:** The repository is retained as private engineering work. This public description presents the product scope and technical achievements without exposing implementation details or reusable proprietary source.
+**Source policy:** Private. Public material presents verified scope and architecture-level decisions without exposing reusable proprietary implementation.
 
 ---
 
 ## Vendiqo
 
-**Offline-first Windows point-of-sale application for Pakistani retailers, wholesalers, and trading businesses**
+**Offline-first Windows point-of-sale application for Pakistani small retailers, wholesalers, and trading businesses**
 
-**Status:** Active development
+**Status:** Completed release-candidate product (0.1.0)  
+**Role:** Software Engineer  
+**Technology:** Python, Qt/PySide desktop stack, SQLite, migration-managed persistence, Ruff, mypy, pytest, PyInstaller
 
-**Role:** Software Engineer
+### Completed release-candidate scope
 
-**Technology:** Python desktop stack with local persistence and automated quality checks
+- Professional Windows navigation shell with persistent light/dark mode
+- Products, categories, units, SKUs, and keyboard-wedge barcode support
+- Immutable inventory movement ledger with calculated stock balances
+- Supplier directory and atomic purchase posting
+- Exact fully paid local sales, customer linkage, payments, and stock issue
+- Receipt preview, printing, PDF export, duplicate/reprint, and referenced sale returns
+- Customer contact directory, operational reporting, and document search
+- Checksummed backups, verification, atomic restore, and rollback protection
+- Versioned FBR contract boundary with a provider-neutral durable compliance queue
+- Reproducible Windows portable PyInstaller build with smoke-tested first-launch migration and backup checks
+- Automated quality gate covering formatting, linting, static typing, tests, and packaged self-checks
 
-### Current engineering scope
+### Deliberate boundaries
 
-- Product and reference-data management
-- Immutable inventory-ledger concepts
-- Supplier purchasing workflows
-- Local sales and cashier checkout
-- Receipt preview, printing, and PDF output
-- Referenced sale returns
-- Customer directory and customer-linked sales
-- Exact monetary and quantity representation
-- Local-first operational-data design
+The current release candidate does **not** claim features that are not implemented. Tax calculation, customer credit/receivables, damaged-return disposition, live FBR transmission, automatic compliance-queue processing, code signing, a traditional installer, and final physical-printer acceptance remain outside the completed 0.1.0 release-candidate scope.
 
-Planned capabilities are intentionally not presented as completed work. Tax, customer credit/receivables, backup/restore, and potential FBR integration remain future work unless implemented and verified.
+The Compliance workspace represents an integration foundation, not a claim of FBR compliance.
 
-**Why the repository is private:** Vendiqo is under active development. Keeping the source private protects unfinished implementation and makes it possible to present verified milestones without exposing code prematurely.
+### Portfolio value
+
+Vendiqo demonstrates financial and inventory transaction design, immutable records, recovery engineering, release automation, keyboard-driven retail workflows, provider-neutral integration boundaries, and careful separation between implemented behavior and future regulatory integration.
+
+**Source policy:** Private. The completed product is presented through verified capabilities and engineering evidence while unfinished or regulatory-dependent work is stated explicitly.
 
 ---
 
-## Source-code policy
+## Private-source policy
 
-These projects use a **show the work, protect the implementation** portfolio approach:
+These projects follow a **show the engineering, protect the implementation** approach:
 
-- Source repositories remain private.
-- No customer databases, credentials, API secrets, invoices, logs, or private business data are published.
-- No proprietary implementation files are mirrored into this public repository.
-- Public material focuses on product scope, architecture-level capabilities, engineering practices, technology choices, and verified outcomes.
-- Source access, when ever appropriate, should be granted deliberately and only to trusted reviewers under suitable conditions.
+- Production and product source repositories remain private.
+- Customer databases, credentials, API secrets, invoices, backups, logs, runtime data, and private business information are never published as portfolio material.
+- Proprietary implementation files are not mirrored into public showcase repositories.
+- Public descriptions focus on verified outcomes, technology choices, architecture-level decisions, testing, data safety, and product scope.
+- Private source access should only be granted deliberately to trusted reviewers when there is a genuine need.
 
-## About the developer
+## Developer
 
-**Asad Abbas — Software Engineer**
-
-GitHub: [asadabbas717](https://github.com/asadabbas717)
+**Asad Abbas — Software Engineer**  
+GitHub: [asadabbas717](https://github.com/asadabbas717)  
+Portfolio: [asadabbas717.github.io](https://asadabbas717.github.io)
