@@ -1,1094 +1,590 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Asad Abbas is a Software Engineer building reliable Windows business software, Android applications, React/TypeScript products, and API-driven mobile experiences." />
+  <meta name="description" content="Asad Abbas — Software Engineer building reliable Windows business software, mobile applications, and web products with evidence-driven engineering." />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#071018" />
+  <meta name="theme-color" content="#f3efe5" />
   <link rel="canonical" href="https://asadabbas717.github.io/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://asadabbas717.github.io/" />
   <meta property="og:title" content="Asad Abbas — Software Engineer" />
-  <meta property="og:description" content="Reliable business software, desktop engineering, Android, React/TypeScript, testing, recoverability, and production-minded delivery." />
+  <meta property="og:description" content="Engineering business software that survives real use: correctness, recoverability, testing, packaging, and product delivery." />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Asad Abbas — Software Engineer" />
-  <meta name="twitter:description" content="Software Engineer building reliable desktop, mobile, and business applications." />
+  <meta name="twitter:description" content="Desktop, mobile and web engineering backed by testable evidence." />
 
   <title>Asad Abbas — Software Engineer</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Asad Abbas",
-    "jobTitle": "Software Engineer",
-    "url": "https://asadabbas717.github.io/",
-    "sameAs": ["https://github.com/asadabbas717"],
-    "knowsAbout": [
-      "Software Engineering",
-      "Python",
-      "PySide6",
-      "SQLite",
-      "React",
-      "TypeScript",
-      "Android",
-      "Firebase",
-      "Software Testing",
-      "Desktop Applications"
-    ]
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Asad Abbas",
+    "jobTitle":"Software Engineer",
+    "url":"https://asadabbas717.github.io/",
+    "sameAs":["https://github.com/asadabbas717"],
+    "knowsAbout":["Python","PySide6","SQLite","Software Testing","Desktop Applications","React","TypeScript","Android","Firebase","React Native"]
   }
   </script>
 
   <style>
-    :root {
-      --bg:#071018;
-      --bg-alt:#0a151f;
-      --surface:#0e1c28;
-      --surface-2:#132533;
-      --surface-3:#172d3d;
-      --text:#edf7fb;
-      --muted:#9bb0bd;
-      --dim:#667f8e;
-      --accent:#46d5ff;
-      --accent-2:#77efb1;
-      --warm:#ffd77f;
-      --danger:#ff9f9f;
-      --border:rgba(138,211,239,.16);
-      --border-strong:rgba(70,213,255,.34);
-      --shadow:0 22px 70px rgba(0,0,0,.24);
-      --radius:20px;
-      --radius-sm:12px;
-      --nav:rgba(7,16,24,.84);
-      --grid:rgba(88,182,219,.04);
+    :root{
+      --paper:#f3efe5;
+      --paper-2:#e9e2d3;
+      --ink:#111317;
+      --ink-soft:#4e5156;
+      --blue:#2447ff;
+      --blue-deep:#1732bd;
+      --orange:#ff5b35;
+      --lime:#c7f34a;
+      --white:#fffdf8;
+      --line:rgba(17,19,23,.16);
+      --line-strong:rgba(17,19,23,.34);
+      --shadow:0 24px 70px rgba(24,24,20,.12);
+      --radius:28px;
+      --mono:'IBM Plex Mono',monospace;
+      --sans:'Manrope',sans-serif;
+      --serif:'Instrument Serif',serif;
     }
 
-    html[data-theme="light"] {
-      --bg:#f5f9fb;
-      --bg-alt:#edf4f7;
-      --surface:#ffffff;
-      --surface-2:#f2f8fa;
-      --surface-3:#e9f3f6;
-      --text:#10232e;
-      --muted:#526b79;
-      --dim:#708894;
-      --accent:#007da6;
-      --accent-2:#0a9962;
-      --warm:#9b6a00;
-      --danger:#b54b4b;
-      --border:rgba(18,74,98,.13);
-      --border-strong:rgba(0,125,166,.34);
-      --shadow:0 22px 70px rgba(24,62,78,.11);
-      --nav:rgba(245,249,251,.87);
-      --grid:rgba(0,100,135,.045);
-    }
-
-    * { box-sizing:border-box; margin:0; padding:0; }
-    html { scroll-behavior:smooth; }
-    body {
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;background:var(--paper)}
+    body{
       min-height:100vh;
-      font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.65;
-      transition:background .25s ease,color .25s ease;
+      overflow-x:hidden;
+      background:
+        radial-gradient(circle at 82% 8%,rgba(36,71,255,.10),transparent 23rem),
+        radial-gradient(circle at 8% 62%,rgba(255,91,53,.08),transparent 24rem),
+        var(--paper);
+      color:var(--ink);
+      font-family:var(--sans);
+      line-height:1.6;
+      text-rendering:optimizeLegibility;
     }
-    body::before {
+    body::before{
       content:"";
       position:fixed;
       inset:0;
+      z-index:-3;
       pointer-events:none;
-      z-index:-2;
-      background-image:
-        linear-gradient(var(--grid) 1px,transparent 1px),
-        linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-      background-size:64px 64px;
-      mask-image:linear-gradient(to bottom,black,transparent 82%);
+      opacity:.34;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E");
     }
-    a { color:inherit; }
-    button,input,textarea { font:inherit; }
-    img { max-width:100%; }
-    ::selection { background:rgba(70,213,255,.22); }
+    a{color:inherit}
+    img{max-width:100%}
+    button{font:inherit}
+    ::selection{background:var(--lime);color:var(--ink)}
+    :focus-visible{outline:3px solid var(--blue);outline-offset:4px}
 
-    .skip-link {
-      position:fixed;
-      left:16px;
-      top:-60px;
-      z-index:200;
-      padding:.75rem 1rem;
-      background:var(--surface);
-      border:1px solid var(--border-strong);
-      border-radius:10px;
-      color:var(--text);
-      text-decoration:none;
-      transition:top .2s ease;
-    }
-    .skip-link:focus { top:16px; }
+    .skip-link{position:fixed;left:16px;top:-80px;z-index:999;background:var(--ink);color:var(--white);padding:.8rem 1rem;border-radius:12px;text-decoration:none;transition:top .2s ease}
+    .skip-link:focus{top:16px}
 
-    :focus-visible { outline:3px solid rgba(70,213,255,.5); outline-offset:3px; }
+    .scroll-meter{position:fixed;left:0;top:0;width:100%;height:4px;z-index:500;background:transparent}
+    .scroll-meter span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--blue),var(--orange),var(--lime));transform-origin:left}
 
-    .wrap { width:min(1180px,calc(100% - 40px)); margin-inline:auto; }
-    .mono { font-family:'JetBrains Mono',monospace; }
-    .accent { color:var(--accent); }
-    .green { color:var(--accent-2); }
-    .warm { color:var(--warm); }
+    .cursor-glow{position:fixed;width:28rem;height:28rem;border-radius:50%;pointer-events:none;z-index:-1;translate:-50% -50%;background:radial-gradient(circle,rgba(36,71,255,.07),rgba(36,71,255,0) 68%);opacity:0;transition:opacity .25s ease}
 
-    .top-progress {
-      position:fixed;
-      top:0;
-      left:0;
-      width:0;
-      height:2px;
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));
-      z-index:150;
-    }
+    .wrap{width:min(1240px,calc(100% - 44px));margin-inline:auto}
+    .mono{font-family:var(--mono)}
+    .eyebrow{font:600 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase}
 
-    nav {
-      position:sticky;
-      top:0;
-      z-index:100;
-      background:var(--nav);
-      backdrop-filter:blur(18px);
-      border-bottom:1px solid var(--border);
-    }
-    .nav-inner {
-      min-height:72px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:1.2rem;
-    }
-    .brand {
-      display:inline-flex;
-      align-items:center;
-      gap:.75rem;
-      font-weight:800;
-      text-decoration:none;
-      letter-spacing:-.02em;
-    }
-    .brand-mark {
-      width:34px;
-      height:34px;
-      display:grid;
-      place-items:center;
-      border-radius:10px;
-      background:linear-gradient(135deg,rgba(70,213,255,.16),rgba(119,239,177,.13));
-      border:1px solid var(--border-strong);
-      color:var(--accent);
-      font:600 .76rem 'JetBrains Mono',monospace;
-    }
-    .nav-links { display:flex; align-items:center; gap:1.35rem; }
-    .nav-links a {
-      text-decoration:none;
-      color:var(--muted);
-      font:500 .69rem 'JetBrains Mono',monospace;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      transition:color .2s ease;
-    }
-    .nav-links a:hover { color:var(--accent); }
-    .nav-actions { display:flex; align-items:center; gap:.6rem; }
-    .icon-btn {
-      width:38px;
-      height:38px;
-      display:grid;
-      place-items:center;
-      border-radius:10px;
-      border:1px solid var(--border);
-      background:var(--surface);
-      color:var(--muted);
-      cursor:pointer;
-      transition:transform .2s ease,border-color .2s ease,color .2s ease;
-    }
-    .icon-btn:hover { transform:translateY(-2px); border-color:var(--border-strong); color:var(--accent); }
-    .menu-btn { display:none; }
+    nav{position:sticky;top:0;z-index:200;background:rgba(243,239,229,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav-inner{min-height:72px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
+    .brand{display:inline-flex;align-items:center;gap:.75rem;text-decoration:none;font-weight:800;width:max-content}
+    .brand-badge{width:38px;height:38px;border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center;font:600 .72rem var(--mono);background:var(--lime);box-shadow:4px 4px 0 var(--ink);transition:transform .2s ease,box-shadow .2s ease}
+    .brand:hover .brand-badge{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+    .nav-links{display:flex;align-items:center;justify-content:center;gap:1.5rem}
+    .nav-links a{text-decoration:none;font:600 .66rem var(--mono);letter-spacing:.08em;text-transform:uppercase;position:relative}
+    .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:2px;background:var(--blue);transition:right .25s ease}
+    .nav-links a:hover::after{right:0}
+    .nav-cta{justify-self:end;text-decoration:none;border:1.5px solid var(--ink);padding:.65rem .9rem;border-radius:999px;font:600 .67rem var(--mono);text-transform:uppercase;letter-spacing:.06em;background:var(--white);transition:transform .2s ease,box-shadow .2s ease}
+    .nav-cta:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+    .menu-btn{display:none;border:1.5px solid var(--ink);background:var(--white);border-radius:999px;padding:.55rem .8rem;font:600 .68rem var(--mono)}
 
-    .hero {
-      position:relative;
-      min-height:calc(100vh - 72px);
-      display:flex;
-      align-items:center;
-      overflow:hidden;
-      padding:78px 0 70px;
-    }
-    .hero::after {
-      content:"";
-      position:absolute;
-      width:620px;
-      height:620px;
-      right:-210px;
-      top:-180px;
-      border-radius:50%;
-      background:radial-gradient(circle,rgba(70,213,255,.13),transparent 67%);
-      filter:blur(6px);
-      pointer-events:none;
-    }
-    .hero-grid {
-      position:relative;
-      z-index:1;
-      display:grid;
-      grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);
-      gap:64px;
-      align-items:center;
-    }
-    .availability {
-      display:inline-flex;
-      align-items:center;
-      gap:.65rem;
-      padding:.4rem .75rem;
-      border:1px solid rgba(119,239,177,.28);
-      background:rgba(119,239,177,.055);
-      color:var(--accent-2);
-      border-radius:999px;
-      font:500 .68rem 'JetBrains Mono',monospace;
-      letter-spacing:.05em;
-      text-transform:uppercase;
-    }
-    .availability::before {
-      content:"";
-      width:7px;
-      height:7px;
-      border-radius:50%;
-      background:var(--accent-2);
-      box-shadow:0 0 0 5px rgba(119,239,177,.09);
-    }
-    h1 {
-      max-width:850px;
-      margin:1.45rem 0 1rem;
-      font-size:clamp(3.4rem,8vw,6.8rem);
-      line-height:.94;
-      letter-spacing:-.065em;
-    }
-    .hero-role {
-      color:var(--warm);
-      font-size:clamp(1.06rem,2vw,1.35rem);
-      font-weight:600;
-      margin-bottom:1.2rem;
-    }
-    .hero-copy {
-      max-width:720px;
-      color:var(--muted);
-      font-size:1.05rem;
-    }
-    .hero-copy strong { color:var(--text); font-weight:600; }
-    .hero-actions { display:flex; gap:.8rem; flex-wrap:wrap; margin-top:2rem; }
-    .btn {
-      min-height:46px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:.55rem;
-      padding:.78rem 1.1rem;
-      border-radius:11px;
-      border:1px solid var(--border);
-      background:var(--surface);
-      color:var(--text);
-      text-decoration:none;
-      font:600 .72rem 'JetBrains Mono',monospace;
-      letter-spacing:.04em;
-      transition:transform .2s ease,border-color .2s ease,background .2s ease;
-    }
-    .btn:hover { transform:translateY(-2px); border-color:var(--border-strong); }
-    .btn.primary { background:var(--accent); color:#041016; border-color:var(--accent); }
-    html[data-theme="light"] .btn.primary { color:white; }
-    .btn.ghost { background:transparent; }
+    .hero{min-height:calc(100vh - 72px);display:grid;align-items:center;padding:62px 0 54px;position:relative}
+    .hero-layout{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(330px,.86fr);gap:56px;align-items:center}
+    .hero-kicker{display:flex;align-items:center;gap:.75rem;margin-bottom:1.4rem}
+    .hero-kicker .dot{width:11px;height:11px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 7px rgba(255,91,53,.13)}
+    .hero-title{font-size:clamp(4.4rem,10.2vw,9.6rem);line-height:.78;letter-spacing:-.085em;font-weight:800;text-transform:uppercase;max-width:920px}
+    .hero-title .serif{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:none;color:var(--blue);letter-spacing:-.045em;display:inline-block;transform:rotate(-2deg)}
+    .hero-sub{max-width:720px;margin-top:1.8rem;font-size:clamp(1.05rem,1.9vw,1.35rem);color:var(--ink-soft)}
+    .hero-sub strong{color:var(--ink)}
+    .hero-actions{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2rem}
+    .button{position:relative;display:inline-flex;align-items:center;gap:.7rem;min-height:50px;padding:.8rem 1.1rem;border:1.5px solid var(--ink);border-radius:999px;text-decoration:none;font:600 .72rem var(--mono);letter-spacing:.04em;text-transform:uppercase;overflow:hidden;background:var(--white);transition:transform .2s ease,box-shadow .2s ease}
+    .button::before{content:"";position:absolute;inset:0;background:var(--lime);transform:translateY(105%);transition:transform .28s cubic-bezier(.2,.8,.2,1);z-index:0}
+    .button>*{position:relative;z-index:1}
+    .button:hover::before{transform:translateY(0)}
+    .button:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+    .button.primary{background:var(--blue);color:var(--white)}
+    .button.primary::before{background:var(--orange)}
 
-    .hero-panel {
-      position:relative;
-      border:1px solid var(--border);
-      border-radius:22px;
-      background:linear-gradient(180deg,var(--surface),rgba(14,28,40,.78));
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    html[data-theme="light"] .hero-panel { background:linear-gradient(180deg,#fff,#f3f9fb); }
-    .panel-top {
-      height:46px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:0 1rem;
-      border-bottom:1px solid var(--border);
-    }
-    .dots { display:flex; gap:.38rem; }
-    .dots span { width:7px; height:7px; border-radius:50%; background:var(--dim); opacity:.6; }
-    .panel-title { color:var(--dim); font:500 .63rem 'JetBrains Mono',monospace; }
-    .product-status { display:grid; gap:.78rem; padding:1.1rem; }
-    .status-row {
-      display:grid;
-      grid-template-columns:40px 1fr auto;
-      align-items:center;
-      gap:.8rem;
-      padding:.9rem;
-      border:1px solid var(--border);
-      border-radius:13px;
-      background:rgba(255,255,255,.015);
-    }
-    .status-mark {
-      width:40px;
-      height:40px;
-      display:grid;
-      place-items:center;
-      border-radius:11px;
-      border:1px solid var(--border);
-      color:var(--accent);
-      font:600 .7rem 'JetBrains Mono',monospace;
-    }
-    .status-row strong { display:block; font-size:.9rem; }
-    .status-row small { color:var(--muted); font-size:.76rem; }
-    .status-pill {
-      padding:.25rem .48rem;
-      border-radius:999px;
-      border:1px solid rgba(119,239,177,.24);
-      color:var(--accent-2);
-      background:rgba(119,239,177,.05);
-      font:500 .57rem 'JetBrains Mono',monospace;
-      text-transform:uppercase;
-      letter-spacing:.05em;
-      white-space:nowrap;
-    }
-    .panel-foot {
-      display:flex;
-      justify-content:space-between;
-      gap:1rem;
-      padding:1rem 1.15rem;
-      border-top:1px solid var(--border);
-      color:var(--dim);
-      font:500 .62rem 'JetBrains Mono',monospace;
+    .signal-card{position:relative;aspect-ratio:1/1;border:1.5px solid var(--ink);border-radius:38px;background:var(--white);box-shadow:12px 12px 0 var(--ink);overflow:hidden;isolation:isolate}
+    .signal-card::before{content:"ENGINEERING / EVIDENCE / SYSTEM";position:absolute;left:18px;top:18px;z-index:3;font:600 .62rem var(--mono);letter-spacing:.08em}
+    .signal-card::after{content:"01";position:absolute;right:20px;bottom:12px;z-index:3;font:600 4rem/1 var(--serif);color:var(--orange)}
+    #signalCanvas{width:100%;height:100%;display:block}
+    .signal-stamp{position:absolute;left:50%;top:50%;z-index:4;translate:-50% -50%;width:154px;height:154px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;text-align:center;background:rgba(199,243,74,.90);font:600 .67rem/1.55 var(--mono);letter-spacing:.08em;text-transform:uppercase;transform:rotate(-7deg);mix-blend-mode:multiply}
+
+    .evidence-tape{border-block:1.5px solid var(--ink);background:var(--lime);overflow:hidden;white-space:nowrap}
+    .evidence-track{display:inline-flex;min-width:max-content;animation:tape 28s linear infinite}
+    .evidence-track span{display:inline-flex;align-items:center;gap:1.4rem;padding:.92rem 1.4rem;font:600 .7rem var(--mono);letter-spacing:.07em;text-transform:uppercase}
+    .evidence-track i{width:8px;height:8px;border-radius:50%;background:var(--ink)}
+    @keyframes tape{to{transform:translateX(-50%)}}
+
+    section{padding:110px 0}
+    .section-top{display:grid;grid-template-columns:180px 1fr;gap:2rem;margin-bottom:3.2rem;align-items:start}
+    .section-no{font:600 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+    .section-title{font-size:clamp(3rem,6.4vw,6.4rem);line-height:.88;letter-spacing:-.065em;max-width:980px}
+    .section-title em{font-family:var(--serif);font-weight:400;color:var(--orange)}
+    .section-copy{max-width:720px;color:var(--ink-soft);font-size:1.05rem;margin-top:1.1rem}
+
+    .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid var(--ink);border-radius:26px;overflow:hidden;background:var(--white);box-shadow:10px 10px 0 rgba(17,19,23,.95)}
+    .proof{min-height:190px;padding:1.4rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1.5px solid var(--ink)}
+    .proof:last-child{border-right:0}
+    .proof .label{font:600 .63rem var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft)}
+    .proof strong{display:block;font-size:clamp(2.3rem,5vw,5rem);line-height:.85;letter-spacing:-.06em;color:var(--blue)}
+    .proof small{color:var(--ink-soft);font-size:.8rem}
+
+    .casefile{border-top:1.5px solid var(--ink);padding-top:2rem;display:grid;grid-template-columns:180px minmax(0,1.05fr) minmax(320px,.95fr);gap:2rem;align-items:start;margin-top:3.5rem}
+    .case-index{position:sticky;top:100px}
+    .case-index strong{font:400 clamp(4rem,8vw,8rem)/.8 var(--serif);color:var(--orange)}
+    .case-index span{display:block;margin-top:.75rem;font:600 .66rem var(--mono);text-transform:uppercase;letter-spacing:.08em}
+    .case-main h3{font-size:clamp(2.4rem,5vw,5rem);line-height:.9;letter-spacing:-.055em;margin-bottom:1rem}
+    .case-main .lede{font-size:1.08rem;color:var(--ink-soft);max-width:720px}
+    .case-main .lede strong{color:var(--ink)}
+    .chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.3rem}
+    .chip{padding:.38rem .62rem;border:1px solid var(--line-strong);border-radius:999px;background:rgba(255,253,248,.72);font:500 .62rem var(--mono)}
+    .case-side{display:grid;gap:.8rem}
+    .fact{border:1.5px solid var(--ink);border-radius:20px;padding:1rem 1.1rem;background:var(--white);transition:transform .25s ease,box-shadow .25s ease}
+    .fact:hover{transform:translate(-4px,-4px);box-shadow:7px 7px 0 var(--ink)}
+    .fact b{display:block;font:600 .63rem var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin-bottom:.35rem}
+    .fact p{font-size:.88rem;color:var(--ink-soft)}
+
+    .qashoryx-stage{position:relative;margin-top:2rem;border:1.5px solid var(--ink);border-radius:34px;background:var(--blue);color:var(--white);padding:clamp(1.5rem,4vw,3rem);overflow:hidden;min-height:440px}
+    .qashoryx-stage::before{content:"Q";position:absolute;right:-.02em;bottom:-.19em;font:400 clamp(18rem,36vw,36rem)/.7 var(--serif);color:rgba(255,255,255,.10)}
+    .q-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:2rem}
+    .q-title{font-size:clamp(3.8rem,8vw,8rem);line-height:.82;letter-spacing:-.075em}
+    .q-title em{font-family:var(--serif);font-weight:400;color:var(--lime)}
+    .q-copy{color:rgba(255,255,255,.78);max-width:700px;margin-top:1.1rem}
+    .q-list{display:grid;gap:.7rem;align-content:start}
+    .q-list li{list-style:none;border-top:1px solid rgba(255,255,255,.32);padding-top:.72rem;display:grid;grid-template-columns:64px 1fr;gap:.8rem;font-size:.86rem}
+    .q-list span{font:600 .62rem var(--mono);color:var(--lime)}
+
+    .project-wall{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+    .project-card{position:relative;border:1.5px solid var(--ink);border-radius:26px;background:var(--white);padding:1.35rem;min-height:270px;overflow:hidden;transition:box-shadow .3s ease;transform-style:preserve-3d}
+    .project-card:hover{box-shadow:9px 9px 0 var(--ink)}
+    .project-card:nth-child(1){grid-column:span 7;background:var(--orange);color:var(--ink)}
+    .project-card:nth-child(2){grid-column:span 5}
+    .project-card:nth-child(3){grid-column:span 5;background:var(--lime)}
+    .project-card:nth-child(4){grid-column:span 7}
+    .project-card .project-no{font:600 .61rem var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.72}
+    .project-card h3{font-size:clamp(1.7rem,3vw,3rem);line-height:.95;letter-spacing:-.045em;margin:.8rem 0}
+    .project-card p{max-width:620px;font-size:.9rem;color:inherit;opacity:.78}
+    .project-card .stack{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+    .project-card .stack span{font:500 .58rem var(--mono);border:1px solid currentColor;border-radius:999px;padding:.3rem .5rem}
+    .project-link{position:absolute;right:1.2rem;bottom:1.1rem;text-decoration:none;font:600 .64rem var(--mono);text-transform:uppercase;border-bottom:1px solid currentColor}
+
+    .principles{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+    .principle{border-top:1.5px solid var(--ink);padding:1.4rem 0 2.4rem;display:grid;grid-template-columns:90px 1fr;gap:1rem}
+    .principle .num{font:400 3rem/1 var(--serif);color:var(--blue)}
+    .principle h3{font-size:1.4rem;margin-bottom:.45rem}
+    .principle p{color:var(--ink-soft);font-size:.9rem;max-width:520px}
+
+    .skills-board{border:1.5px solid var(--ink);border-radius:30px;overflow:hidden;background:var(--white)}
+    .skill-row{display:grid;grid-template-columns:230px 1fr;border-bottom:1.5px solid var(--ink)}
+    .skill-row:last-child{border-bottom:0}
+    .skill-row h3{padding:1.1rem;font:600 .68rem var(--mono);text-transform:uppercase;letter-spacing:.07em;background:var(--paper-2)}
+    .skill-list{display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem}
+    .skill-list span{border:1px solid var(--line-strong);border-radius:999px;padding:.38rem .62rem;font-size:.75rem}
+
+    .timeline{display:grid;gap:0;border-top:1.5px solid var(--ink)}
+    .timeline-item{display:grid;grid-template-columns:180px 1fr 220px;gap:2rem;padding:1.4rem 0;border-bottom:1.5px solid var(--ink);align-items:start}
+    .timeline-item time{font:500 .64rem var(--mono);text-transform:uppercase;color:var(--ink-soft)}
+    .timeline-item h3{font-size:1.4rem;letter-spacing:-.025em}
+    .timeline-item p{color:var(--ink-soft);font-size:.9rem;margin-top:.25rem;max-width:700px}
+    .timeline-item .org{text-align:right;font:600 .64rem var(--mono);text-transform:uppercase;color:var(--blue)}
+
+    .contact-stage{position:relative;border:1.5px solid var(--ink);border-radius:40px;background:var(--ink);color:var(--white);padding:clamp(2rem,6vw,5rem);overflow:hidden}
+    .contact-stage::after{content:"HELLO";position:absolute;right:-.04em;bottom:-.2em;font:400 clamp(10rem,28vw,26rem)/.7 var(--serif);color:rgba(255,255,255,.05)}
+    .contact-stage h2{position:relative;z-index:2;font-size:clamp(3.5rem,8vw,8rem);line-height:.82;letter-spacing:-.065em;max-width:900px}
+    .contact-stage h2 em{font-family:var(--serif);font-weight:400;color:var(--lime)}
+    .contact-stage p{position:relative;z-index:2;color:rgba(255,255,255,.68);max-width:650px;margin-top:1.2rem}
+    .contact-actions{position:relative;z-index:2;display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.7rem}
+    .contact-stage .button{background:var(--white);color:var(--ink)}
+
+    footer{padding:28px 0 38px}
+    .footer-inner{display:flex;justify-content:space-between;gap:1rem;align-items:center;font:500 .61rem var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
+
+    .reveal{opacity:0;transform:translateY(34px);clip-path:inset(0 0 18% 0);transition:opacity .7s ease,transform .85s cubic-bezier(.2,.8,.2,1),clip-path .85s cubic-bezier(.2,.8,.2,1)}
+    .reveal.visible{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
+    .word-pop{display:inline-block;transform-origin:bottom center;animation:wordPop .75s cubic-bezier(.2,.9,.2,1) both}
+    @keyframes wordPop{from{opacity:0;transform:translateY(45px) rotate(2deg)}to{opacity:1;transform:none}}
+    .floaty{animation:floaty 5.5s ease-in-out infinite}
+    @keyframes floaty{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-10px) rotate(-4deg)}}
+
+    @media(max-width:980px){
+      .nav-inner{grid-template-columns:1fr auto}.nav-links{display:none}.nav-cta{display:none}.menu-btn{display:block;justify-self:end}.nav-links.open{position:absolute;top:72px;left:22px;right:22px;display:grid;gap:0;background:var(--white);border:1.5px solid var(--ink);border-radius:18px;box-shadow:7px 7px 0 var(--ink);overflow:hidden}.nav-links.open a{padding:1rem;border-bottom:1px solid var(--line)}.nav-links.open a:last-child{border-bottom:0}
+      .hero-layout{grid-template-columns:1fr}.signal-card{width:min(620px,100%);justify-self:center}.hero-title{font-size:clamp(4rem,14vw,8rem)}
+      .section-top,.casefile{grid-template-columns:1fr}.case-index{position:static;display:flex;align-items:end;gap:1rem}.case-index strong{font-size:4rem}.case-index span{margin:0 0 .2rem}
+      .proof-grid{grid-template-columns:repeat(2,1fr)}.proof:nth-child(2){border-right:0}.proof:nth-child(-n+2){border-bottom:1.5px solid var(--ink)}
+      .q-grid{grid-template-columns:1fr}.project-card:nth-child(n){grid-column:span 6}.timeline-item{grid-template-columns:150px 1fr}.timeline-item .org{grid-column:2;text-align:left}
     }
 
-    .proof {
-      position:relative;
-      z-index:2;
-      margin-top:-26px;
-    }
-    .proof-grid {
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      border:1px solid var(--border);
-      border-radius:18px;
-      background:var(--surface);
-      overflow:hidden;
-      box-shadow:var(--shadow);
-    }
-    .proof-item { padding:1.1rem 1.2rem; border-right:1px solid var(--border); }
-    .proof-item:last-child { border-right:0; }
-    .proof-item strong { display:block; color:var(--accent); font-size:1.2rem; margin-bottom:.2rem; }
-    .proof-item span { color:var(--muted); font-size:.78rem; }
-
-    section { padding:96px 0; }
-    .alt { background:var(--bg-alt); border-block:1px solid var(--border); }
-    .section-head {
-      display:grid;
-      grid-template-columns:1fr minmax(280px,520px);
-      gap:2rem;
-      align-items:end;
-      margin-bottom:2.5rem;
-    }
-    .kicker {
-      color:var(--accent);
-      font:600 .68rem 'JetBrains Mono',monospace;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-    }
-    h2 {
-      margin-top:.65rem;
-      font-size:clamp(2.2rem,4.5vw,4rem);
-      line-height:1;
-      letter-spacing:-.05em;
-    }
-    .section-head p { color:var(--muted); }
-
-    .flagship {
-      display:grid;
-      grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);
-      gap:1.2rem;
-      margin-bottom:1.2rem;
-    }
-    .case-card {
-      position:relative;
-      border:1px solid var(--border);
-      background:var(--surface);
-      border-radius:var(--radius);
-      overflow:hidden;
-      transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
-    }
-    .case-card:hover { transform:translateY(-4px); border-color:var(--border-strong); box-shadow:var(--shadow); }
-    .case-main { padding:2rem; }
-    .case-labels { display:flex; gap:.45rem; flex-wrap:wrap; margin-bottom:1.25rem; }
-    .badge {
-      display:inline-flex;
-      align-items:center;
-      min-height:27px;
-      padding:.28rem .55rem;
-      border-radius:999px;
-      border:1px solid var(--border);
-      color:var(--muted);
-      background:rgba(255,255,255,.018);
-      font:500 .6rem 'JetBrains Mono',monospace;
-      text-transform:uppercase;
-      letter-spacing:.05em;
-    }
-    .badge.featured { border-color:rgba(255,215,127,.3); color:var(--warm); }
-    .badge.private { border-color:rgba(70,213,255,.25); color:var(--accent); }
-    .badge.ready { border-color:rgba(119,239,177,.28); color:var(--accent-2); }
-    .case-card h3 { font-size:clamp(1.65rem,3vw,2.45rem); letter-spacing:-.035em; margin-bottom:.65rem; }
-    .case-card .lead { color:var(--muted); font-size:.98rem; max-width:760px; }
-    .case-grid {
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:.8rem;
-      margin-top:1.45rem;
-    }
-    .case-block {
-      padding:1rem;
-      border:1px solid var(--border);
-      border-radius:12px;
-      background:var(--surface-2);
-    }
-    .case-block span { color:var(--dim); font:500 .6rem 'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.08em; }
-    .case-block p { margin-top:.35rem; color:var(--text); font-size:.88rem; }
-    .case-actions { display:flex; gap:.65rem; flex-wrap:wrap; margin-top:1.35rem; }
-    .tech-row { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:1.3rem; }
-    .tech {
-      padding:.3rem .55rem;
-      border:1px solid var(--border);
-      border-radius:8px;
-      color:var(--muted);
-      background:rgba(255,255,255,.012);
-      font:500 .61rem 'JetBrains Mono',monospace;
+    @media(max-width:680px){
+      .wrap{width:min(100% - 28px,1240px)}.hero{padding-top:40px}.hero-title{font-size:clamp(3.45rem,17vw,6.2rem)}
+      section{padding:82px 0}.section-title{font-size:clamp(2.8rem,13vw,4.8rem)}
+      .proof-grid{grid-template-columns:1fr}.proof{border-right:0!important;border-bottom:1.5px solid var(--ink)!important}.proof:last-child{border-bottom:0!important;min-height:150px}
+      .project-wall{display:grid;grid-template-columns:1fr}.project-card:nth-child(n){grid-column:auto}.principles{grid-template-columns:1fr}.principle{grid-template-columns:70px 1fr}
+      .skill-row{grid-template-columns:1fr}.skill-row h3{border-bottom:1px solid var(--line)}
+      .timeline-item{grid-template-columns:1fr;gap:.45rem}.timeline-item .org{grid-column:1}.footer-inner{align-items:flex-start;flex-direction:column}
+      .signal-card{border-radius:28px;box-shadow:8px 8px 0 var(--ink)}.signal-stamp{width:125px;height:125px;font-size:.58rem}
+      .contact-stage{border-radius:28px}.contact-stage h2{font-size:clamp(3.2rem,16vw,6rem)}
     }
 
-    .case-aside { padding:1.35rem; display:grid; gap:.8rem; }
-    .metric-card {
-      padding:1.1rem;
-      border-radius:13px;
-      border:1px solid var(--border);
-      background:var(--surface-2);
-    }
-    .metric-card strong { display:block; color:var(--accent); font-size:1.35rem; margin-bottom:.25rem; }
-    .metric-card span { color:var(--muted); font-size:.8rem; }
-    .privacy-note {
-      padding:1rem;
-      border:1px solid rgba(70,213,255,.19);
-      border-radius:13px;
-      background:rgba(70,213,255,.045);
-      color:var(--muted);
-      font-size:.8rem;
-    }
-
-    .product-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.2rem; }
-    .product-card { padding:1.6rem; }
-    .product-card h3 { font-size:1.45rem; margin:.8rem 0 .55rem; }
-    .product-card > p { color:var(--muted); }
-    .feature-list { display:grid; gap:.52rem; margin-top:1.1rem; }
-    .feature {
-      display:grid;
-      grid-template-columns:20px 1fr;
-      gap:.6rem;
-      color:var(--muted);
-      font-size:.86rem;
-    }
-    .feature::before { content:"✓"; color:var(--accent-2); font-weight:700; }
-    .boundary {
-      margin-top:1rem;
-      padding:.85rem 1rem;
-      border-left:2px solid var(--warm);
-      background:rgba(255,215,127,.045);
-      color:var(--muted);
-      font-size:.78rem;
-    }
-
-    .public-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
-    .public-card {
-      display:flex;
-      flex-direction:column;
-      min-height:260px;
-      padding:1.45rem;
-      border:1px solid var(--border);
-      border-radius:16px;
-      background:var(--surface);
-      text-decoration:none;
-      transition:transform .22s ease,border-color .22s ease,background .22s ease;
-    }
-    .public-card:hover { transform:translateY(-4px); border-color:var(--border-strong); background:var(--surface-2); }
-    .public-icon {
-      width:42px;
-      height:42px;
-      display:grid;
-      place-items:center;
-      border-radius:11px;
-      border:1px solid var(--border);
-      color:var(--accent);
-      font:600 .64rem 'JetBrains Mono',monospace;
-    }
-    .public-card h3 { margin:1rem 0 .5rem; font-size:1.2rem; }
-    .public-card p { color:var(--muted); font-size:.88rem; }
-    .public-card .tech-row { margin-top:auto; padding-top:1rem; }
-    .link-line { margin-top:1rem; color:var(--accent); font:600 .66rem 'JetBrains Mono',monospace; }
-
-    .principles { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
-    .principle {
-      padding:1.35rem;
-      border:1px solid var(--border);
-      border-radius:15px;
-      background:var(--surface);
-    }
-    .principle-num { color:var(--accent); font:600 .66rem 'JetBrains Mono',monospace; }
-    .principle h3 { margin:.8rem 0 .5rem; font-size:1.02rem; }
-    .principle p { color:var(--muted); font-size:.84rem; }
-
-    .skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
-    .skill-card {
-      padding:1.35rem;
-      border:1px solid var(--border);
-      border-radius:15px;
-      background:var(--surface);
-    }
-    .skill-card h3 { font-size:1rem; margin-bottom:.85rem; }
-    .skill-list { display:flex; flex-wrap:wrap; gap:.42rem; }
-
-    .timeline { position:relative; display:grid; gap:1rem; }
-    .timeline::before { content:""; position:absolute; left:19px; top:12px; bottom:12px; width:1px; background:var(--border); }
-    .timeline-item { display:grid; grid-template-columns:40px 1fr; gap:1rem; position:relative; }
-    .timeline-dot {
-      width:40px;
-      height:40px;
-      display:grid;
-      place-items:center;
-      border-radius:12px;
-      border:1px solid var(--border-strong);
-      background:var(--bg-alt);
-      color:var(--accent);
-      font:600 .62rem 'JetBrains Mono',monospace;
-      z-index:1;
-    }
-    .timeline-body {
-      padding:1.25rem 1.35rem;
-      border:1px solid var(--border);
-      border-radius:15px;
-      background:var(--surface);
-    }
-    .timeline-head { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
-    .timeline-head h3 { font-size:1rem; }
-    .timeline-head span { color:var(--dim); font:500 .62rem 'JetBrains Mono',monospace; }
-    .timeline-org { color:var(--accent); font-size:.82rem; margin-top:.18rem; }
-    .timeline-body p { margin-top:.75rem; color:var(--muted); font-size:.86rem; }
-
-    .education-card {
-      display:grid;
-      grid-template-columns:1fr auto;
-      gap:1.5rem;
-      align-items:start;
-      padding:1.55rem;
-      border:1px solid var(--border);
-      border-radius:16px;
-      background:var(--surface);
-    }
-    .education-card h3 { font-size:1.18rem; }
-    .education-card p { margin-top:.45rem; color:var(--muted); }
-    .education-year { color:var(--accent); font:600 .65rem 'JetBrains Mono',monospace; }
-
-    .contact {
-      position:relative;
-      overflow:hidden;
-      border:1px solid var(--border);
-      border-radius:24px;
-      background:linear-gradient(135deg,var(--surface),var(--surface-2));
-      padding:clamp(1.5rem,5vw,3.6rem);
-    }
-    .contact::after {
-      content:"";
-      position:absolute;
-      width:420px;
-      height:420px;
-      right:-190px;
-      bottom:-230px;
-      border-radius:50%;
-      background:radial-gradient(circle,rgba(70,213,255,.13),transparent 65%);
-      pointer-events:none;
-    }
-    .contact-grid { position:relative; z-index:1; display:grid; grid-template-columns:1.2fr .8fr; gap:2rem; align-items:end; }
-    .contact h2 { max-width:720px; }
-    .contact p { margin-top:1rem; color:var(--muted); max-width:700px; }
-    .contact-actions { display:grid; gap:.7rem; }
-    .contact-link {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:1rem;
-      padding:.9rem 1rem;
-      border:1px solid var(--border);
-      border-radius:12px;
-      background:rgba(255,255,255,.018);
-      color:var(--muted);
-      text-decoration:none;
-      font-size:.85rem;
-    }
-    .contact-link:hover { color:var(--accent); border-color:var(--border-strong); }
-
-    footer { padding:30px 0 42px; color:var(--dim); }
-    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; font:500 .62rem 'JetBrains Mono',monospace; }
-
-    .reveal { opacity:0; transform:translateY(18px); transition:opacity .55s ease,transform .55s ease; }
-    .reveal.visible { opacity:1; transform:none; }
-
-    @media (max-width:1000px) {
-      .hero-grid,.flagship,.contact-grid { grid-template-columns:1fr; }
-      .hero-panel { max-width:700px; }
-      .proof-grid { grid-template-columns:repeat(2,1fr); }
-      .proof-item:nth-child(2) { border-right:0; }
-      .proof-item:nth-child(-n+2) { border-bottom:1px solid var(--border); }
-      .principles { grid-template-columns:repeat(2,1fr); }
-      .skills-grid { grid-template-columns:repeat(2,1fr); }
-    }
-
-    @media (max-width:760px) {
-      .wrap { width:min(100% - 28px,1180px); }
-      .menu-btn { display:grid; }
-      .nav-links {
-        position:absolute;
-        left:14px;
-        right:14px;
-        top:72px;
-        display:none;
-        flex-direction:column;
-        align-items:stretch;
-        gap:0;
-        padding:.6rem;
-        border:1px solid var(--border);
-        border-radius:14px;
-        background:var(--surface);
-        box-shadow:var(--shadow);
-      }
-      .nav-links.open { display:flex; }
-      .nav-links a { padding:.82rem .7rem; border-radius:9px; }
-      .nav-links a:hover { background:var(--surface-2); }
-      .hero { min-height:auto; padding-top:58px; }
-      .hero-grid { gap:38px; }
-      h1 { font-size:clamp(3.1rem,16vw,5.2rem); }
-      .proof { margin-top:0; padding-top:14px; }
-      section { padding:72px 0; }
-      .section-head { grid-template-columns:1fr; align-items:start; gap:.8rem; }
-      .product-grid,.public-grid,.case-grid,.skills-grid { grid-template-columns:1fr; }
-      .education-card { grid-template-columns:1fr; }
-    }
-
-    @media (max-width:520px) {
-      .proof-grid,.principles { grid-template-columns:1fr; }
-      .proof-item { border-right:0; border-bottom:1px solid var(--border); }
-      .proof-item:last-child { border-bottom:0; }
-      .hero-actions,.case-actions { flex-direction:column; }
-      .btn { width:100%; }
-      .status-row { grid-template-columns:38px 1fr; }
-      .status-pill { grid-column:2; justify-self:start; }
-      .panel-foot { flex-direction:column; }
-    }
-
-    @media (prefers-reduced-motion:reduce) {
-      *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.01ms !important; }
-      .reveal { opacity:1; transform:none; }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}.evidence-track,.floaty,.word-pop{animation:none!important}.reveal{opacity:1;transform:none;clip-path:none;transition:none}.button,.fact,.project-card,.brand-badge{transition:none}.cursor-glow{display:none}
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <div class="top-progress" id="progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-meter" aria-hidden="true"><span id="scrollBar"></span></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
   <nav aria-label="Primary navigation">
     <div class="wrap nav-inner">
-      <a class="brand" href="#top" aria-label="Asad Abbas home">
-        <span class="brand-mark">AA</span>
-        <span>Asad Abbas</span>
-      </a>
-
+      <a class="brand" href="#top" aria-label="Asad Abbas home"><span class="brand-badge">AA</span><span>Asad Abbas</span></a>
       <div class="nav-links" id="navLinks">
-        <a href="#products">Products</a>
-        <a href="#public-code">Public Code</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#work">Work</a>
+        <a href="#code">Public Code</a>
         <a href="#approach">Approach</a>
-        <a href="#background">Background</a>
         <a href="#contact">Contact</a>
       </div>
-
-      <div class="nav-actions">
-        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch color theme" title="Switch color theme">◐</button>
-        <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">☰</button>
-      </div>
+      <a class="nav-cta" href="https://github.com/asadabbas717" target="_blank" rel="noreferrer">GitHub ↗</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
     </div>
   </nav>
 
   <main id="main">
-    <header class="hero" id="top">
-      <div class="wrap hero-grid">
+    <section class="hero" id="top">
+      <div class="wrap hero-layout">
         <div>
-          <div class="availability">Open to software engineering opportunities</div>
-          <h1>I build software that has to <span class="accent">work.</span></h1>
-          <div class="hero-role">Software Engineer · Desktop · Mobile · Business Systems</div>
-          <p class="hero-copy">
-            I’m <strong>Asad Abbas</strong>, a Software Engineering graduate focused on reliable, practical applications: Windows business software, Android/Firebase products, React/TypeScript interfaces, local-first data systems, testing, recovery, and production-minded delivery.
-          </p>
+          <div class="hero-kicker eyebrow"><span class="dot" aria-hidden="true"></span><span>Software Engineer · Pakistan</span></div>
+          <h1 class="hero-title"><span class="word-pop">Software</span><br><span class="serif word-pop" style="animation-delay:.08s">that survives</span><br><span class="word-pop" style="animation-delay:.16s">real work.</span></h1>
+          <p class="hero-sub">I build <strong>desktop, mobile and business systems</strong> where correctness, recoverability and operator usability matter more than demo-day polish.</p>
           <div class="hero-actions">
-            <a class="btn primary" href="#products">Explore my engineering work →</a>
-            <a class="btn" href="https://github.com/asadabbas717" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="btn ghost" href="mailto:asadabbasbusiness@gmail.com">Email me</a>
+            <a class="button primary magnetic" href="#work"><span>See the engineering</span><span>↓</span></a>
+            <a class="button magnetic" href="https://github.com/asadabbas717" target="_blank" rel="noreferrer"><span>Inspect public code</span><span>↗</span></a>
           </div>
         </div>
 
-        <aside class="hero-panel reveal" aria-label="Selected product status">
-          <div class="panel-top">
-            <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="panel-title">engineering/product-status</div>
-          </div>
-          <div class="product-status">
-            <div class="status-row">
-              <div class="status-mark">QX</div>
-              <div><strong>Qashoryx POS</strong><small>Wholesale business system</small></div>
-              <span class="status-pill">Flagship</span>
-            </div>
-            <div class="status-row">
-              <div class="status-mark">FX</div>
-              <div><strong>Fixloom</strong><small>Repair workflow manager</small></div>
-              <span class="status-pill">Feature complete</span>
-            </div>
-            <div class="status-row">
-              <div class="status-mark">VQ</div>
-              <div><strong>Vendiqo</strong><small>Retail / wholesale POS</small></div>
-              <span class="status-pill">Release candidate</span>
-            </div>
-          </div>
-          <div class="panel-foot">
-            <span>private source · public engineering evidence</span>
-            <span class="green">scope verified</span>
-          </div>
-        </aside>
-      </div>
-    </header>
-
-    <div class="proof">
-      <div class="wrap proof-grid reveal">
-        <div class="proof-item"><strong>3</strong><span>Substantial private product builds documented safely</span></div>
-        <div class="proof-item"><strong>82 tests</strong><span>Qashoryx automated regression suite</span></div>
-        <div class="proof-item"><strong>0.1.0 RC</strong><span>Vendiqo completed release-candidate build</span></div>
-        <div class="proof-item"><strong>Multi-stack</strong><span>Python desktop, Android/Firebase, React/TypeScript</span></div>
-      </div>
-    </div>
-
-    <section id="products">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div>
-            <div class="kicker">01 · Product engineering</div>
-            <h2>Serious software, not portfolio filler.</h2>
-          </div>
-          <p>My strongest work is private because it contains business-specific implementation. I expose the engineering evidence—scope, architecture decisions, safety mechanisms, quality gates, and product boundaries—without publishing proprietary source.</p>
-        </div>
-
-        <div class="flagship">
-          <article class="case-card reveal">
-            <div class="case-main">
-              <div class="case-labels">
-                <span class="badge featured">Flagship case study</span>
-                <span class="badge private">Private source</span>
-                <span class="badge ready">Real-world business software</span>
-              </div>
-              <h3>Qashoryx POS</h3>
-              <p class="lead">An offline-first Windows wholesale point-of-sale and business operations system built around inventory, invoicing, customer balances, payments, reporting, recoverability, and daily operator workflows.</p>
-
-              <div class="case-grid">
-                <div class="case-block">
-                  <span>Business problem</span>
-                  <p>Bring sales, stock, customer dues, expenses, warranty workflows, reporting, and printable documents into one dependable local desktop system.</p>
-                </div>
-                <div class="case-block">
-                  <span>Engineering focus</span>
-                  <p>Financial correctness, transaction-safe stock changes, permissions, audit-oriented records, backups, migrations, invoice output, and responsive desktop UX.</p>
-                </div>
-                <div class="case-block">
-                  <span>Reliability</span>
-                  <p>Verified backup/restore safeguards, atomic database operations, protected account workflows, migration safety, and rollback behavior.</p>
-                </div>
-                <div class="case-block">
-                  <span>Quality evidence</span>
-                  <p>82 automated tests spanning database initialization, security, transactions, balances, reports, restore, runtime paths, and packaging.</p>
-                </div>
-              </div>
-
-              <div class="tech-row">
-                <span class="tech">Python</span><span class="tech">PySide6</span><span class="tech">SQLite</span><span class="tech">ReportLab</span><span class="tech">PyInstaller</span><span class="tech">Inno Setup</span>
-              </div>
-              <div class="case-actions">
-                <a class="btn primary" href="PRIVATE_PROJECT_SHOWCASE.md#qashoryx-pos">Read technical overview →</a>
-                <a class="btn" href="mailto:asadabbasbusiness@gmail.com?subject=Qashoryx%20technical%20discussion">Discuss the project</a>
-              </div>
-            </div>
-          </article>
-
-          <aside class="case-card case-aside reveal" aria-label="Qashoryx engineering highlights">
-            <div class="metric-card"><strong>Offline-first</strong><span>Business-critical workflows remain usable without cloud dependency.</span></div>
-            <div class="metric-card"><strong>Transaction-safe</strong><span>Sales, edits, payments, returns, and stock effects are designed around database consistency.</span></div>
-            <div class="metric-card"><strong>Recoverable</strong><span>Migration backups, integrity validation, and safe restore behavior protect operational data.</span></div>
-            <div class="metric-card"><strong>Packaged</strong><span>Windows executable and installer workflows turn source into a distributable desktop product.</span></div>
-            <div class="privacy-note">Private source protects business-specific implementation. No customer database, credentials, invoices, secrets, or runtime data are exposed through this portfolio.</div>
-          </aside>
-        </div>
-
-        <div class="product-grid">
-          <article class="case-card product-card reveal">
-            <div class="case-labels"><span class="badge private">Private source</span><span class="badge ready">Feature complete</span></div>
-            <h3>Fixloom</h3>
-            <p>Offline-first repair workflow manager for Windows repair shops, covering intake, repair progression, financial records, attachments, printed documents, and recovery.</p>
-            <div class="feature-list">
-              <div class="feature">Customer, device, technician, and guided repair-intake workflows</div>
-              <div class="feature">Controlled repair-state transitions with immutable status history</div>
-              <div class="feature">Exact monetary handling for charges, payments, and balances</div>
-              <div class="feature">Alembic migrations, checksummed backups, integrity-verified restore</div>
-              <div class="feature">pytest, Ruff, mypy, and reproducible Windows packaging</div>
-            </div>
-            <div class="tech-row"><span class="tech">Python</span><span class="tech">PySide6</span><span class="tech">SQLAlchemy</span><span class="tech">Alembic</span><span class="tech">pytest</span></div>
-            <div class="case-actions"><a class="btn" href="PRIVATE_PROJECT_SHOWCASE.md#fixloom">Technical overview →</a></div>
-          </article>
-
-          <article class="case-card product-card reveal">
-            <div class="case-labels"><span class="badge private">Private source</span><span class="badge ready">Completed release candidate</span></div>
-            <h3>Vendiqo</h3>
-            <p>Offline-first Windows POS for Pakistani small retailers, wholesalers, and trading businesses. The completed 0.1.0 release candidate includes the core operational product and portable Windows distribution.</p>
-            <div class="feature-list">
-              <div class="feature">Products, units, SKUs, barcode input, suppliers, purchases, local sales, and returns</div>
-              <div class="feature">Immutable inventory movement ledger with calculated stock balances</div>
-              <div class="feature">Receipt preview, print, PDF, reprint, reporting, and document search</div>
-              <div class="feature">Checksummed backups, atomic restore, and rollback protection</div>
-              <div class="feature">Versioned FBR contract boundary and provider-neutral durable compliance queue</div>
-              <div class="feature">Ruff, mypy, pytest, frozen-executable smoke checks, and reproducible portable ZIP build</div>
-            </div>
-            <div class="boundary"><strong>Scope honesty:</strong> live FBR transmission, tax calculation, credit/receivables, damaged-return disposition, code signing, a traditional installer, and final physical-printer acceptance are not claimed as completed 0.1.0 capabilities.</div>
-            <div class="tech-row"><span class="tech">Python</span><span class="tech">Qt/PySide</span><span class="tech">SQLite</span><span class="tech">pytest</span><span class="tech">PyInstaller</span></div>
-            <div class="case-actions"><a class="btn" href="PRIVATE_PROJECT_SHOWCASE.md#vendiqo">Technical overview →</a></div>
-          </article>
+        <div class="signal-card reveal" aria-label="Interactive engineering signal visualization">
+          <canvas id="signalCanvas" aria-hidden="true"></canvas>
+          <div class="signal-stamp floaty">evidence<br>over<br>claims</div>
         </div>
       </div>
     </section>
 
-    <section id="public-code" class="alt">
+    <div class="evidence-tape" aria-label="Engineering evidence highlights">
+      <div class="evidence-track">
+        <span><i></i> Qashoryx v2.1.1</span><span><i></i> 133 tests + 26 parameterized subtests</span><span><i></i> 7 ordered migrations</span><span><i></i> zero reconciliation findings on verified business data</span><span><i></i> real 80 mm thermal-printer spool test</span><span><i></i> release manifests + SHA-256 evidence</span><span><i></i> private source / public engineering evidence</span>
+        <span><i></i> Qashoryx v2.1.1</span><span><i></i> 133 tests + 26 parameterized subtests</span><span><i></i> 7 ordered migrations</span><span><i></i> zero reconciliation findings on verified business data</span><span><i></i> real 80 mm thermal-printer spool test</span><span><i></i> release manifests + SHA-256 evidence</span><span><i></i> private source / public engineering evidence</span>
+      </div>
+    </div>
+
+    <section id="evidence">
       <div class="wrap">
-        <div class="section-head reveal">
-          <div>
-            <div class="kicker">02 · Public code</div>
-            <h2>Code you can inspect.</h2>
-          </div>
-          <p>These repositories complement the private business products with inspectable Android, React/TypeScript, React Native, API integration, and C++/DSA work.</p>
+        <div class="section-top reveal">
+          <div class="section-no">01 / Evidence</div>
+          <div><h2 class="section-title">No vanity metrics.<br><em>Engineering evidence.</em></h2><p class="section-copy">The strongest work in this portfolio is private because it contains business-specific implementation. What is public here is the part that should matter to a technical reviewer: verified behavior, release discipline, data safety and measurable proof.</p></div>
         </div>
 
-        <div class="public-grid">
-          <a class="public-card reveal" href="https://github.com/asadabbas717/Social_Connect" target="_blank" rel="noreferrer">
-            <div class="public-icon">SC</div>
-            <h3>Social Connect</h3>
-            <p>Native Android social application with Firebase authentication, profiles, image-backed posts, likes, comments, search, and real-time one-to-one chat.</p>
-            <div class="tech-row"><span class="tech">Java</span><span class="tech">XML</span><span class="tech">Firebase Auth</span><span class="tech">Firestore</span><span class="tech">Storage</span></div>
-            <div class="link-line">View repository →</div>
-          </a>
+        <div class="proof-grid reveal">
+          <article class="proof"><span class="label">Qashoryx regression suite</span><strong class="counter" data-target="133">0</strong><small>tests, plus 26 parameterized subtests</small></article>
+          <article class="proof"><span class="label">Migration baseline</span><strong class="counter" data-target="7">0</strong><small>ordered, backup-first database migrations</small></article>
+          <article class="proof"><span class="label">Verified reconciliation</span><strong class="counter" data-target="0">0</strong><small>findings across 568 invoices, 463 customers and 255 products</small></article>
+          <article class="proof"><span class="label">Physical output</span><strong>80<span style="font-size:.42em">mm</span></strong><small>successful controlled thermal-printer spool test</small></article>
+        </div>
+      </div>
+    </section>
 
-          <a class="public-card reveal" href="https://github.com/asadabbas717/family-tree-webapp" target="_blank" rel="noreferrer">
-            <div class="public-icon">FT</div>
-            <h3>Family Tree Web App</h3>
-            <p>Local-first React/TypeScript family graph with normalized relationship data, ancestry-cycle validation, import safety, recovery behavior, automatic layout, tests, and responsive interaction.</p>
-            <div class="tech-row"><span class="tech">React</span><span class="tech">TypeScript</span><span class="tech">Vite</span><span class="tech">React Flow</span><span class="tech">Vitest</span></div>
-            <div class="link-line">View repository →</div>
-          </a>
+    <section id="work">
+      <div class="wrap">
+        <div class="section-top reveal">
+          <div class="section-no">02 / Product work</div>
+          <div><h2 class="section-title">Three products.<br><em>Three different failure modes.</em></h2><p class="section-copy">A wholesale POS can lose money, a repair system can lose workflow history, and a retail POS can corrupt stock. I design around those consequences first.</p></div>
+        </div>
 
-          <a class="public-card reveal" href="https://github.com/asadabbas717/pakistan-fuel-trip-calculator" target="_blank" rel="noreferrer">
-            <div class="public-icon">FP</div>
-            <h3>FuelTrip PK</h3>
-            <p>React Native trip-cost utility using device location, OpenStreetMap-based geocoding and routing, persisted vehicle averages, trip history, and shareable cost estimates.</p>
-            <div class="tech-row"><span class="tech">React Native</span><span class="tech">Expo</span><span class="tech">OSRM</span><span class="tech">Nominatim</span><span class="tech">Local Storage</span></div>
-            <div class="link-line">View repository →</div>
-          </a>
+        <div class="qashoryx-stage reveal">
+          <div class="q-grid">
+            <div>
+              <div class="eyebrow" style="color:var(--lime)">Flagship case file · Qashoryx POS v2.1.1</div>
+              <h3 class="q-title">Business software,<br><em>hardened by evidence.</em></h3>
+              <p class="q-copy">Offline-first wholesale billing, stock, customer accounts, payments, expenses, warranty workflows and reporting. The recent modernization concentrated on regression protection, transaction safety, recovery, performance, release verification and operator workflows—not a risky rewrite.</p>
+              <div class="chips"><span class="chip" style="color:white;border-color:rgba(255,255,255,.45)">Python</span><span class="chip" style="color:white;border-color:rgba(255,255,255,.45)">PySide6</span><span class="chip" style="color:white;border-color:rgba(255,255,255,.45)">SQLite</span><span class="chip" style="color:white;border-color:rgba(255,255,255,.45)">ReportLab</span><span class="chip" style="color:white;border-color:rgba(255,255,255,.45)">PyInstaller</span><span class="chip" style="color:white;border-color:rgba(255,255,255,.45)">Inno Setup</span></div>
+            </div>
+            <ul class="q-list">
+              <li><span>01</span><div><strong>133 tests + 26 parameterized subtests.</strong><br>Cross-module regression protects setup, authentication, stock, customers, invoices, payments, edits/returns, reports, PDF, backup, restore and reopen.</div></li>
+              <li><span>02</span><div><strong>Zero reconciliation findings.</strong><br>Verified backup replay covered 568 invoices, 463 active customers and 255 products.</div></li>
+              <li><span>03</span><div><strong>Release evidence, not “works on my machine.”</strong><br>Dependency lock, clean-build enforcement, packaged self-verification, manifest generation and artifact hashes.</div></li>
+              <li><span>04</span><div><strong>Real hardware acceptance.</strong><br>A controlled one-page 80 mm receipt rendered and spooled successfully to a BC-80POS thermal printer.</div></li>
+              <li><span>05</span><div><strong>Compatibility preserved.</strong><br>Seven ordered migrations, backup-first upgrades, restore rehearsal and database health checks protect historical data.</div></li>
+            </ul>
+          </div>
+        </div>
 
-          <a class="public-card reveal" href="https://github.com/asadabbas717/cpp-interview-practice" target="_blank" rel="noreferrer">
-            <div class="public-icon">C++</div>
-            <h3>C++ Interview Practice</h3>
-            <p>Structured C++17 fundamentals, OOP, STL, and DSA practice covering arrays, strings, hash maps, sliding windows, linked lists, trees, graphs, dynamic programming, and bit manipulation.</p>
-            <div class="tech-row"><span class="tech">C++17</span><span class="tech">STL</span><span class="tech">OOP</span><span class="tech">DSA</span><span class="tech">Complexity</span></div>
-            <div class="link-line">View repository →</div>
-          </a>
+        <article class="casefile reveal">
+          <div class="case-index"><strong>02</strong><span>Fixloom</span></div>
+          <div class="case-main"><h3>Repair workflow without workflow amnesia.</h3><p class="lede"><strong>Feature-complete offline-first Windows application</strong> for repair shops: structured intake, device history, technicians, controlled repair states, exact monetary records, attachments, PDFs, migration-managed persistence and verified recovery.</p><div class="chips"><span class="chip">Python 3.14</span><span class="chip">PySide6</span><span class="chip">SQLAlchemy 2.x</span><span class="chip">Alembic</span><span class="chip">pytest</span><span class="chip">Ruff</span><span class="chip">mypy</span></div></div>
+          <div class="case-side"><div class="fact"><b>State integrity</b><p>Repair transitions and history are treated as operational records, not decorative status labels.</p></div><div class="fact"><b>Recovery</b><p>Checksummed backup/restore with SQLite integrity validation and staged replacement.</p></div><div class="fact"><b>Release discipline</b><p>Automated tests, linting, typing and reproducible Windows packaging.</p></div></div>
+        </article>
+
+        <article class="casefile reveal">
+          <div class="case-index"><strong>03</strong><span>Vendiqo</span></div>
+          <div class="case-main"><h3>Retail transactions built as records, not mutable guesses.</h3><p class="lede"><strong>Completed 0.1.0 release-candidate POS</strong> for Pakistani retailers, wholesalers and trading businesses. It uses an immutable inventory movement ledger, atomic purchasing and sales, exact money/quantity handling, referenced returns, checksummed recovery and a provider-neutral compliance boundary.</p><div class="chips"><span class="chip">Python</span><span class="chip">PySide / Qt</span><span class="chip">SQLite</span><span class="chip">pytest</span><span class="chip">Ruff</span><span class="chip">mypy</span><span class="chip">PyInstaller</span></div></div>
+          <div class="case-side"><div class="fact"><b>Inventory</b><p>Immutable movement history with calculated stock balances.</p></div><div class="fact"><b>Transactions</b><p>Supplier purchases, local sales, payments, receipt snapshots and referenced returns.</p></div><div class="fact"><b>Honest scope</b><p>Compliance integration foundation is explicitly separated from claims of live FBR compliance.</p></div></div>
+        </article>
+
+        <div style="margin-top:2.2rem"><a class="button magnetic" href="PRIVATE_PROJECT_SHOWCASE.md"><span>Read private-project engineering notes</span><span>→</span></a></div>
+      </div>
+    </section>
+
+    <section id="code">
+      <div class="wrap">
+        <div class="section-top reveal">
+          <div class="section-no">03 / Public code</div>
+          <div><h2 class="section-title">Private depth.<br><em>Public proof.</em></h2><p class="section-copy">These repositories give reviewers something inspectable across Android, React/TypeScript, React Native and core computer-science practice.</p></div>
+        </div>
+
+        <div class="project-wall">
+          <article class="project-card tilt reveal"><div class="project-no">Public / Android</div><h3>Social Connect</h3><p>Native Android social application with Firebase Authentication, Firestore, Storage, posts, likes, comments, search and real-time one-to-one chat.</p><div class="stack"><span>Java</span><span>Android</span><span>Firebase</span></div><a class="project-link" href="https://github.com/asadabbas717/Social_Connect" target="_blank" rel="noreferrer">Source ↗</a></article>
+          <article class="project-card tilt reveal"><div class="project-no">Public / Web</div><h3>Family Tree</h3><p>Local-first relationship graph with normalized entities, cycle prevention, validated backup import/export, recovery behavior and automated tests.</p><div class="stack"><span>React 19</span><span>TypeScript</span><span>React Flow</span><span>Vitest</span></div><a class="project-link" href="https://github.com/asadabbas717/family-tree-webapp" target="_blank" rel="noreferrer">Source ↗</a></article>
+          <article class="project-card tilt reveal"><div class="project-no">Public / Mobile</div><h3>FuelTrip PK</h3><p>Pakistan-focused trip-cost calculator using geolocation, OpenStreetMap search/routing, local vehicle profiles and trip history.</p><div class="stack"><span>React Native</span><span>Expo</span><span>OSRM</span><span>Nominatim</span></div><a class="project-link" href="https://github.com/asadabbas717/pakistan-fuel-trip-calculator" target="_blank" rel="noreferrer">Source ↗</a></article>
+          <article class="project-card tilt reveal"><div class="project-no">Public / Fundamentals</div><h3>C++ Interview Practice</h3><p>Structured C++17 practice spanning fundamentals, OOP, STL, arrays, linked lists, trees, graphs, dynamic programming and complexity reasoning.</p><div class="stack"><span>C++17</span><span>STL</span><span>OOP</span><span>DSA</span></div><a class="project-link" href="https://github.com/asadabbas717/cpp-interview-practice" target="_blank" rel="noreferrer">Source ↗</a></article>
         </div>
       </div>
     </section>
 
     <section id="approach">
       <div class="wrap">
-        <div class="section-head reveal">
-          <div>
-            <div class="kicker">03 · Engineering approach</div>
-            <h2>What I optimize for.</h2>
-          </div>
-          <p>UI matters, but correctness matters more. My strongest projects are built around predictable state changes, explicit boundaries, recovery paths, and evidence that the system behaves as intended.</p>
+        <div class="section-top reveal">
+          <div class="section-no">04 / Approach</div>
+          <div><h2 class="section-title">The interface is visible.<br><em>The failure model is the work.</em></h2><p class="section-copy">My best projects are organized around what must never go wrong: money, stock, history, backups, authentication and releases.</p></div>
         </div>
 
         <div class="principles">
-          <div class="principle reveal"><div class="principle-num">01</div><h3>Correct transactions</h3><p>Financial and inventory workflows are designed so partial failure does not leave half-written business state behind.</p></div>
-          <div class="principle reveal"><div class="principle-num">02</div><h3>Recoverable data</h3><p>Backups, integrity checks, migrations, restore validation, and isolation matter because business software eventually faces real operational failures.</p></div>
-          <div class="principle reveal"><div class="principle-num">03</div><h3>Testable behavior</h3><p>Automated checks focus on high-risk paths: money, stock, persistence, reporting, rollback, rendering, migration, and recovery.</p></div>
-          <div class="principle reveal"><div class="principle-num">04</div><h3>Honest scope</h3><p>I distinguish implemented behavior from roadmap items, deployment gates, and regulatory dependencies rather than presenting future work as finished.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="alt" id="skills">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div><div class="kicker">04 · Technical toolkit</div><h2>Skills backed by projects.</h2></div>
-          <p>The focus is not on collecting technology names. These are the tools and engineering areas represented directly across my product and public-code work.</p>
+          <article class="principle reveal"><div class="num">01</div><div><h3>Correct transactions</h3><p>Financial, stock and document writes should commit together or not at all. Rollback behavior is part of the product.</p></div></article>
+          <article class="principle reveal"><div class="num">02</div><div><h3>Recoverable data</h3><p>Backups are only useful if they are verifiable and restorable. Migration and restore paths need evidence, not optimism.</p></div></article>
+          <article class="principle reveal"><div class="num">03</div><div><h3>Measured change</h3><p>I prefer regression tests, reconciliation and profiling before replacing working architecture with fashionable abstractions.</p></div></article>
+          <article class="principle reveal"><div class="num">04</div><div><h3>Honest boundaries</h3><p>Implemented, verified and deployed are different states. The portfolio says which one is true instead of blurring them together.</p></div></article>
         </div>
 
-        <div class="skills-grid">
-          <div class="skill-card reveal"><h3>Desktop & business software</h3><div class="skill-list"><span class="tech">Python</span><span class="tech">PySide6 / Qt</span><span class="tech">SQLite</span><span class="tech">SQLAlchemy</span><span class="tech">Alembic</span><span class="tech">ReportLab</span><span class="tech">PyInstaller</span></div></div>
-          <div class="skill-card reveal"><h3>Mobile</h3><div class="skill-list"><span class="tech">Android</span><span class="tech">Java</span><span class="tech">XML</span><span class="tech">Firebase</span><span class="tech">React Native</span><span class="tech">Expo</span><span class="tech">Flutter / Dart</span></div></div>
-          <div class="skill-card reveal"><h3>Web</h3><div class="skill-list"><span class="tech">React</span><span class="tech">TypeScript</span><span class="tech">JavaScript</span><span class="tech">Vite</span><span class="tech">HTML</span><span class="tech">CSS</span><span class="tech">Node.js</span></div></div>
-          <div class="skill-card reveal"><h3>Quality & reliability</h3><div class="skill-list"><span class="tech">pytest</span><span class="tech">unittest</span><span class="tech">Vitest</span><span class="tech">Ruff</span><span class="tech">mypy</span><span class="tech">Database migrations</span><span class="tech">Backup / restore</span></div></div>
-          <div class="skill-card reveal"><h3>Core engineering</h3><div class="skill-list"><span class="tech">Git</span><span class="tech">GitHub</span><span class="tech">SQL</span><span class="tech">REST APIs</span><span class="tech">C++</span><span class="tech">Data structures</span><span class="tech">Debugging</span></div></div>
-          <div class="skill-card reveal"><h3>Applied AI exposure</h3><div class="skill-list"><span class="tech">Python</span><span class="tech">Generative AI</span><span class="tech">Gemini</span><span class="tech">CLIP</span><span class="tech">Flux</span><span class="tech">Computer Vision</span></div></div>
+        <div class="skills-board reveal" style="margin-top:3rem">
+          <div class="skill-row"><h3>Desktop & Business</h3><div class="skill-list"><span>Python</span><span>PySide6 / Qt</span><span>SQLite</span><span>SQLAlchemy</span><span>Alembic</span><span>ReportLab</span><span>PyInstaller</span><span>Inno Setup</span></div></div>
+          <div class="skill-row"><h3>Quality & Reliability</h3><div class="skill-list"><span>pytest</span><span>unittest</span><span>Ruff</span><span>mypy</span><span>migration safety</span><span>backup / restore</span><span>transaction rollback</span><span>release verification</span></div></div>
+          <div class="skill-row"><h3>Mobile</h3><div class="skill-list"><span>Android</span><span>Java</span><span>Firebase</span><span>React Native</span><span>Expo</span><span>Flutter / Dart</span></div></div>
+          <div class="skill-row"><h3>Web & Core</h3><div class="skill-list"><span>React</span><span>TypeScript</span><span>JavaScript</span><span>Vite</span><span>Node.js</span><span>SQL</span><span>REST APIs</span><span>C++</span><span>DSA</span><span>Git</span></div></div>
         </div>
       </div>
     </section>
 
     <section id="background">
       <div class="wrap">
-        <div class="section-head reveal">
-          <div><div class="kicker">05 · Technical background</div><h2>Built through practice.</h2></div>
-          <p>My background combines formal Software Engineering education, internship experience, academic AI/web work, and self-directed development of increasingly substantial applications.</p>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-item reveal">
-            <div class="timeline-dot">APP</div>
-            <div class="timeline-body">
-              <div class="timeline-head"><div><h3>Independent Product Engineering</h3><div class="timeline-org">Qashoryx · Fixloom · Vendiqo</div></div><span>Recent work</span></div>
-              <p>Designed and developed offline-first Windows business applications with increasing emphasis on transactional correctness, migrations, reporting, recoverability, automated quality gates, packaging, and safe public documentation of private source.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-dot">AND</div>
-            <div class="timeline-body">
-              <div class="timeline-head"><div><h3>Android Application Intern</h3><div class="timeline-org">DevelopersHub Corporation</div></div><span>2025</span></div>
-              <p>Built a working Android social application using Java, XML, Firebase Authentication, Firestore, Storage, profiles, posts, likes, comments, search, and real-time chat. Received the internship’s Best Intern recognition.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-dot">AI</div>
-            <div class="timeline-body">
-              <div class="timeline-head"><div><h3>Generative AI & Web Capstone</h3><div class="timeline-org">DreamBoard-AI · UMT</div></div><span>2024–2025</span></div>
-              <p>Co-developed a storyboarding platform using Python, ReactJS, NodeJS, Gemini, CLIP, and Flux, gaining practical exposure to AI-assisted media generation and full-stack application workflows.</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="height:1rem"></div>
-        <div class="education-card reveal">
-          <div>
-            <h3>Bachelor of Science in Software Engineering</h3>
-            <div class="timeline-org">University of Management and Technology (UMT), Lahore</div>
-            <p>Formal foundation in software engineering with project work spanning mobile development, web development, databases, programming, and applied AI.</p>
-          </div>
-          <div class="education-year">2021–2025</div>
+        <div class="section-top reveal"><div class="section-no">05 / Background</div><div><h2 class="section-title">Built by doing.<br><em>Refined by evidence.</em></h2></div></div>
+        <div class="timeline reveal">
+          <article class="timeline-item"><time>Independent product engineering</time><div><h3>Qashoryx · Fixloom · Vendiqo</h3><p>Desktop business systems focused on operational workflows, financial/data correctness, recovery, testing and Windows delivery.</p></div><div class="org">Software Engineer</div></article>
+          <article class="timeline-item"><time>2025</time><div><h3>Android Application Internship</h3><p>Built and practiced native Android application workflows with Java, XML and Firebase-backed features.</p></div><div class="org">DevelopersHub</div></article>
+          <article class="timeline-item"><time>Academic capstone</time><div><h3>Generative AI & Web Development</h3><p>Worked across web application development and generative-AI integration as part of university capstone work.</p></div><div class="org">UMT</div></article>
+          <article class="timeline-item"><time>Education</time><div><h3>BS Software Engineering</h3><p>Software Engineering graduate with continued focus on practical product engineering, systems thinking and cybersecurity fundamentals.</p></div><div class="org">University of Management & Technology</div></article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="alt">
+    <section id="contact">
       <div class="wrap">
-        <div class="contact reveal">
-          <div class="contact-grid">
-            <div>
-              <div class="kicker">06 · Contact</div>
-              <h2>Looking for a software engineer who builds beyond the demo?</h2>
-              <p>I’m open to software engineering opportunities where I can contribute to real products, strengthen my engineering depth, and keep growing through practical delivery.</p>
-            </div>
-            <div class="contact-actions">
-              <a class="contact-link" href="mailto:asadabbasbusiness@gmail.com"><span>Email</span><strong>asadabbasbusiness@gmail.com</strong></a>
-              <a class="contact-link" href="https://github.com/asadabbas717" target="_blank" rel="noreferrer"><span>GitHub</span><strong>@asadabbas717</strong></a>
-              <a class="contact-link" href="PRIVATE_PROJECT_SHOWCASE.md"><span>Private projects</span><strong>Technical overview →</strong></a>
-            </div>
-          </div>
+        <div class="contact-stage reveal">
+          <div class="eyebrow" style="color:var(--lime)">Open to software engineering opportunities</div>
+          <h2>Need someone who thinks beyond <em>the happy path?</em></h2>
+          <p>I’m interested in software engineering roles where reliability, data integrity, debugging and real product ownership matter. Public code is available on GitHub; private product architecture and sanitized demonstrations can be discussed in interviews.</p>
+          <div class="contact-actions"><a class="button magnetic" href="https://github.com/asadabbas717" target="_blank" rel="noreferrer"><span>GitHub profile</span><span>↗</span></a><a class="button magnetic" href="mailto:asadabbasmallah@gmail.com"><span>Email me</span><span>→</span></a></div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap footer-inner">
-      <span>© 2026 Asad Abbas · Software Engineer</span>
-      <span>Built as a fast, static GitHub Pages portfolio.</span>
-    </div>
+    <div class="wrap footer-inner"><span>Asad Abbas · Software Engineer</span><span>Designed as evidence, not decoration · <span id="year"></span></span></div>
   </footer>
 
   <script>
-    (() => {
-      const root = document.documentElement;
-      const themeToggle = document.getElementById('themeToggle');
-      const menuToggle = document.getElementById('menuToggle');
-      const navLinks = document.getElementById('navLinks');
-      const progress = document.getElementById('progress');
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      const savedTheme = localStorage.getItem('portfolio-theme');
-      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-      root.dataset.theme = savedTheme || (prefersLight ? 'light' : 'dark');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn?.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    navLinks?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn?.setAttribute('aria-expanded','false');
+    }));
 
-      const updateThemeLabel = () => {
-        const isDark = root.dataset.theme === 'dark';
-        themeToggle.textContent = isDark ? '☀' : '☾';
-        themeToggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
-        document.querySelector('meta[name="theme-color"]').setAttribute('content', isDark ? '#071018' : '#f5f9fb');
-      };
-      updateThemeLabel();
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-      themeToggle.addEventListener('click', () => {
-        root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-        localStorage.setItem('portfolio-theme', root.dataset.theme);
-        updateThemeLabel();
+    const scrollBar = document.getElementById('scrollBar');
+    const updateScroll = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      const pct = max > 0 ? (scrollY / max) * 100 : 0;
+      scrollBar.style.width = pct + '%';
+    };
+    addEventListener('scroll', updateScroll, {passive:true});
+    updateScroll();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const counters = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = Number(el.dataset.target || 0);
+        if (reducedMotion || target === 0) {
+          el.textContent = String(target);
+        } else {
+          const start = performance.now();
+          const duration = 1000;
+          const step = now => {
+            const p = Math.min(1,(now-start)/duration);
+            const eased = 1 - Math.pow(1-p,3);
+            el.textContent = String(Math.round(target*eased));
+            if (p < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        }
+        counterObserver.unobserve(el);
+      });
+    }, {threshold:.6});
+    counters.forEach(el => counterObserver.observe(el));
+
+    if (!reducedMotion && matchMedia('(pointer:fine)').matches) {
+      const glow = document.getElementById('cursorGlow');
+      addEventListener('pointermove', e => {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+        glow.style.opacity = '1';
+      }, {passive:true});
+
+      document.querySelectorAll('.magnetic').forEach(el => {
+        el.addEventListener('pointermove', e => {
+          const r = el.getBoundingClientRect();
+          const x = e.clientX - (r.left + r.width/2);
+          const y = e.clientY - (r.top + r.height/2);
+          el.style.transform = `translate(${x*.09}px,${y*.09}px)`;
+        });
+        el.addEventListener('pointerleave', () => el.style.transform = '');
       });
 
-      menuToggle.addEventListener('click', () => {
-        const open = navLinks.classList.toggle('open');
-        menuToggle.setAttribute('aria-expanded', String(open));
-        menuToggle.textContent = open ? '×' : '☰';
+      document.querySelectorAll('.tilt').forEach(card => {
+        card.addEventListener('pointermove', e => {
+          const r = card.getBoundingClientRect();
+          const rx = ((e.clientY-r.top)/r.height-.5)*-4;
+          const ry = ((e.clientX-r.left)/r.width-.5)*5;
+          card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+        });
+        card.addEventListener('pointerleave', () => card.style.transform = '');
       });
+    }
 
-      navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.textContent = '☰';
+    const canvas = document.getElementById('signalCanvas');
+    const ctx = canvas.getContext('2d');
+    const pointer = {x:.5,y:.5};
+    let points = [];
+
+    function sizeCanvas(){
+      const rect = canvas.getBoundingClientRect();
+      const dpr = Math.min(devicePixelRatio || 1, 2);
+      canvas.width = Math.max(1,Math.floor(rect.width*dpr));
+      canvas.height = Math.max(1,Math.floor(rect.height*dpr));
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      points = Array.from({length:22},(_,i)=>({
+        x: rect.width*(.08+Math.random()*.84),
+        y: rect.height*(.10+Math.random()*.80),
+        r: 2.2+Math.random()*3.8,
+        phase: Math.random()*Math.PI*2,
+        speed:.00035+Math.random()*.0006,
+        amp:4+Math.random()*12
+      }));
+    }
+
+    function drawSignal(t=0){
+      const rect = canvas.getBoundingClientRect();
+      ctx.clearRect(0,0,rect.width,rect.height);
+      ctx.fillStyle = '#fffdf8';
+      ctx.fillRect(0,0,rect.width,rect.height);
+
+      ctx.strokeStyle = 'rgba(17,19,23,.08)';
+      ctx.lineWidth = 1;
+      const gap = Math.max(34,rect.width/10);
+      for(let x=0;x<rect.width;x+=gap){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,rect.height);ctx.stroke()}
+      for(let y=0;y<rect.height;y+=gap){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(rect.width,y);ctx.stroke()}
+
+      const current = points.map(p=>({
+        ...p,
+        dx:p.x + (reducedMotion?0:Math.sin(t*p.speed+p.phase)*p.amp),
+        dy:p.y + (reducedMotion?0:Math.cos(t*p.speed*.8+p.phase)*p.amp)
       }));
 
-      const updateProgress = () => {
-        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-        const ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
-        progress.style.width = `${Math.min(100, Math.max(0, ratio * 100))}%`;
-      };
-      updateProgress();
-      window.addEventListener('scroll', updateProgress, { passive:true });
-
-      if (reducedMotion || !('IntersectionObserver' in window)) {
-        document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-      } else {
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold:.12, rootMargin:'0px 0px -40px 0px' });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      for(let i=0;i<current.length;i++){
+        for(let j=i+1;j<current.length;j++){
+          const a=current[i],b=current[j];
+          const d=Math.hypot(a.dx-b.dx,a.dy-b.dy);
+          if(d<120){
+            ctx.strokeStyle=`rgba(36,71,255,${(1-d/120)*.22})`;
+            ctx.beginPath();ctx.moveTo(a.dx,a.dy);ctx.lineTo(b.dx,b.dy);ctx.stroke();
+          }
+        }
       }
-    })();
+
+      const px=pointer.x*rect.width, py=pointer.y*rect.height;
+      current.forEach((p,i)=>{
+        const d=Math.hypot(p.dx-px,p.dy-py);
+        const hover=Math.max(0,1-d/150);
+        ctx.fillStyle = i%5===0 ? '#ff5b35' : (i%3===0 ? '#c7f34a' : '#2447ff');
+        ctx.beginPath();ctx.arc(p.dx,p.dy,p.r+hover*4,0,Math.PI*2);ctx.fill();
+      });
+
+      ctx.strokeStyle='rgba(17,19,23,.5)';
+      ctx.lineWidth=1.5;
+      ctx.beginPath();ctx.arc(px,py,18,0,Math.PI*2);ctx.stroke();
+
+      if(!reducedMotion) requestAnimationFrame(drawSignal);
+    }
+
+    canvas.addEventListener('pointermove',e=>{
+      const r=canvas.getBoundingClientRect();
+      pointer.x=(e.clientX-r.left)/r.width;
+      pointer.y=(e.clientY-r.top)/r.height;
+    });
+    canvas.addEventListener('pointerleave',()=>{pointer.x=.5;pointer.y=.5});
+    addEventListener('resize',sizeCanvas);
+    sizeCanvas();
+    drawSignal(0);
   </script>
 </body>
 </html>
