@@ -90,7 +90,7 @@ Fixloom demonstrates structured application architecture, migration-managed pers
 
 **Status:** Completed release-candidate product (0.1.0)  
 **Role:** Software Engineer  
-**Technology:** Python, Qt/PySide desktop stack, SQLite, migration-managed persistence, Ruff, mypy, pytest, PyInstaller
+**Technology:** Python, Qt/PySide desktop stack, SQLite, migration-managed persistence, Ruff, mypy, pytest, PyInstaller, Inno Setup
 
 ### Completed release-candidate scope
 
@@ -104,17 +104,19 @@ Fixloom demonstrates structured application architecture, migration-managed pers
 - Checksummed backups, verification, atomic restore, and rollback protection
 - Versioned FBR contract boundary with a provider-neutral durable compliance queue
 - Reproducible Windows portable PyInstaller build with smoke-tested first-launch migration and backup checks
+- Per-user Inno Setup installer produced by the Windows release workflow
+- SHA-256 release artifacts for the portable distribution and installer outputs
 - Automated quality gate covering formatting, linting, static typing, tests, and packaged self-checks
 
 ### Deliberate boundaries
 
-The current release candidate does **not** claim features that are not implemented. Tax calculation, customer credit/receivables, damaged-return disposition, live FBR transmission, automatic compliance-queue processing, code signing, a traditional installer, and final physical-printer acceptance remain outside the completed 0.1.0 release-candidate scope.
+The current release candidate does **not** claim features that are not implemented. Tax calculation, customer credit/receivables, damaged-return disposition, live FBR transmission, and automatic compliance-queue processing remain outside the completed 0.1.0 release-candidate scope. Code signing and final physical-printer acceptance remain deployment gates.
 
 The Compliance workspace represents an integration foundation, not a claim of FBR compliance.
 
 ### Portfolio value
 
-Vendiqo demonstrates financial and inventory transaction design, immutable records, recovery engineering, release automation, keyboard-driven retail workflows, provider-neutral integration boundaries, and careful separation between implemented behavior and future regulatory integration.
+Vendiqo demonstrates financial and inventory transaction design, immutable records, recovery engineering, release automation, keyboard-driven retail workflows, provider-neutral integration boundaries, Windows installer delivery, and careful separation between implemented behavior and future regulatory integration.
 
 **Source policy:** Private. The completed product is presented through verified capabilities and engineering evidence while unfinished or regulatory-dependent work is stated explicitly.
 
