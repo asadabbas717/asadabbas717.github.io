@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Asad Abbas — Software Engineer building reliable Windows business software, mobile applications, and web products with evidence-driven engineering." />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#f3efe5" />
+  <meta name="theme-color" content="#f2efe8" />
   <link rel="canonical" href="https://asadabbas717.github.io/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://asadabbas717.github.io/" />
   <meta property="og:title" content="Asad Abbas — Software Engineer" />
-  <meta property="og:description" content="Engineering business software that survives real use: correctness, recoverability, testing, packaging, and product delivery." />
+  <meta property="og:description" content="Software that survives real work: correctness, recoverability, testing, packaging, and product delivery." />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Asad Abbas — Software Engineer" />
-  <meta name="twitter:description" content="Desktop, mobile and web engineering backed by testable evidence." />
+  <meta name="twitter:description" content="An interactive engineering portfolio built around evidence, systems, and real product work." />
 
   <title>Asad Abbas — Software Engineer</title>
 
@@ -36,555 +36,497 @@
 
   <style>
     :root{
-      --paper:#f3efe5;
-      --paper-2:#e9e2d3;
-      --ink:#111317;
-      --ink-soft:#4e5156;
-      --blue:#2447ff;
-      --blue-deep:#1732bd;
-      --orange:#ff5b35;
-      --lime:#c7f34a;
-      --white:#fffdf8;
-      --line:rgba(17,19,23,.16);
-      --line-strong:rgba(17,19,23,.34);
-      --shadow:0 24px 70px rgba(24,24,20,.12);
-      --radius:28px;
-      --mono:'IBM Plex Mono',monospace;
-      --sans:'Manrope',sans-serif;
-      --serif:'Instrument Serif',serif;
+      --paper:#f2efe8;
+      --paper-2:#e8e3d8;
+      --ink:#151515;
+      --muted:#666157;
+      --blue:#2248ff;
+      --red:#ff4d2e;
+      --lime:#c9ff36;
+      --violet:#7656ff;
+      --line:#171717;
+      --soft-line:rgba(21,21,21,.17);
+      --card:#f8f5ee;
+      --shadow:0 22px 60px rgba(36,31,22,.12);
+      --serif:'Instrument Serif',Georgia,serif;
+      --sans:'Manrope',system-ui,sans-serif;
+      --mono:'IBM Plex Mono',ui-monospace,monospace;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;background:var(--paper)}
-    body{
-      min-height:100vh;
-      overflow-x:hidden;
-      background:
-        radial-gradient(circle at 82% 8%,rgba(36,71,255,.10),transparent 23rem),
-        radial-gradient(circle at 8% 62%,rgba(255,91,53,.08),transparent 24rem),
-        var(--paper);
-      color:var(--ink);
-      font-family:var(--sans);
-      line-height:1.6;
-      text-rendering:optimizeLegibility;
-    }
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-3;
-      pointer-events:none;
-      opacity:.34;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E");
-    }
+    body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.55;overflow-x:hidden}
     a{color:inherit}
-    img{max-width:100%}
     button{font:inherit}
     ::selection{background:var(--lime);color:var(--ink)}
     :focus-visible{outline:3px solid var(--blue);outline-offset:4px}
 
-    .skip-link{position:fixed;left:16px;top:-80px;z-index:999;background:var(--ink);color:var(--white);padding:.8rem 1rem;border-radius:12px;text-decoration:none;transition:top .2s ease}
-    .skip-link:focus{top:16px}
+    .noise{position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.13;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.17'/%3E%3C/svg%3E")}
+    .cursor-signal{position:fixed;width:160px;height:160px;border-radius:50%;pointer-events:none;z-index:1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(34,72,255,.13),rgba(34,72,255,0) 66%);transition:width .2s,height .2s;display:none}
+    @media(pointer:fine){.cursor-signal{display:block}}
 
-    .scroll-meter{position:fixed;left:0;top:0;width:100%;height:4px;z-index:500;background:transparent}
-    .scroll-meter span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--blue),var(--orange),var(--lime));transform-origin:left}
+    .skip{position:fixed;left:16px;top:-60px;z-index:1200;background:var(--lime);border:2px solid var(--ink);padding:.7rem 1rem;text-decoration:none;font:600 .72rem var(--mono)}
+    .skip:focus{top:16px}
 
-    .cursor-glow{position:fixed;width:28rem;height:28rem;border-radius:50%;pointer-events:none;z-index:-1;translate:-50% -50%;background:radial-gradient(circle,rgba(36,71,255,.07),rgba(36,71,255,0) 68%);opacity:0;transition:opacity .25s ease}
-
-    .wrap{width:min(1240px,calc(100% - 44px));margin-inline:auto}
+    .progress{position:fixed;left:0;top:0;height:5px;width:0;background:linear-gradient(90deg,var(--blue),var(--red),var(--lime));z-index:1100}
+    .wrap{width:min(1320px,calc(100% - 44px));margin:auto}
     .mono{font-family:var(--mono)}
-    .eyebrow{font:600 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase}
 
-    nav{position:sticky;top:0;z-index:200;background:rgba(243,239,229,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-    .nav-inner{min-height:72px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
-    .brand{display:inline-flex;align-items:center;gap:.75rem;text-decoration:none;font-weight:800;width:max-content}
-    .brand-badge{width:38px;height:38px;border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center;font:600 .72rem var(--mono);background:var(--lime);box-shadow:4px 4px 0 var(--ink);transition:transform .2s ease,box-shadow .2s ease}
-    .brand:hover .brand-badge{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
-    .nav-links{display:flex;align-items:center;justify-content:center;gap:1.5rem}
-    .nav-links a{text-decoration:none;font:600 .66rem var(--mono);letter-spacing:.08em;text-transform:uppercase;position:relative}
-    .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:2px;background:var(--blue);transition:right .25s ease}
-    .nav-links a:hover::after{right:0}
-    .nav-cta{justify-self:end;text-decoration:none;border:1.5px solid var(--ink);padding:.65rem .9rem;border-radius:999px;font:600 .67rem var(--mono);text-transform:uppercase;letter-spacing:.06em;background:var(--white);transition:transform .2s ease,box-shadow .2s ease}
-    .nav-cta:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
-    .menu-btn{display:none;border:1.5px solid var(--ink);background:var(--white);border-radius:999px;padding:.55rem .8rem;font:600 .68rem var(--mono)}
+    nav{position:fixed;left:0;right:0;top:0;z-index:1000;padding:16px 0;pointer-events:none}
+    .nav-shell{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand,.nav-cluster{pointer-events:auto;background:rgba(242,239,232,.86);backdrop-filter:blur(14px);border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink)}
+    .brand{display:flex;align-items:center;gap:.8rem;padding:.72rem .9rem;text-decoration:none;font:700 .72rem var(--mono);letter-spacing:.06em}
+    .brand-mark{width:26px;height:26px;display:grid;place-items:center;background:var(--blue);color:white;border:1.5px solid var(--ink);transform:rotate(-7deg)}
+    .nav-cluster{display:flex;align-items:center;padding:.35rem}
+    .nav-cluster a{padding:.55rem .72rem;text-decoration:none;font:600 .66rem var(--mono);text-transform:uppercase;letter-spacing:.06em}
+    .nav-cluster a:hover{background:var(--lime)}
+    .menu-btn{display:none;border:0;background:var(--ink);color:var(--paper);padding:.65rem .8rem;font:600 .7rem var(--mono);pointer-events:auto}
 
-    .hero{min-height:calc(100vh - 72px);display:grid;align-items:center;padding:62px 0 54px;position:relative}
-    .hero-layout{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(330px,.86fr);gap:56px;align-items:center}
-    .hero-kicker{display:flex;align-items:center;gap:.75rem;margin-bottom:1.4rem}
-    .hero-kicker .dot{width:11px;height:11px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 7px rgba(255,91,53,.13)}
-    .hero-title{font-size:clamp(4.4rem,10.2vw,9.6rem);line-height:.78;letter-spacing:-.085em;font-weight:800;text-transform:uppercase;max-width:920px}
-    .hero-title .serif{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:none;color:var(--blue);letter-spacing:-.045em;display:inline-block;transform:rotate(-2deg)}
-    .hero-sub{max-width:720px;margin-top:1.8rem;font-size:clamp(1.05rem,1.9vw,1.35rem);color:var(--ink-soft)}
-    .hero-sub strong{color:var(--ink)}
-    .hero-actions{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2rem}
-    .button{position:relative;display:inline-flex;align-items:center;gap:.7rem;min-height:50px;padding:.8rem 1.1rem;border:1.5px solid var(--ink);border-radius:999px;text-decoration:none;font:600 .72rem var(--mono);letter-spacing:.04em;text-transform:uppercase;overflow:hidden;background:var(--white);transition:transform .2s ease,box-shadow .2s ease}
-    .button::before{content:"";position:absolute;inset:0;background:var(--lime);transform:translateY(105%);transition:transform .28s cubic-bezier(.2,.8,.2,1);z-index:0}
-    .button>*{position:relative;z-index:1}
-    .button:hover::before{transform:translateY(0)}
-    .button:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
-    .button.primary{background:var(--blue);color:var(--white)}
-    .button.primary::before{background:var(--orange)}
+    .hero{min-height:100svh;display:grid;align-items:end;position:relative;padding:128px 0 56px;border-bottom:2px solid var(--ink);overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(21,21,21,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(21,21,21,.08) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(to bottom,#000,transparent 92%)}
+    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(320px,.65fr);gap:42px;align-items:end}
+    .hero-label{display:inline-flex;align-items:center;gap:.55rem;border:1.5px solid var(--ink);background:var(--lime);padding:.48rem .7rem;font:600 .66rem var(--mono);text-transform:uppercase;letter-spacing:.07em;transform:rotate(-1deg)}
+    .hero-label i{width:8px;height:8px;border-radius:50%;background:var(--ink);animation:pulse 1.7s infinite}
+    @keyframes pulse{50%{transform:scale(.45);opacity:.35}}
+    .hero h1{font-size:clamp(4.8rem,11.5vw,10.4rem);line-height:.76;letter-spacing:-.085em;margin:1.25rem 0 1.5rem;text-transform:uppercase;font-weight:800;max-width:1100px}
+    .hero h1 .serif{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;color:var(--red);letter-spacing:-.06em}
+    .hero h1 .shift{display:inline-block;transform:translateX(clamp(16px,4vw,70px))}
+    .hero-copy{max-width:760px;font-size:clamp(1rem,1.6vw,1.2rem);color:#3d3932}
+    .hero-copy strong{color:var(--ink)}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:1.6rem}
+    .btn{--tx:0px;--ty:0px;display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.1rem;border:1.5px solid var(--ink);background:var(--paper);box-shadow:4px 4px 0 var(--ink);text-decoration:none;font:600 .7rem var(--mono);text-transform:uppercase;letter-spacing:.04em;transform:translate(var(--tx),var(--ty));transition:background .15s,box-shadow .15s}
+    .btn:hover{background:var(--lime);box-shadow:7px 7px 0 var(--ink)}
+    .btn.blue{background:var(--blue);color:white}
+    .btn.blue:hover{background:var(--red)}
 
-    .signal-card{position:relative;aspect-ratio:1/1;border:1.5px solid var(--ink);border-radius:38px;background:var(--white);box-shadow:12px 12px 0 var(--ink);overflow:hidden;isolation:isolate}
-    .signal-card::before{content:"ENGINEERING / EVIDENCE / SYSTEM";position:absolute;left:18px;top:18px;z-index:3;font:600 .62rem var(--mono);letter-spacing:.08em}
-    .signal-card::after{content:"01";position:absolute;right:20px;bottom:12px;z-index:3;font:600 4rem/1 var(--serif);color:var(--orange)}
-    #signalCanvas{width:100%;height:100%;display:block}
-    .signal-stamp{position:absolute;left:50%;top:50%;z-index:4;translate:-50% -50%;width:154px;height:154px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;text-align:center;background:rgba(199,243,74,.90);font:600 .67rem/1.55 var(--mono);letter-spacing:.08em;text-transform:uppercase;transform:rotate(-7deg);mix-blend-mode:multiply}
+    .hero-evidence{position:relative;min-height:520px}
+    .e-card{position:absolute;border:1.5px solid var(--ink);background:var(--card);box-shadow:7px 7px 0 var(--ink);padding:1rem 1.05rem;width:min(310px,88%);transform-origin:center;animation:float 6s ease-in-out infinite}
+    .e-card:nth-child(1){top:0;right:4%;transform:rotate(3deg)}
+    .e-card:nth-child(2){top:134px;left:0;transform:rotate(-4deg);animation-delay:-1.8s}
+    .e-card:nth-child(3){top:284px;right:0;transform:rotate(2deg);animation-delay:-3s}
+    .e-card:nth-child(4){bottom:0;left:10%;transform:rotate(-2deg);animation-delay:-4.4s;background:var(--lime)}
+    @keyframes float{0%,100%{translate:0 0}50%{translate:0 -10px}}
+    .e-card small{display:block;font:600 .6rem var(--mono);text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:.5rem}
+    .e-card strong{font-size:clamp(2rem,4vw,4rem);line-height:.9;letter-spacing:-.05em}
+    .e-card span{display:block;margin-top:.5rem;font-size:.8rem;color:var(--muted)}
+    .e-card.zero strong{font-family:var(--serif);font-style:italic;color:var(--red);font-size:4rem}
 
-    .evidence-tape{border-block:1.5px solid var(--ink);background:var(--lime);overflow:hidden;white-space:nowrap}
-    .evidence-track{display:inline-flex;min-width:max-content;animation:tape 28s linear infinite}
-    .evidence-track span{display:inline-flex;align-items:center;gap:1.4rem;padding:.92rem 1.4rem;font:600 .7rem var(--mono);letter-spacing:.07em;text-transform:uppercase}
-    .evidence-track i{width:8px;height:8px;border-radius:50%;background:var(--ink)}
+    .tape{border-bottom:2px solid var(--ink);background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap}
+    .tape-track{display:inline-flex;min-width:max-content;animation:tape 28s linear infinite}
+    .tape-track span{padding:.78rem 1.2rem;font:500 .68rem var(--mono);text-transform:uppercase;letter-spacing:.08em}
+    .tape-track b{color:var(--lime);font-weight:600}
     @keyframes tape{to{transform:translateX(-50%)}}
 
-    section{padding:110px 0}
-    .section-top{display:grid;grid-template-columns:180px 1fr;gap:2rem;margin-bottom:3.2rem;align-items:start}
-    .section-no{font:600 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
-    .section-title{font-size:clamp(3rem,6.4vw,6.4rem);line-height:.88;letter-spacing:-.065em;max-width:980px}
-    .section-title em{font-family:var(--serif);font-weight:400;color:var(--orange)}
-    .section-copy{max-width:720px;color:var(--ink-soft);font-size:1.05rem;margin-top:1.1rem}
+    .section{padding:110px 0;border-bottom:2px solid var(--ink);position:relative}
+    .section-kicker{display:flex;align-items:center;gap:.7rem;font:600 .66rem var(--mono);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.9rem}
+    .section-kicker::before{content:"";width:34px;height:2px;background:var(--ink)}
+    .section-title{font-size:clamp(3rem,7vw,7rem);line-height:.87;letter-spacing:-.065em;max-width:1050px}
+    .section-title em{font-family:var(--serif);font-weight:400;color:var(--blue)}
+    .lead{max-width:740px;margin-top:1.25rem;color:var(--muted);font-size:1.05rem}
 
-    .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid var(--ink);border-radius:26px;overflow:hidden;background:var(--white);box-shadow:10px 10px 0 rgba(17,19,23,.95)}
-    .proof{min-height:190px;padding:1.4rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1.5px solid var(--ink)}
-    .proof:last-child{border-right:0}
-    .proof .label{font:600 .63rem var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft)}
-    .proof strong{display:block;font-size:clamp(2.3rem,5vw,5rem);line-height:.85;letter-spacing:-.06em;color:var(--blue)}
-    .proof small{color:var(--ink-soft);font-size:.8rem}
+    .atlas{background:var(--paper-2);overflow:hidden}
+    .atlas-shell{margin-top:3rem;min-height:680px;position:relative;border:2px solid var(--ink);background:var(--card);box-shadow:12px 12px 0 var(--ink)}
+    .atlas-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(21,21,21,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(21,21,21,.08) 1px,transparent 1px);background-size:44px 44px}
+    .atlas-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+    .atlas-svg path{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-dasharray:8 10;animation:dash 18s linear infinite}
+    @keyframes dash{to{stroke-dashoffset:-360}}
+    .hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:190px;height:190px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;text-align:center;background:var(--blue);color:white;box-shadow:10px 10px 0 var(--ink);z-index:3}
+    .hub strong{font-size:1.4rem;line-height:1.05}.hub span{font:500 .62rem var(--mono);display:block;margin-top:.4rem}
+    .node{position:absolute;z-index:4;border:1.5px solid var(--ink);background:var(--paper);box-shadow:5px 5px 0 var(--ink);padding:.85rem 1rem;text-decoration:none;min-width:180px;transition:transform .18s,background .18s}
+    .node:hover{background:var(--lime);transform:translate(-3px,-3px)}
+    .node b{display:block;font-size:.95rem}.node span{display:block;font:500 .58rem var(--mono);margin-top:.28rem;color:var(--muted);text-transform:uppercase}
+    .n1{left:7%;top:12%;transform:rotate(-3deg)}.n2{right:6%;top:16%;transform:rotate(3deg)}.n3{left:9%;bottom:12%;transform:rotate(2deg)}.n4{right:8%;bottom:10%;transform:rotate(-3deg)}
+    .atlas-caption{position:absolute;left:22px;bottom:18px;font:500 .6rem var(--mono);color:var(--muted);max-width:320px}
 
-    .casefile{border-top:1.5px solid var(--ink);padding-top:2rem;display:grid;grid-template-columns:180px minmax(0,1.05fr) minmax(320px,.95fr);gap:2rem;align-items:start;margin-top:3.5rem}
-    .case-index{position:sticky;top:100px}
-    .case-index strong{font:400 clamp(4rem,8vw,8rem)/.8 var(--serif);color:var(--orange)}
-    .case-index span{display:block;margin-top:.75rem;font:600 .66rem var(--mono);text-transform:uppercase;letter-spacing:.08em}
-    .case-main h3{font-size:clamp(2.4rem,5vw,5rem);line-height:.9;letter-spacing:-.055em;margin-bottom:1rem}
-    .case-main .lede{font-size:1.08rem;color:var(--ink-soft);max-width:720px}
-    .case-main .lede strong{color:var(--ink)}
-    .chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.3rem}
-    .chip{padding:.38rem .62rem;border:1px solid var(--line-strong);border-radius:999px;background:rgba(255,253,248,.72);font:500 .62rem var(--mono)}
-    .case-side{display:grid;gap:.8rem}
-    .fact{border:1.5px solid var(--ink);border-radius:20px;padding:1rem 1.1rem;background:var(--white);transition:transform .25s ease,box-shadow .25s ease}
-    .fact:hover{transform:translate(-4px,-4px);box-shadow:7px 7px 0 var(--ink)}
-    .fact b{display:block;font:600 .63rem var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin-bottom:.35rem}
-    .fact p{font-size:.88rem;color:var(--ink-soft)}
+    .qashoryx{background:#f7f3e9}
+    .q-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(360px,.85fr);gap:56px;margin-top:3rem;align-items:start}
+    .q-visual{position:sticky;top:110px;min-height:630px;border:2px solid var(--ink);background:#0e0e0e;color:white;box-shadow:12px 12px 0 var(--red);overflow:hidden}
+    .q-top{height:46px;border-bottom:1px solid rgba(255,255,255,.24);display:flex;align-items:center;justify-content:space-between;padding:0 1rem;font:500 .58rem var(--mono);text-transform:uppercase;letter-spacing:.06em}
+    .q-top .live{color:var(--lime)}
+    .q-scene{position:absolute;inset:46px 0 0;opacity:0;transform:translateY(20px);transition:opacity .45s,transform .45s;padding:34px}
+    .q-scene.active{opacity:1;transform:none}
+    .scene-label{font:600 .62rem var(--mono);color:var(--lime);text-transform:uppercase;letter-spacing:.08em}
+    .scene-big{font-size:clamp(3rem,5vw,6rem);line-height:.85;letter-spacing:-.06em;margin:.8rem 0}
+    .scene-note{max-width:520px;color:#bdb9b0;font-size:.9rem}
+    .tx-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:56px;position:relative}
+    .tx-flow::before{content:"";position:absolute;top:50%;left:6%;right:6%;height:2px;background:#555}
+    .tx-node{position:relative;z-index:2;border:1px solid #777;background:#171717;padding:1rem .7rem;text-align:center;font:500 .58rem var(--mono)}
+    .tx-node::after{content:"";position:absolute;top:50%;right:-14px;width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px rgba(201,255,54,.12);animation:packet 1.5s ease-in-out infinite}
+    .tx-node:last-child::after{display:none}
+    @keyframes packet{50%{transform:translateX(10px);opacity:.3}}
+    .recovery-stack{display:grid;gap:12px;margin-top:42px}
+    .recovery-row{display:grid;grid-template-columns:110px 1fr auto;align-items:center;gap:12px;border-bottom:1px solid #444;padding:.8rem 0;font:500 .62rem var(--mono)}
+    .recovery-row b{color:var(--lime)}
+    .test-rings{position:relative;width:310px;height:310px;margin:34px auto 0}
+    .ring{position:absolute;border:1px solid #666;border-radius:50%;inset:0;animation:spin 15s linear infinite}.ring:nth-child(2){inset:32px;animation-direction:reverse;animation-duration:10s}.ring:nth-child(3){inset:72px;animation-duration:7s;border-color:var(--lime)}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .test-core{position:absolute;inset:95px;border:1px solid var(--lime);border-radius:50%;display:grid;place-items:center;text-align:center;background:#161616}.test-core strong{font-size:2.4rem;line-height:.8}.test-core span{font:500 .55rem var(--mono);color:#aaa;margin-top:.3rem}
+    .recon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:38px}
+    .recon-card{border:1px solid #555;padding:1.1rem;background:#171717}.recon-card strong{display:block;font-size:2.6rem;letter-spacing:-.05em}.recon-card span{font:500 .55rem var(--mono);color:#aaa;text-transform:uppercase}.recon-card.zero{background:var(--lime);color:#111;border-color:var(--lime)}.recon-card.zero span{color:#333}
 
-    .qashoryx-stage{position:relative;margin-top:2rem;border:1.5px solid var(--ink);border-radius:34px;background:var(--blue);color:var(--white);padding:clamp(1.5rem,4vw,3rem);overflow:hidden;min-height:440px}
-    .qashoryx-stage::before{content:"Q";position:absolute;right:-.02em;bottom:-.19em;font:400 clamp(18rem,36vw,36rem)/.7 var(--serif);color:rgba(255,255,255,.10)}
-    .q-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:2rem}
-    .q-title{font-size:clamp(3.8rem,8vw,8rem);line-height:.82;letter-spacing:-.075em}
-    .q-title em{font-family:var(--serif);font-weight:400;color:var(--lime)}
-    .q-copy{color:rgba(255,255,255,.78);max-width:700px;margin-top:1.1rem}
-    .q-list{display:grid;gap:.7rem;align-content:start}
-    .q-list li{list-style:none;border-top:1px solid rgba(255,255,255,.32);padding-top:.72rem;display:grid;grid-template-columns:64px 1fr;gap:.8rem;font-size:.86rem}
-    .q-list span{font:600 .62rem var(--mono);color:var(--lime)}
+    .q-steps{display:grid;gap:0}
+    .q-step{min-height:72vh;padding:12vh 0;border-bottom:1px solid var(--soft-line);opacity:.38;transition:opacity .3s}
+    .q-step.active{opacity:1}
+    .q-step .num{font:600 .65rem var(--mono);color:var(--red)}
+    .q-step h3{font-size:clamp(2rem,4vw,4.2rem);line-height:.92;letter-spacing:-.05em;margin:.7rem 0 1rem}
+    .q-step p{color:var(--muted);max-width:520px}
+    .chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}.chip{border:1px solid var(--ink);padding:.35rem .55rem;font:500 .58rem var(--mono);background:var(--paper)}
 
-    .project-wall{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
-    .project-card{position:relative;border:1.5px solid var(--ink);border-radius:26px;background:var(--white);padding:1.35rem;min-height:270px;overflow:hidden;transition:box-shadow .3s ease;transform-style:preserve-3d}
-    .project-card:hover{box-shadow:9px 9px 0 var(--ink)}
-    .project-card:nth-child(1){grid-column:span 7;background:var(--orange);color:var(--ink)}
-    .project-card:nth-child(2){grid-column:span 5}
-    .project-card:nth-child(3){grid-column:span 5;background:var(--lime)}
-    .project-card:nth-child(4){grid-column:span 7}
-    .project-card .project-no{font:600 .61rem var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.72}
-    .project-card h3{font-size:clamp(1.7rem,3vw,3rem);line-height:.95;letter-spacing:-.045em;margin:.8rem 0}
-    .project-card p{max-width:620px;font-size:.9rem;color:inherit;opacity:.78}
-    .project-card .stack{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
-    .project-card .stack span{font:500 .58rem var(--mono);border:1px solid currentColor;border-radius:999px;padding:.3rem .5rem}
-    .project-link{position:absolute;right:1.2rem;bottom:1.1rem;text-decoration:none;font:600 .64rem var(--mono);text-transform:uppercase;border-bottom:1px solid currentColor}
+    .worlds{background:#ebe6dc}
+    .world-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:3rem}
+    .world{position:relative;min-height:620px;border:2px solid var(--ink);overflow:hidden;box-shadow:10px 10px 0 var(--ink);transition:transform .15s;transform-style:preserve-3d}
+    .world .inner{position:relative;z-index:2;padding:34px;min-height:620px;display:flex;flex-direction:column}
+    .world h3{font-size:clamp(3rem,5vw,5.4rem);letter-spacing:-.06em;line-height:.82}.world p{max-width:500px;margin-top:1rem}
+    .world .meta{margin-top:auto;border-top:1.5px solid currentColor;padding-top:1rem;display:flex;justify-content:space-between;gap:1rem;align-items:end}.world .meta span{font:500 .6rem var(--mono);text-transform:uppercase}
+    .vendiqo{background:var(--blue);color:white}
+    .receipt{position:absolute;width:52%;right:-3%;top:16%;background:#fff;color:#111;border:2px solid #111;padding:1.1rem;transform:rotate(6deg);box-shadow:8px 8px 0 #111}
+    .receipt-head{display:flex;justify-content:space-between;font:600 .55rem var(--mono);border-bottom:1px dashed #111;padding-bottom:.65rem}.receipt-line{display:flex;justify-content:space-between;font:500 .5rem var(--mono);padding:.45rem 0;border-bottom:1px dotted #777}.barcode{height:72px;margin-top:1rem;background:repeating-linear-gradient(90deg,#111 0 3px,transparent 3px 5px,#111 5px 6px,transparent 6px 10px);background-size:120% 100%;animation:barcode 4s linear infinite}@keyframes barcode{to{background-position:80px 0}}
+    .fixloom{background:var(--lime);color:var(--ink)}
+    .repair-orbit{position:absolute;width:360px;height:360px;right:-70px;top:90px;border:2px solid var(--ink);border-radius:50%;animation:spin 18s linear infinite}.repair-orbit::before,.repair-orbit::after{content:"";position:absolute;border:1.5px solid var(--ink);border-radius:50%}.repair-orbit::before{inset:45px}.repair-orbit::after{inset:95px}
+    .tool-dot{position:absolute;width:56px;height:56px;border:2px solid var(--ink);background:var(--paper);display:grid;place-items:center;font:700 .65rem var(--mono);box-shadow:4px 4px 0 var(--ink)}.td1{right:115px;top:105px}.td2{right:20px;top:260px}.td3{right:205px;top:350px}
 
-    .principles{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-    .principle{border-top:1.5px solid var(--ink);padding:1.4rem 0 2.4rem;display:grid;grid-template-columns:90px 1fr;gap:1rem}
-    .principle .num{font:400 3rem/1 var(--serif);color:var(--blue)}
-    .principle h3{font-size:1.4rem;margin-bottom:.45rem}
-    .principle p{color:var(--ink-soft);font-size:.9rem;max-width:520px}
+    .public-lab{background:#111;color:#f5f0e5}
+    .public-lab .section-kicker::before{background:#f5f0e5}.public-lab .lead{color:#aaa}.public-lab .section-title em{color:var(--lime)}
+    .lab-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:3rem}
+    .lab-card{min-height:360px;border:1px solid #555;background:#191919;padding:1.25rem;display:flex;flex-direction:column;text-decoration:none;transition:transform .18s,background .18s;position:relative;overflow:hidden}
+    .lab-card::before{content:"";position:absolute;width:120px;height:120px;border:1px solid #555;border-radius:50%;right:-40px;top:-40px;transition:transform .4s}
+    .lab-card:hover{background:#232323;transform:translateY(-6px)}.lab-card:hover::before{transform:scale(1.6)}
+    .lab-index{font:600 .58rem var(--mono);color:var(--lime)}.lab-card h3{font-size:1.5rem;line-height:1.05;margin:1rem 0}.lab-card p{font-size:.88rem;color:#aaa}.lab-tags{margin-top:auto;display:flex;flex-wrap:wrap;gap:.4rem}.lab-tags span{font:500 .54rem var(--mono);border:1px solid #555;padding:.3rem .45rem;color:#ddd}
 
-    .skills-board{border:1.5px solid var(--ink);border-radius:30px;overflow:hidden;background:var(--white)}
-    .skill-row{display:grid;grid-template-columns:230px 1fr;border-bottom:1.5px solid var(--ink)}
-    .skill-row:last-child{border-bottom:0}
-    .skill-row h3{padding:1.1rem;font:600 .68rem var(--mono);text-transform:uppercase;letter-spacing:.07em;background:var(--paper-2)}
-    .skill-list{display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem}
-    .skill-list span{border:1px solid var(--line-strong);border-radius:999px;padding:.38rem .62rem;font-size:.75rem}
+    .principles{background:var(--red);color:#111}
+    .principle-grid{display:grid;grid-template-columns:repeat(2,1fr);border:2px solid #111;margin-top:3rem}
+    .principle{min-height:280px;padding:1.7rem;border-right:2px solid #111;border-bottom:2px solid #111;position:relative;overflow:hidden;background:rgba(255,255,255,.06)}
+    .principle:nth-child(2n){border-right:0}.principle:nth-last-child(-n+2){border-bottom:0}
+    .principle .p-num{font:600 .58rem var(--mono)}.principle h3{font-size:2rem;line-height:1;margin:.7rem 0}.principle p{max-width:520px}.principle .ghost{position:absolute;right:-12px;bottom:-36px;font-size:8rem;font-weight:800;line-height:1;opacity:.08}
 
-    .timeline{display:grid;gap:0;border-top:1.5px solid var(--ink)}
-    .timeline-item{display:grid;grid-template-columns:180px 1fr 220px;gap:2rem;padding:1.4rem 0;border-bottom:1.5px solid var(--ink);align-items:start}
-    .timeline-item time{font:500 .64rem var(--mono);text-transform:uppercase;color:var(--ink-soft)}
-    .timeline-item h3{font-size:1.4rem;letter-spacing:-.025em}
-    .timeline-item p{color:var(--ink-soft);font-size:.9rem;margin-top:.25rem;max-width:700px}
-    .timeline-item .org{text-align:right;font:600 .64rem var(--mono);text-transform:uppercase;color:var(--blue)}
+    .about{background:var(--paper)}
+    .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;margin-top:3rem;align-items:start}
+    .portrait-type{font-family:var(--serif);font-size:clamp(5rem,12vw,12rem);line-height:.7;color:var(--blue);position:sticky;top:120px}
+    .portrait-type span{display:block;color:var(--red);transform:translateX(15%)}
+    .timeline{border-top:2px solid var(--ink)}
+    .tl{display:grid;grid-template-columns:140px 1fr;gap:20px;padding:1.5rem 0;border-bottom:1px solid var(--soft-line)}
+    .tl time{font:600 .58rem var(--mono);text-transform:uppercase}.tl h3{font-size:1.2rem}.tl p{color:var(--muted);margin-top:.25rem;font-size:.9rem}
 
-    .contact-stage{position:relative;border:1.5px solid var(--ink);border-radius:40px;background:var(--ink);color:var(--white);padding:clamp(2rem,6vw,5rem);overflow:hidden}
-    .contact-stage::after{content:"HELLO";position:absolute;right:-.04em;bottom:-.2em;font:400 clamp(10rem,28vw,26rem)/.7 var(--serif);color:rgba(255,255,255,.05)}
-    .contact-stage h2{position:relative;z-index:2;font-size:clamp(3.5rem,8vw,8rem);line-height:.82;letter-spacing:-.065em;max-width:900px}
-    .contact-stage h2 em{font-family:var(--serif);font-weight:400;color:var(--lime)}
-    .contact-stage p{position:relative;z-index:2;color:rgba(255,255,255,.68);max-width:650px;margin-top:1.2rem}
-    .contact-actions{position:relative;z-index:2;display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.7rem}
-    .contact-stage .button{background:var(--white);color:var(--ink)}
+    .contact{background:var(--blue);color:white;min-height:74vh;display:grid;align-items:center}
+    .contact h2{font-size:clamp(4rem,10vw,10rem);line-height:.75;letter-spacing:-.07em;text-transform:uppercase}.contact h2 em{font-family:var(--serif);font-weight:400;text-transform:none;color:var(--lime)}
+    .contact-row{display:flex;justify-content:space-between;gap:2rem;align-items:end;margin-top:2rem;border-top:1px solid rgba(255,255,255,.45);padding-top:1.2rem}.contact-row p{max-width:600px;color:#d8deff}.contact .btn{background:var(--lime);color:#111}
 
-    footer{padding:28px 0 38px}
-    .footer-inner{display:flex;justify-content:space-between;gap:1rem;align-items:center;font:500 .61rem var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
+    footer{background:#111;color:#aaa;padding:1.3rem 0;font:500 .58rem var(--mono);text-transform:uppercase;letter-spacing:.05em}.footer-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
-    .reveal{opacity:0;transform:translateY(34px);clip-path:inset(0 0 18% 0);transition:opacity .7s ease,transform .85s cubic-bezier(.2,.8,.2,1),clip-path .85s cubic-bezier(.2,.8,.2,1)}
-    .reveal.visible{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
-    .word-pop{display:inline-block;transform-origin:bottom center;animation:wordPop .75s cubic-bezier(.2,.9,.2,1) both}
-    @keyframes wordPop{from{opacity:0;transform:translateY(45px) rotate(2deg)}to{opacity:1;transform:none}}
-    .floaty{animation:floaty 5.5s ease-in-out infinite}
-    @keyframes floaty{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-10px) rotate(-4deg)}}
+    .reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+    .counter{font-variant-numeric:tabular-nums}
 
-    @media(max-width:980px){
-      .nav-inner{grid-template-columns:1fr auto}.nav-links{display:none}.nav-cta{display:none}.menu-btn{display:block;justify-self:end}.nav-links.open{position:absolute;top:72px;left:22px;right:22px;display:grid;gap:0;background:var(--white);border:1.5px solid var(--ink);border-radius:18px;box-shadow:7px 7px 0 var(--ink);overflow:hidden}.nav-links.open a{padding:1rem;border-bottom:1px solid var(--line)}.nav-links.open a:last-child{border-bottom:0}
-      .hero-layout{grid-template-columns:1fr}.signal-card{width:min(620px,100%);justify-self:center}.hero-title{font-size:clamp(4rem,14vw,8rem)}
-      .section-top,.casefile{grid-template-columns:1fr}.case-index{position:static;display:flex;align-items:end;gap:1rem}.case-index strong{font-size:4rem}.case-index span{margin:0 0 .2rem}
-      .proof-grid{grid-template-columns:repeat(2,1fr)}.proof:nth-child(2){border-right:0}.proof:nth-child(-n+2){border-bottom:1.5px solid var(--ink)}
-      .q-grid{grid-template-columns:1fr}.project-card:nth-child(n){grid-column:span 6}.timeline-item{grid-template-columns:150px 1fr}.timeline-item .org{grid-column:2;text-align:left}
+    @media(max-width:1050px){
+      .hero-grid,.q-layout,.about-grid{grid-template-columns:1fr}.hero-evidence{min-height:390px}.q-visual{position:relative;top:auto}.world-grid{grid-template-columns:1fr}.lab-grid{grid-template-columns:repeat(2,1fr)}.atlas-shell{min-height:600px}.hub{width:150px;height:150px}.node{min-width:150px}.receipt{width:46%}
     }
-
-    @media(max-width:680px){
-      .wrap{width:min(100% - 28px,1240px)}.hero{padding-top:40px}.hero-title{font-size:clamp(3.45rem,17vw,6.2rem)}
-      section{padding:82px 0}.section-title{font-size:clamp(2.8rem,13vw,4.8rem)}
-      .proof-grid{grid-template-columns:1fr}.proof{border-right:0!important;border-bottom:1.5px solid var(--ink)!important}.proof:last-child{border-bottom:0!important;min-height:150px}
-      .project-wall{display:grid;grid-template-columns:1fr}.project-card:nth-child(n){grid-column:auto}.principles{grid-template-columns:1fr}.principle{grid-template-columns:70px 1fr}
-      .skill-row{grid-template-columns:1fr}.skill-row h3{border-bottom:1px solid var(--line)}
-      .timeline-item{grid-template-columns:1fr;gap:.45rem}.timeline-item .org{grid-column:1}.footer-inner{align-items:flex-start;flex-direction:column}
-      .signal-card{border-radius:28px;box-shadow:8px 8px 0 var(--ink)}.signal-stamp{width:125px;height:125px;font-size:.58rem}
-      .contact-stage{border-radius:28px}.contact-stage h2{font-size:clamp(3.2rem,16vw,6rem)}
+    @media(max-width:760px){
+      .wrap{width:min(100% - 24px,1320px)}
+      nav{padding:10px 0}.nav-cluster{display:none;position:absolute;right:12px;top:62px;flex-direction:column;align-items:stretch;background:var(--paper);min-width:210px}.nav-cluster.open{display:flex}.menu-btn{display:block}.brand{padding:.6rem .7rem}
+      .hero{padding-top:100px}.hero h1{font-size:clamp(3.4rem,18vw,6rem)}.hero h1 .shift{transform:none}.hero-evidence{min-height:500px}.e-card{width:72%}.e-card:nth-child(1){right:0}.e-card:nth-child(2){left:0}.e-card:nth-child(3){right:0}.e-card:nth-child(4){left:0}
+      .section{padding:80px 0}.section-title{font-size:clamp(2.8rem,14vw,5rem)}
+      .atlas-shell{min-height:760px}.hub{top:48%;width:132px;height:132px}.n1{left:5%;top:8%}.n2{right:4%;top:24%}.n3{left:5%;bottom:24%}.n4{right:4%;bottom:7%}.atlas-svg{display:none}
+      .q-visual{min-height:540px}.q-scene{padding:24px}.tx-flow{grid-template-columns:1fr 1fr}.recon-grid{grid-template-columns:1fr 1fr}.q-step{min-height:auto;padding:3.2rem 0}
+      .world .inner{padding:24px}.receipt{width:70%;right:-16%;top:32%}.repair-orbit{right:-170px}.lab-grid{grid-template-columns:1fr}.principle-grid{grid-template-columns:1fr}.principle{border-right:0}.principle:nth-last-child(-n+2){border-bottom:2px solid #111}.principle:last-child{border-bottom:0}.tl{grid-template-columns:1fr}.portrait-type{position:relative;top:auto}.contact-row{align-items:flex-start;flex-direction:column}
     }
-
     @media(prefers-reduced-motion:reduce){
-      html{scroll-behavior:auto}.evidence-track,.floaty,.word-pop{animation:none!important}.reveal{opacity:1;transform:none;clip-path:none;transition:none}.button,.fact,.project-card,.brand-badge{transition:none}.cursor-glow{display:none}
+      html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.cursor-signal{display:none}.reveal{opacity:1;transform:none}
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="scroll-meter" aria-hidden="true"><span id="scrollBar"></span></div>
-  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-signal" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"></div>
+  <a class="skip" href="#main">Skip to content</a>
 
   <nav aria-label="Primary navigation">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#top" aria-label="Asad Abbas home"><span class="brand-badge">AA</span><span>Asad Abbas</span></a>
-      <div class="nav-links" id="navLinks">
-        <a href="#evidence">Evidence</a>
-        <a href="#work">Work</a>
-        <a href="#code">Public Code</a>
-        <a href="#approach">Approach</a>
-        <a href="#contact">Contact</a>
+    <div class="wrap nav-shell">
+      <a class="brand" href="#top"><span class="brand-mark">AA</span><span>ASAD / SYSTEMS</span></a>
+      <div class="nav-cluster" id="navCluster">
+        <a href="#atlas">Map</a><a href="#qashoryx">Qashoryx</a><a href="#products">Products</a><a href="#lab">Public Lab</a><a href="#contact">Contact</a>
       </div>
-      <a class="nav-cta" href="https://github.com/asadabbas717" target="_blank" rel="noreferrer">GitHub ↗</a>
-      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navCluster">MENU</button>
     </div>
   </nav>
 
   <main id="main">
     <section class="hero" id="top">
-      <div class="wrap hero-layout">
+      <div class="wrap hero-grid">
         <div>
-          <div class="hero-kicker eyebrow"><span class="dot" aria-hidden="true"></span><span>Software Engineer · Pakistan</span></div>
-          <h1 class="hero-title"><span class="word-pop">Software</span><br><span class="serif word-pop" style="animation-delay:.08s">that survives</span><br><span class="word-pop" style="animation-delay:.16s">real work.</span></h1>
-          <p class="hero-sub">I build <strong>desktop, mobile and business systems</strong> where correctness, recoverability and operator usability matter more than demo-day polish.</p>
+          <div class="hero-label"><i></i> Software Engineer · Pakistan</div>
+          <h1>Software<br><span class="shift">that <span class="serif">survives</span></span><br>real work.</h1>
+          <p class="hero-copy">I build desktop, mobile and web software around a simple standard: <strong>money should reconcile, stock should remain truthful, data should recover, releases should be verifiable, and the interface should help people finish real work.</strong></p>
           <div class="hero-actions">
-            <a class="button primary magnetic" href="#work"><span>See the engineering</span><span>↓</span></a>
-            <a class="button magnetic" href="https://github.com/asadabbas717" target="_blank" rel="noreferrer"><span>Inspect public code</span><span>↗</span></a>
+            <a class="btn blue magnetic" href="#qashoryx">Enter the evidence →</a>
+            <a class="btn magnetic" href="https://github.com/asadabbas717" target="_blank" rel="noreferrer">Inspect public code ↗</a>
           </div>
         </div>
 
-        <div class="signal-card reveal" aria-label="Interactive engineering signal visualization">
-          <canvas id="signalCanvas" aria-hidden="true"></canvas>
-          <div class="signal-stamp floaty">evidence<br>over<br>claims</div>
+        <div class="hero-evidence" aria-label="Selected Qashoryx engineering evidence">
+          <div class="e-card"><small>verified business data</small><strong class="counter" data-target="568">0</strong><span>invoices reconciled</span></div>
+          <div class="e-card"><small>customer state</small><strong class="counter" data-target="463">0</strong><span>active customers checked</span></div>
+          <div class="e-card"><small>catalog state</small><strong class="counter" data-target="255">0</strong><span>products checked</span></div>
+          <div class="e-card zero"><small>reconciliation result</small><strong>ZERO</strong><span>findings across the verified backup</span></div>
         </div>
       </div>
     </section>
 
-    <div class="evidence-tape" aria-label="Engineering evidence highlights">
-      <div class="evidence-track">
-        <span><i></i> Qashoryx v2.1.1</span><span><i></i> 133 tests + 26 parameterized subtests</span><span><i></i> 7 ordered migrations</span><span><i></i> zero reconciliation findings on verified business data</span><span><i></i> real 80 mm thermal-printer spool test</span><span><i></i> release manifests + SHA-256 evidence</span><span><i></i> private source / public engineering evidence</span>
-        <span><i></i> Qashoryx v2.1.1</span><span><i></i> 133 tests + 26 parameterized subtests</span><span><i></i> 7 ordered migrations</span><span><i></i> zero reconciliation findings on verified business data</span><span><i></i> real 80 mm thermal-printer spool test</span><span><i></i> release manifests + SHA-256 evidence</span><span><i></i> private source / public engineering evidence</span>
+    <div class="tape" aria-label="Engineering evidence ticker">
+      <div class="tape-track">
+        <span><b>QASHORYX 2.1.1</b></span><span>133 tests + 26 parameterized subtests</span><span>7 migrations</span><span>real 80 mm printer spool test</span><span>transaction rollback</span><span>verified restore rehearsal</span><span>release hashes</span><span><b>VENDIQO RC</b></span><span>Inno Setup installer</span><span><b>FIXLOOM</b> feature complete</span>
+        <span><b>QASHORYX 2.1.1</b></span><span>133 tests + 26 parameterized subtests</span><span>7 migrations</span><span>real 80 mm printer spool test</span><span>transaction rollback</span><span>verified restore rehearsal</span><span>release hashes</span><span><b>VENDIQO RC</b></span><span>Inno Setup installer</span><span><b>FIXLOOM</b> feature complete</span>
       </div>
     </div>
 
-    <section id="evidence">
+    <section class="section atlas" id="atlas">
       <div class="wrap">
-        <div class="section-top reveal">
-          <div class="section-no">01 / Evidence</div>
-          <div><h2 class="section-title">No vanity metrics.<br><em>Engineering evidence.</em></h2><p class="section-copy">The strongest work in this portfolio is private because it contains business-specific implementation. What is public here is the part that should matter to a technical reviewer: verified behavior, release discipline, data safety and measurable proof.</p></div>
-        </div>
+        <div class="section-kicker reveal">01 / system map</div>
+        <h2 class="section-title reveal">Not a list of projects.<br>An <em>engineering map.</em></h2>
+        <p class="lead reveal">Each product exists because a different kind of real-world failure matters: money, stock, repair state, recoverability, release confidence, or human workflow.</p>
 
-        <div class="proof-grid reveal">
-          <article class="proof"><span class="label">Qashoryx regression suite</span><strong class="counter" data-target="133">0</strong><small>tests, plus 26 parameterized subtests</small></article>
-          <article class="proof"><span class="label">Migration baseline</span><strong class="counter" data-target="7">0</strong><small>ordered, backup-first database migrations</small></article>
-          <article class="proof"><span class="label">Verified reconciliation</span><strong class="counter" data-target="0">0</strong><small>findings across 568 invoices, 463 customers and 255 products</small></article>
-          <article class="proof"><span class="label">Physical output</span><strong>80<span style="font-size:.42em">mm</span></strong><small>successful controlled thermal-printer spool test</small></article>
+        <div class="atlas-shell reveal" id="atlasShell">
+          <div class="atlas-grid" aria-hidden="true"></div>
+          <svg class="atlas-svg" viewBox="0 0 1200 680" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M600 340 C400 260,320 170,180 125"/><path d="M600 340 C795 260,900 170,1030 150"/><path d="M600 340 C395 430,310 520,190 560"/><path d="M600 340 C805 430,900 520,1030 565"/>
+          </svg>
+          <div class="hub"><div><strong>ASAD<br>ABBAS</strong><span>software engineer</span></div></div>
+          <a class="node n1" href="#qashoryx"><b>Qashoryx</b><span>money · stock · recovery</span></a>
+          <a class="node n2" href="#products"><b>Vendiqo</b><span>retail · ledger · release</span></a>
+          <a class="node n3" href="#products"><b>Fixloom</b><span>repair · workflow · history</span></a>
+          <a class="node n4" href="#lab"><b>Public Lab</b><span>android · react · mobile · c++</span></a>
+          <p class="atlas-caption">Move through the map by scrolling. The flagship system below expands into the evidence behind it.</p>
         </div>
       </div>
     </section>
 
-    <section id="work">
+    <section class="section qashoryx" id="qashoryx">
       <div class="wrap">
-        <div class="section-top reveal">
-          <div class="section-no">02 / Product work</div>
-          <div><h2 class="section-title">Three products.<br><em>Three different failure modes.</em></h2><p class="section-copy">A wholesale POS can lose money, a repair system can lose workflow history, and a retail POS can corrupt stock. I design around those consequences first.</p></div>
-        </div>
+        <div class="section-kicker reveal">02 / flagship system</div>
+        <h2 class="section-title reveal">Qashoryx is where<br><em>the proof lives.</em></h2>
+        <p class="lead reveal">Version 2.1.1 is an offline-first wholesale Windows application built around transaction safety, customer balances, inventory integrity, reporting, recovery, packaging, and operator workflows.</p>
 
-        <div class="qashoryx-stage reveal">
-          <div class="q-grid">
-            <div>
-              <div class="eyebrow" style="color:var(--lime)">Flagship case file · Qashoryx POS v2.1.1</div>
-              <h3 class="q-title">Business software,<br><em>hardened by evidence.</em></h3>
-              <p class="q-copy">Offline-first wholesale billing, stock, customer accounts, payments, expenses, warranty workflows and reporting. The recent modernization concentrated on regression protection, transaction safety, recovery, performance, release verification and operator workflows—not a risky rewrite.</p>
-              <div class="chips"><span class="chip" style="color:white;border-color:rgba(255,255,255,.45)">Python</span><span class="chip" style="color:white;border-color:rgba(255,255,255,.45)">PySide6</span><span class="chip" style="color:white;border-color:rgba(255,255,255,.45)">SQLite</span><span class="chip" style="color:white;border-color:rgba(255,255,255,.45)">ReportLab</span><span class="chip" style="color:white;border-color:rgba(255,255,255,.45)">PyInstaller</span><span class="chip" style="color:white;border-color:rgba(255,255,255,.45)">Inno Setup</span></div>
+        <div class="q-layout">
+          <div class="q-visual" aria-live="polite">
+            <div class="q-top"><span>QASHORYX / EVIDENCE VIEWER</span><span class="live">● VERIFIED STATE</span></div>
+
+            <div class="q-scene active" data-scene="0">
+              <div class="scene-label">01 · atomic business operations</div>
+              <div class="scene-big">ONE SALE.<br>ONE TRANSACTION.</div>
+              <p class="scene-note">Invoice, payment and stock effects move together. A failure restores the original state instead of leaving partial business records behind.</p>
+              <div class="tx-flow"><div class="tx-node">INVOICE</div><div class="tx-node">PAYMENT</div><div class="tx-node">STOCK</div><div class="tx-node">AUDIT</div></div>
             </div>
-            <ul class="q-list">
-              <li><span>01</span><div><strong>133 tests + 26 parameterized subtests.</strong><br>Cross-module regression protects setup, authentication, stock, customers, invoices, payments, edits/returns, reports, PDF, backup, restore and reopen.</div></li>
-              <li><span>02</span><div><strong>Zero reconciliation findings.</strong><br>Verified backup replay covered 568 invoices, 463 active customers and 255 products.</div></li>
-              <li><span>03</span><div><strong>Release evidence, not “works on my machine.”</strong><br>Dependency lock, clean-build enforcement, packaged self-verification, manifest generation and artifact hashes.</div></li>
-              <li><span>04</span><div><strong>Real hardware acceptance.</strong><br>A controlled one-page 80 mm receipt rendered and spooled successfully to a BC-80POS thermal printer.</div></li>
-              <li><span>05</span><div><strong>Compatibility preserved.</strong><br>Seven ordered migrations, backup-first upgrades, restore rehearsal and database health checks protect historical data.</div></li>
-            </ul>
+
+            <div class="q-scene" data-scene="1">
+              <div class="scene-label">02 · recovery before confidence</div>
+              <div class="scene-big">BACK UP.<br>VERIFY. THEN MOVE.</div>
+              <p class="scene-note">Migrations and restore workflows create verified safety copies, run integrity checks, validate candidates and replace live data only after the recovery path proves itself.</p>
+              <div class="recovery-stack">
+                <div class="recovery-row"><b>01</b><span>Create SQLite-safe backup</span><span>✓</span></div>
+                <div class="recovery-row"><b>02</b><span>Full integrity verification</span><span>✓</span></div>
+                <div class="recovery-row"><b>03</b><span>Upgrade isolated candidate</span><span>✓</span></div>
+                <div class="recovery-row"><b>04</b><span>Atomic replacement / reopen</span><span>✓</span></div>
+              </div>
+            </div>
+
+            <div class="q-scene" data-scene="2">
+              <div class="scene-label">03 · quality gate</div>
+              <div class="scene-big">133 TESTS.<br>26 SUBTESTS.</div>
+              <p class="scene-note">The suite covers migrations, authentication, transaction rollback, invoice edits and returns, balances, reporting, restore, runtime paths and packaging regressions.</p>
+              <div class="test-rings"><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="test-core"><div><strong>159</strong><span>test + subtest<br>checks</span></div></div></div>
+            </div>
+
+            <div class="q-scene" data-scene="3">
+              <div class="scene-label">04 · real-data reconciliation</div>
+              <div class="scene-big">THE DATA<br>HAD TO AGREE.</div>
+              <p class="scene-note">A read-only reconciliation pass over the verified pre-modernization backup reported zero findings without rewriting historical business records.</p>
+              <div class="recon-grid"><div class="recon-card"><strong>568</strong><span>invoices</span></div><div class="recon-card"><strong>463</strong><span>active customers</span></div><div class="recon-card"><strong>255</strong><span>products</span></div><div class="recon-card zero"><strong>0</strong><span>findings</span></div></div>
+            </div>
+          </div>
+
+          <div class="q-steps">
+            <article class="q-step active" data-step="0"><div class="num">01 / CORRECTNESS</div><h3>Transactions should fail completely, not halfway.</h3><p>Qashoryx keeps invoice creation, saved-invoice edits, returns, payment replacement and stock effects inside controlled transactional boundaries. Business state either commits together or rolls back.</p><div class="chips"><span class="chip">SQLite</span><span class="chip">Decimal boundaries</span><span class="chip">Rollback tests</span></div></article>
+            <article class="q-step" data-step="1"><div class="num">02 / RECOVERY</div><h3>A backup is only useful if you can prove it restores.</h3><p>Backup-first migrations, full integrity checks, emergency pre-restore copies, isolated restore candidates and packaged self-verification turn recovery into a tested workflow rather than a hope.</p><div class="chips"><span class="chip">Verified backup</span><span class="chip">Integrity checks</span><span class="chip">Restore rehearsal</span></div></article>
+            <article class="q-step" data-step="2"><div class="num">03 / RELEASE EVIDENCE</div><h3>The build has to explain why it deserves trust.</h3><p>The quality gate checks whitespace, critical lint/import failures, gradual typing, formatting scope and the test suite. Release evidence records source commit, dependency-lock hash and artifact hashes.</p><div class="chips"><span class="chip">133 tests</span><span class="chip">26 subtests</span><span class="chip">SHA-256 evidence</span><span class="chip">PyInstaller + Inno Setup</span></div></article>
+            <article class="q-step" data-step="3"><div class="num">04 / REAL-WORLD EVIDENCE</div><h3>Reconciliation came before modernization.</h3><p>The verified backup reconciled across 568 invoices, 463 active customers and 255 products with zero findings. A controlled BC-80POS 80 mm printer test also rendered and spooled successfully to physical hardware.</p><div class="chips"><span class="chip">0 findings</span><span class="chip">80 mm hardware test</span><span class="chip">real business history</span></div><div class="hero-actions"><a class="btn magnetic" href="PRIVATE_PROJECT_SHOWCASE.md">Read sanitized case study →</a></div></article>
           </div>
         </div>
-
-        <article class="casefile reveal">
-          <div class="case-index"><strong>02</strong><span>Fixloom</span></div>
-          <div class="case-main"><h3>Repair workflow without workflow amnesia.</h3><p class="lede"><strong>Feature-complete offline-first Windows application</strong> for repair shops: structured intake, device history, technicians, controlled repair states, exact monetary records, attachments, PDFs, migration-managed persistence and verified recovery.</p><div class="chips"><span class="chip">Python 3.14</span><span class="chip">PySide6</span><span class="chip">SQLAlchemy 2.x</span><span class="chip">Alembic</span><span class="chip">pytest</span><span class="chip">Ruff</span><span class="chip">mypy</span></div></div>
-          <div class="case-side"><div class="fact"><b>State integrity</b><p>Repair transitions and history are treated as operational records, not decorative status labels.</p></div><div class="fact"><b>Recovery</b><p>Checksummed backup/restore with SQLite integrity validation and staged replacement.</p></div><div class="fact"><b>Release discipline</b><p>Automated tests, linting, typing and reproducible Windows packaging.</p></div></div>
-        </article>
-
-        <article class="casefile reveal">
-          <div class="case-index"><strong>03</strong><span>Vendiqo</span></div>
-          <div class="case-main"><h3>Retail transactions built as records, not mutable guesses.</h3><p class="lede"><strong>Completed 0.1.0 release-candidate POS</strong> for Pakistani retailers, wholesalers and trading businesses. It uses an immutable inventory movement ledger, atomic purchasing and sales, exact money/quantity handling, referenced returns, checksummed recovery and a provider-neutral compliance boundary.</p><div class="chips"><span class="chip">Python</span><span class="chip">PySide / Qt</span><span class="chip">SQLite</span><span class="chip">pytest</span><span class="chip">Ruff</span><span class="chip">mypy</span><span class="chip">PyInstaller</span></div></div>
-          <div class="case-side"><div class="fact"><b>Inventory</b><p>Immutable movement history with calculated stock balances.</p></div><div class="fact"><b>Transactions</b><p>Supplier purchases, local sales, payments, receipt snapshots and referenced returns.</p></div><div class="fact"><b>Honest scope</b><p>Compliance integration foundation is explicitly separated from claims of live FBR compliance.</p></div></div>
-        </article>
-
-        <div style="margin-top:2.2rem"><a class="button magnetic" href="PRIVATE_PROJECT_SHOWCASE.md"><span>Read private-project engineering notes</span><span>→</span></a></div>
       </div>
     </section>
 
-    <section id="code">
+    <section class="section worlds" id="products">
       <div class="wrap">
-        <div class="section-top reveal">
-          <div class="section-no">03 / Public code</div>
-          <div><h2 class="section-title">Private depth.<br><em>Public proof.</em></h2><p class="section-copy">These repositories give reviewers something inspectable across Android, React/TypeScript, React Native and core computer-science practice.</p></div>
-        </div>
+        <div class="section-kicker reveal">03 / product worlds</div>
+        <h2 class="section-title reveal">Same engineer.<br>Different <em>failure modes.</em></h2>
+        <p class="lead reveal">Vendiqo and Fixloom are not duplicates of Qashoryx. Each is designed around a different operational truth.</p>
 
-        <div class="project-wall">
-          <article class="project-card tilt reveal"><div class="project-no">Public / Android</div><h3>Social Connect</h3><p>Native Android social application with Firebase Authentication, Firestore, Storage, posts, likes, comments, search and real-time one-to-one chat.</p><div class="stack"><span>Java</span><span>Android</span><span>Firebase</span></div><a class="project-link" href="https://github.com/asadabbas717/Social_Connect" target="_blank" rel="noreferrer">Source ↗</a></article>
-          <article class="project-card tilt reveal"><div class="project-no">Public / Web</div><h3>Family Tree</h3><p>Local-first relationship graph with normalized entities, cycle prevention, validated backup import/export, recovery behavior and automated tests.</p><div class="stack"><span>React 19</span><span>TypeScript</span><span>React Flow</span><span>Vitest</span></div><a class="project-link" href="https://github.com/asadabbas717/family-tree-webapp" target="_blank" rel="noreferrer">Source ↗</a></article>
-          <article class="project-card tilt reveal"><div class="project-no">Public / Mobile</div><h3>FuelTrip PK</h3><p>Pakistan-focused trip-cost calculator using geolocation, OpenStreetMap search/routing, local vehicle profiles and trip history.</p><div class="stack"><span>React Native</span><span>Expo</span><span>OSRM</span><span>Nominatim</span></div><a class="project-link" href="https://github.com/asadabbas717/pakistan-fuel-trip-calculator" target="_blank" rel="noreferrer">Source ↗</a></article>
-          <article class="project-card tilt reveal"><div class="project-no">Public / Fundamentals</div><h3>C++ Interview Practice</h3><p>Structured C++17 practice spanning fundamentals, OOP, STL, arrays, linked lists, trees, graphs, dynamic programming and complexity reasoning.</p><div class="stack"><span>C++17</span><span>STL</span><span>OOP</span><span>DSA</span></div><a class="project-link" href="https://github.com/asadabbas717/cpp-interview-practice" target="_blank" rel="noreferrer">Source ↗</a></article>
+        <div class="world-grid">
+          <article class="world vendiqo tilt reveal">
+            <div class="receipt" aria-hidden="true"><div class="receipt-head"><span>VENDIQO</span><span>RC 0.1.0</span></div><div class="receipt-line"><span>LEDGER</span><b>IMMUTABLE</b></div><div class="receipt-line"><span>PURCHASE</span><b>ATOMIC</b></div><div class="receipt-line"><span>RETURN</span><b>REFERENCED</b></div><div class="receipt-line"><span>BACKUP</span><b>CHECKSUMMED</b></div><div class="receipt-line"><span>INSTALLER</span><b>INNO SETUP</b></div><div class="barcode"></div></div>
+            <div class="inner"><div class="section-kicker">VENDIQO / RELEASE CANDIDATE</div><h3>Retail that remembers every movement.</h3><p>Offline-first Windows POS with products, SKUs, barcode workflows, immutable inventory movement, supplier purchasing, exact local sales, receipts, referenced returns, operational reporting, checksummed recovery and a provider-neutral FBR integration boundary.</p><div class="meta"><span>Python · Qt · SQLite · Ruff · mypy · pytest</span><a class="btn magnetic" href="PRIVATE_PROJECT_SHOWCASE.md">Scope ↗</a></div></div>
+          </article>
+
+          <article class="world fixloom tilt reveal">
+            <div class="repair-orbit" aria-hidden="true"></div><div class="tool-dot td1" aria-hidden="true">JOB</div><div class="tool-dot td2" aria-hidden="true">PAY</div><div class="tool-dot td3" aria-hidden="true">HIST</div>
+            <div class="inner"><div class="section-kicker">FIXLOOM / FEATURE COMPLETE</div><h3>Repair work as a controlled state machine.</h3><p>Customers, devices, technicians, intake, immutable status history, exact PKR charges and payments, managed attachments, branded PDFs, eight Alembic migrations, verified backups and reproducible Windows packaging.</p><div class="meta"><span>Python · PySide6 · SQLAlchemy · Alembic · pytest</span><a class="btn magnetic" href="PRIVATE_PROJECT_SHOWCASE.md">Scope ↗</a></div></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="approach">
+    <section class="section public-lab" id="lab">
       <div class="wrap">
-        <div class="section-top reveal">
-          <div class="section-no">04 / Approach</div>
-          <div><h2 class="section-title">The interface is visible.<br><em>The failure model is the work.</em></h2><p class="section-copy">My best projects are organized around what must never go wrong: money, stock, history, backups, authentication and releases.</p></div>
-        </div>
-
-        <div class="principles">
-          <article class="principle reveal"><div class="num">01</div><div><h3>Correct transactions</h3><p>Financial, stock and document writes should commit together or not at all. Rollback behavior is part of the product.</p></div></article>
-          <article class="principle reveal"><div class="num">02</div><div><h3>Recoverable data</h3><p>Backups are only useful if they are verifiable and restorable. Migration and restore paths need evidence, not optimism.</p></div></article>
-          <article class="principle reveal"><div class="num">03</div><div><h3>Measured change</h3><p>I prefer regression tests, reconciliation and profiling before replacing working architecture with fashionable abstractions.</p></div></article>
-          <article class="principle reveal"><div class="num">04</div><div><h3>Honest boundaries</h3><p>Implemented, verified and deployed are different states. The portfolio says which one is true instead of blurring them together.</p></div></article>
-        </div>
-
-        <div class="skills-board reveal" style="margin-top:3rem">
-          <div class="skill-row"><h3>Desktop & Business</h3><div class="skill-list"><span>Python</span><span>PySide6 / Qt</span><span>SQLite</span><span>SQLAlchemy</span><span>Alembic</span><span>ReportLab</span><span>PyInstaller</span><span>Inno Setup</span></div></div>
-          <div class="skill-row"><h3>Quality & Reliability</h3><div class="skill-list"><span>pytest</span><span>unittest</span><span>Ruff</span><span>mypy</span><span>migration safety</span><span>backup / restore</span><span>transaction rollback</span><span>release verification</span></div></div>
-          <div class="skill-row"><h3>Mobile</h3><div class="skill-list"><span>Android</span><span>Java</span><span>Firebase</span><span>React Native</span><span>Expo</span><span>Flutter / Dart</span></div></div>
-          <div class="skill-row"><h3>Web & Core</h3><div class="skill-list"><span>React</span><span>TypeScript</span><span>JavaScript</span><span>Vite</span><span>Node.js</span><span>SQL</span><span>REST APIs</span><span>C++</span><span>DSA</span><span>Git</span></div></div>
+        <div class="section-kicker reveal">04 / public lab</div>
+        <h2 class="section-title reveal">Private depth.<br><em>Public proof.</em></h2>
+        <p class="lead reveal">The flagship business products protect private implementation. These repositories let recruiters inspect code, structure and breadth directly.</p>
+        <div class="lab-grid">
+          <a class="lab-card reveal" href="https://github.com/asadabbas717/Social_Connect" target="_blank" rel="noreferrer"><span class="lab-index">01 / ANDROID</span><h3>Social Connect</h3><p>Native Android social application with Firebase authentication, Firestore-backed feeds, Storage, search, comments and real-time chat.</p><div class="lab-tags"><span>Java</span><span>XML</span><span>Firebase</span></div></a>
+          <a class="lab-card reveal" href="https://github.com/asadabbas717/family-tree-webapp" target="_blank" rel="noreferrer"><span class="lab-index">02 / WEB SYSTEMS</span><h3>Family Tree</h3><p>Local-first React/TypeScript family-tree editor with graph layout, relationship validation, versioned persistence, backup/recovery and tests.</p><div class="lab-tags"><span>React</span><span>TypeScript</span><span>React Flow</span><span>Vitest</span></div></a>
+          <a class="lab-card reveal" href="https://github.com/asadabbas717/pakistan-fuel-trip-calculator" target="_blank" rel="noreferrer"><span class="lab-index">03 / MOBILE + MAPS</span><h3>FuelTrip PK</h3><p>Pakistan-focused fuel-cost estimator using location search, OpenStreetMap services, OSRM routing, local history and vehicle averages.</p><div class="lab-tags"><span>React Native</span><span>Expo</span><span>OSRM</span></div></a>
+          <a class="lab-card reveal" href="https://github.com/asadabbas717/cpp-interview-practice" target="_blank" rel="noreferrer"><span class="lab-index">04 / FUNDAMENTALS</span><h3>C++ Practice</h3><p>C++17 interview practice covering core language, OOP, STL, arrays, trees, graphs, dynamic programming and algorithmic complexity.</p><div class="lab-tags"><span>C++17</span><span>STL</span><span>DSA</span></div></a>
         </div>
       </div>
     </section>
 
-    <section id="background">
+    <section class="section principles" id="principles">
       <div class="wrap">
-        <div class="section-top reveal"><div class="section-no">05 / Background</div><div><h2 class="section-title">Built by doing.<br><em>Refined by evidence.</em></h2></div></div>
-        <div class="timeline reveal">
-          <article class="timeline-item"><time>Independent product engineering</time><div><h3>Qashoryx · Fixloom · Vendiqo</h3><p>Desktop business systems focused on operational workflows, financial/data correctness, recovery, testing and Windows delivery.</p></div><div class="org">Software Engineer</div></article>
-          <article class="timeline-item"><time>2025</time><div><h3>Android Application Internship</h3><p>Built and practiced native Android application workflows with Java, XML and Firebase-backed features.</p></div><div class="org">DevelopersHub</div></article>
-          <article class="timeline-item"><time>Academic capstone</time><div><h3>Generative AI & Web Development</h3><p>Worked across web application development and generative-AI integration as part of university capstone work.</p></div><div class="org">UMT</div></article>
-          <article class="timeline-item"><time>Education</time><div><h3>BS Software Engineering</h3><p>Software Engineering graduate with continued focus on practical product engineering, systems thinking and cybersecurity fundamentals.</p></div><div class="org">University of Management & Technology</div></article>
+        <div class="section-kicker reveal">05 / engineering rules</div>
+        <h2 class="section-title reveal">The interface changes.<br>The <em>rules</em> don’t.</h2>
+        <div class="principle-grid reveal">
+          <article class="principle"><span class="p-num">01 / TRANSACTIONS</span><h3>Correctness before cleverness.</h3><p>Money, stock and state changes should commit together or not at all.</p><span class="ghost">01</span></article>
+          <article class="principle"><span class="p-num">02 / RECOVERY</span><h3>Restore is a feature.</h3><p>Backups, integrity checks and rollback paths matter only when recovery is rehearsed.</p><span class="ghost">02</span></article>
+          <article class="principle"><span class="p-num">03 / SCOPE</span><h3>Say what exists.</h3><p>Implemented behavior stays separate from roadmap ideas, regulatory dependencies and deployment gates.</p><span class="ghost">03</span></article>
+          <article class="principle"><span class="p-num">04 / DELIVERY</span><h3>A build is evidence.</h3><p>Tests, dependency locks, hashes, migrations and packaging checks turn “works on my machine” into repeatable release confidence.</p><span class="ghost">04</span></article>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section class="section about" id="about">
       <div class="wrap">
-        <div class="contact-stage reveal">
-          <div class="eyebrow" style="color:var(--lime)">Open to software engineering opportunities</div>
-          <h2>Need someone who thinks beyond <em>the happy path?</em></h2>
-          <p>I’m interested in software engineering roles where reliability, data integrity, debugging and real product ownership matter. Public code is available on GitHub; private product architecture and sanitized demonstrations can be discussed in interviews.</p>
-          <div class="contact-actions"><a class="button magnetic" href="https://github.com/asadabbas717" target="_blank" rel="noreferrer"><span>GitHub profile</span><span>↗</span></a><a class="button magnetic" href="mailto:asadabbasmallah@gmail.com"><span>Email me</span><span>→</span></a></div>
+        <div class="section-kicker reveal">06 / builder</div>
+        <div class="about-grid">
+          <div class="portrait-type reveal">Asad<span>Abbas</span></div>
+          <div>
+            <h2 class="section-title reveal">Software Engineer<br>with a bias for <em>systems.</em></h2>
+            <p class="lead reveal">Software Engineering graduate working across Python desktop applications, Android/Firebase, React/TypeScript and React Native. I care most about turning messy operational requirements into software people can actually depend on.</p>
+            <div class="timeline reveal">
+              <div class="tl"><time>Current</time><div><h3>Independent Product Engineering</h3><p>Qashoryx, Fixloom and Vendiqo — desktop business products focused on correctness, workflow, recovery and Windows delivery.</p></div></div>
+              <div class="tl"><time>Mobile</time><div><h3>Android Application Work</h3><p>Java/XML/Firebase application development including authentication, feeds, search and real-time interactions.</p></div></div>
+              <div class="tl"><time>Web / AI</time><div><h3>React, APIs and Generative AI</h3><p>Web and AI experimentation alongside public React/TypeScript systems and API-driven mobile products.</p></div></div>
+              <div class="tl"><time>Education</time><div><h3>BS Software Engineering</h3><p>Foundation across software development, databases, web systems, programming and engineering practice.</p></div></div>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <h2 class="reveal">Need software<br>that <em>holds up?</em></h2>
+        <div class="contact-row reveal"><p>I’m open to Software Engineer, Python/Desktop Application Developer and related product-engineering opportunities where reliability and real workflows matter.</p><div class="hero-actions"><a class="btn magnetic" href="https://github.com/asadabbas717" target="_blank" rel="noreferrer">GitHub ↗</a><a class="btn magnetic" href="#top">Back to system ↑</a></div></div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap footer-inner"><span>Asad Abbas · Software Engineer</span><span>Designed as evidence, not decoration · <span id="year"></span></span></div>
-  </footer>
+  <footer><div class="wrap footer-row"><span>Asad Abbas / Software Engineer</span><span>Built as an interactive engineering artifact — not a template.</span></div></footer>
 
   <script>
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
-    menuBtn?.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-    });
-    navLinks?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuBtn?.setAttribute('aria-expanded','false');
-    }));
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const scrollBar = document.getElementById('scrollBar');
-    const updateScroll = () => {
+    const progress = document.querySelector('.progress');
+    addEventListener('scroll', () => {
       const max = document.documentElement.scrollHeight - innerHeight;
-      const pct = max > 0 ? (scrollY / max) * 100 : 0;
-      scrollBar.style.width = pct + '%';
-    };
-    addEventListener('scroll', updateScroll, {passive:true});
-    updateScroll();
+      progress.style.width = `${max > 0 ? scrollY / max * 100 : 0}%`;
+    }, {passive:true});
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {threshold:.12});
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    const counters = document.querySelectorAll('.counter');
-    const counterObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const target = Number(el.dataset.target || 0);
-        if (reducedMotion || target === 0) {
-          el.textContent = String(target);
-        } else {
-          const start = performance.now();
-          const duration = 1000;
-          const step = now => {
-            const p = Math.min(1,(now-start)/duration);
-            const eased = 1 - Math.pow(1-p,3);
-            el.textContent = String(Math.round(target*eased));
-            if (p < 1) requestAnimationFrame(step);
-          };
-          requestAnimationFrame(step);
-        }
-        counterObserver.unobserve(el);
-      });
-    }, {threshold:.6});
-    counters.forEach(el => counterObserver.observe(el));
-
-    if (!reducedMotion && matchMedia('(pointer:fine)').matches) {
-      const glow = document.getElementById('cursorGlow');
+    const cursor = document.querySelector('.cursor-signal');
+    if (!reduced && matchMedia('(pointer:fine)').matches) {
       addEventListener('pointermove', e => {
-        glow.style.left = e.clientX + 'px';
-        glow.style.top = e.clientY + 'px';
-        glow.style.opacity = '1';
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
       }, {passive:true});
+    }
 
-      document.querySelectorAll('.magnetic').forEach(el => {
-        el.addEventListener('pointermove', e => {
-          const r = el.getBoundingClientRect();
-          const x = e.clientX - (r.left + r.width/2);
-          const y = e.clientY - (r.top + r.height/2);
-          el.style.transform = `translate(${x*.09}px,${y*.09}px)`;
-        });
-        el.addEventListener('pointerleave', () => el.style.transform = '');
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
+    }, {threshold:.13});
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+    function animateCounter(el){
+      if (el.dataset.done) return;
+      el.dataset.done = '1';
+      const target = Number(el.dataset.target || 0);
+      if (reduced){ el.textContent = target; return; }
+      const start = performance.now();
+      const dur = 1200;
+      const tick = now => {
+        const t = Math.min(1,(now-start)/dur);
+        const eased = 1 - Math.pow(1-t,3);
+        el.textContent = Math.round(target*eased);
+        if(t<1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }
+    const counterObserver = new IntersectionObserver(entries => entries.forEach(e => {
+      if(e.isIntersecting) animateCounter(e.target);
+    }), {threshold:.5});
+    document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+    const steps = [...document.querySelectorAll('.q-step')];
+    const scenes = [...document.querySelectorAll('.q-scene')];
+    const stepObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        const i = Number(entry.target.dataset.step);
+        steps.forEach((s,n)=>s.classList.toggle('active',n===i));
+        scenes.forEach((s,n)=>s.classList.toggle('active',n===i));
+      });
+    }, {rootMargin:'-35% 0px -45% 0px',threshold:0});
+    steps.forEach(step => stepObserver.observe(step));
+
+    if (!reduced && matchMedia('(pointer:fine)').matches) {
       document.querySelectorAll('.tilt').forEach(card => {
         card.addEventListener('pointermove', e => {
           const r = card.getBoundingClientRect();
-          const rx = ((e.clientY-r.top)/r.height-.5)*-4;
-          const ry = ((e.clientX-r.left)/r.width-.5)*5;
-          card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+          const x = (e.clientX-r.left)/r.width-.5;
+          const y = (e.clientY-r.top)/r.height-.5;
+          card.style.transform = `perspective(1100px) rotateX(${(-y*4).toFixed(2)}deg) rotateY(${(x*5).toFixed(2)}deg)`;
         });
-        card.addEventListener('pointerleave', () => card.style.transform = '');
-      });
-    }
-
-    const canvas = document.getElementById('signalCanvas');
-    const ctx = canvas.getContext('2d');
-    const pointer = {x:.5,y:.5};
-    let points = [];
-
-    function sizeCanvas(){
-      const rect = canvas.getBoundingClientRect();
-      const dpr = Math.min(devicePixelRatio || 1, 2);
-      canvas.width = Math.max(1,Math.floor(rect.width*dpr));
-      canvas.height = Math.max(1,Math.floor(rect.height*dpr));
-      ctx.setTransform(dpr,0,0,dpr,0,0);
-      points = Array.from({length:22},(_,i)=>({
-        x: rect.width*(.08+Math.random()*.84),
-        y: rect.height*(.10+Math.random()*.80),
-        r: 2.2+Math.random()*3.8,
-        phase: Math.random()*Math.PI*2,
-        speed:.00035+Math.random()*.0006,
-        amp:4+Math.random()*12
-      }));
-    }
-
-    function drawSignal(t=0){
-      const rect = canvas.getBoundingClientRect();
-      ctx.clearRect(0,0,rect.width,rect.height);
-      ctx.fillStyle = '#fffdf8';
-      ctx.fillRect(0,0,rect.width,rect.height);
-
-      ctx.strokeStyle = 'rgba(17,19,23,.08)';
-      ctx.lineWidth = 1;
-      const gap = Math.max(34,rect.width/10);
-      for(let x=0;x<rect.width;x+=gap){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,rect.height);ctx.stroke()}
-      for(let y=0;y<rect.height;y+=gap){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(rect.width,y);ctx.stroke()}
-
-      const current = points.map(p=>({
-        ...p,
-        dx:p.x + (reducedMotion?0:Math.sin(t*p.speed+p.phase)*p.amp),
-        dy:p.y + (reducedMotion?0:Math.cos(t*p.speed*.8+p.phase)*p.amp)
-      }));
-
-      for(let i=0;i<current.length;i++){
-        for(let j=i+1;j<current.length;j++){
-          const a=current[i],b=current[j];
-          const d=Math.hypot(a.dx-b.dx,a.dy-b.dy);
-          if(d<120){
-            ctx.strokeStyle=`rgba(36,71,255,${(1-d/120)*.22})`;
-            ctx.beginPath();ctx.moveTo(a.dx,a.dy);ctx.lineTo(b.dx,b.dy);ctx.stroke();
-          }
-        }
-      }
-
-      const px=pointer.x*rect.width, py=pointer.y*rect.height;
-      current.forEach((p,i)=>{
-        const d=Math.hypot(p.dx-px,p.dy-py);
-        const hover=Math.max(0,1-d/150);
-        ctx.fillStyle = i%5===0 ? '#ff5b35' : (i%3===0 ? '#c7f34a' : '#2447ff');
-        ctx.beginPath();ctx.arc(p.dx,p.dy,p.r+hover*4,0,Math.PI*2);ctx.fill();
+        card.addEventListener('pointerleave',()=>card.style.transform='');
       });
 
-      ctx.strokeStyle='rgba(17,19,23,.5)';
-      ctx.lineWidth=1.5;
-      ctx.beginPath();ctx.arc(px,py,18,0,Math.PI*2);ctx.stroke();
+      document.querySelectorAll('.magnetic').forEach(btn => {
+        btn.addEventListener('pointermove', e => {
+          const r = btn.getBoundingClientRect();
+          btn.style.setProperty('--tx',`${(e.clientX-r.left-r.width/2)*.1}px`);
+          btn.style.setProperty('--ty',`${(e.clientY-r.top-r.height/2)*.16}px`);
+        });
+        btn.addEventListener('pointerleave',()=>{btn.style.setProperty('--tx','0px');btn.style.setProperty('--ty','0px')});
+      });
 
-      if(!reducedMotion) requestAnimationFrame(drawSignal);
+      const atlas = document.getElementById('atlasShell');
+      atlas.addEventListener('pointermove', e => {
+        const r = atlas.getBoundingClientRect();
+        const x = (e.clientX-r.left)/r.width-.5;
+        const y = (e.clientY-r.top)/r.height-.5;
+        document.querySelectorAll('.node').forEach((n,i)=>{
+          const m=(i%2?1:-1)*(6+i*1.5);
+          n.style.translate=`${x*m}px ${y*m}px`;
+        });
+      });
+      atlas.addEventListener('pointerleave',()=>document.querySelectorAll('.node').forEach(n=>n.style.translate='0 0'));
     }
 
-    canvas.addEventListener('pointermove',e=>{
-      const r=canvas.getBoundingClientRect();
-      pointer.x=(e.clientX-r.left)/r.width;
-      pointer.y=(e.clientY-r.top)/r.height;
+    const menuBtn = document.getElementById('menuBtn');
+    const navCluster = document.getElementById('navCluster');
+    menuBtn.addEventListener('click',()=>{
+      const open = navCluster.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded',String(open));
     });
-    canvas.addEventListener('pointerleave',()=>{pointer.x=.5;pointer.y=.5});
-    addEventListener('resize',sizeCanvas);
-    sizeCanvas();
-    drawSignal(0);
+    navCluster.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+      navCluster.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');
+    }));
   </script>
 </body>
 </html>
