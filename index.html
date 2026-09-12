@@ -232,7 +232,9 @@
       html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.cursor-signal{display:none}.reveal{opacity:1;transform:none}
     }
   </style>
-</head>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='20' fill='%23c85032'/%3E%3Cpath d='M10 29L20 10L30 29M14 23H26' fill='none' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('folio-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){document.documentElement.dataset.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}</script>
+<link rel="stylesheet" href="folio.css"></head>
 <body>
   <div class="noise" aria-hidden="true"></div>
   <div class="cursor-signal" aria-hidden="true"></div>
@@ -241,11 +243,11 @@
 
   <nav aria-label="Primary navigation">
     <div class="wrap nav-shell">
-      <a class="brand" href="#top"><span class="brand-mark">AA</span><span>ASAD / SYSTEMS</span></a>
+      <a class="brand" href="#top"><span class="brand-mark">AA</span><span>ASAD ABBAS</span></a>
       <div class="nav-cluster" id="navCluster">
         <a href="#atlas">Map</a><a href="#qashoryx">Qashoryx</a><a href="#products">Products</a><a href="#lab">Public Lab</a><a href="#contact">Contact</a>
       </div>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navCluster">MENU</button>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark mode"><span aria-hidden="true">◐</span> <span id="themeLabel">Dark</span></button><button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navCluster">MENU</button>
     </div>
   </nav>
 
@@ -254,22 +256,16 @@
       <div class="wrap hero-grid">
         <div>
           <div class="hero-label"><i></i> Software Engineer · Pakistan</div>
-          <h1>Software<br><span class="shift">that <span class="serif">survives</span></span><br>real work.</h1>
-          <p class="hero-copy">I build desktop, mobile and web software around a simple standard: <strong>money should reconcile, stock should remain truthful, data should recover, releases should be verifiable, and the interface should help people finish real work.</strong></p>
+          <p class="folio-number">INDEPENDENT ENGINEERING / SELECTED WORK</p><h1>Made to work.<br><span class="serif">Built to last.</span></h1>
+          <p class="hero-copy">I’m Asad. I turn complex business workflows into dependable desktop, mobile and web software. <strong>Every detail has a job to do.</strong></p>
           <div class="hero-actions">
             <a class="btn blue magnetic" href="#qashoryx">Enter the evidence →</a>
             <a class="btn magnetic" href="https://github.com/asadabbas717" target="_blank" rel="noreferrer">Inspect public code ↗</a>
           </div>
         </div>
 
-        <div class="hero-evidence" aria-label="Selected Qashoryx engineering evidence">
-          <div class="e-card"><small>verified business data</small><strong class="counter" data-target="568">0</strong><span>invoices reconciled</span></div>
-          <div class="e-card"><small>customer state</small><strong class="counter" data-target="463">0</strong><span>active customers checked</span></div>
-          <div class="e-card"><small>catalog state</small><strong class="counter" data-target="255">0</strong><span>products checked</span></div>
-          <div class="e-card zero"><small>reconciliation result</small><strong>ZERO</strong><span>findings across the verified backup</span></div>
-        </div>
-      </div>
-    </section>
+        <div class="thread-art" aria-hidden="true"><div class="art-caption"><span>FIG. 01 — STRUCTURE &amp; FLOW</span><span>AA / SE</span></div><svg viewBox="0 0 600 560"> <circle class="guide" cx="300" cy="280" r="244"/><path class="guide" d="M20 280H580M300 10V550"/><path d="M520.00 280.00 C300.00 140.00, 260.00 440.00, 180.65 443.40"/><path d="M519.23 298.41 C303.35 141.33, 261.33 438.53, 168.70 431.78"/><path d="M516.92 316.69 C306.67 142.67, 262.67 437.07, 157.66 419.11"/><path d="M513.09 334.71 C309.95 144.00, 264.00 435.60, 147.63 405.46"/><path d="M507.76 352.35 C313.15 145.33, 265.33 434.13, 138.67 390.92"/><path d="M500.98 369.48 C316.27 146.67, 266.67 432.67, 130.84 375.61"/><path d="M492.79 385.99 C319.27 148.00, 268.00 431.20, 124.19 359.63"/><path d="M483.24 401.75 C322.14 149.33, 269.33 429.73, 118.78 343.09"/><path d="M472.41 416.65 C324.85 150.67, 270.67 428.27, 114.64 326.11"/><path d="M460.37 430.60 C327.38 152.00, 272.00 426.80, 111.80 308.81"/><path d="M447.21 443.49 C329.73 153.33, 273.33 425.33, 110.28 291.30"/><path d="M433.01 455.24 C331.86 154.67, 274.67 423.87, 110.09 273.71"/><path d="M417.88 465.75 C333.77 156.00, 276.00 422.40, 111.23 256.17"/><path d="M401.93 474.96 C335.45 157.33, 277.33 420.93, 113.69 238.80"/><path d="M385.25 482.81 C336.87 158.67, 278.67 419.47, 117.47 221.71"/><path d="M367.98 489.23 C338.04 160.00, 280.00 418.00, 122.52 205.03"/><path d="M350.24 494.19 C338.94 161.33, 281.33 416.53, 128.82 188.88"/><path d="M332.14 497.64 C339.57 162.67, 282.67 415.07, 136.32 173.37"/><path d="M313.81 499.57 C339.92 164.00, 284.00 413.60, 144.96 158.60"/><path d="M295.39 499.95 C339.99 165.33, 285.33 412.13, 154.70 144.69"/><path d="M277.00 498.79 C339.78 166.67, 286.67 410.67, 165.45 131.73"/><path d="M258.78 496.10 C339.29 168.00, 288.00 409.20, 177.15 119.80"/><path d="M240.84 491.90 C338.53 169.33, 289.33 407.73, 189.71 109.00"/><path d="M223.31 486.20 C337.49 170.67, 290.67 406.27, 203.04 99.40"/><path d="M206.33 479.06 C336.19 172.00, 292.00 404.80, 217.05 91.07"/><path d="M190.00 470.53 C334.64 173.33, 293.33 403.33, 231.65 84.06"/><path d="M174.44 460.65 C332.85 174.67, 294.67 401.87, 246.72 78.42"/><path d="M159.77 449.51 C330.82 176.00, 296.00 400.40, 262.17 74.20"/><path d="M146.07 437.18 C328.58 177.33, 297.33 398.93, 277.88 71.43"/><path d="M133.46 423.75 C326.14 178.67, 298.67 397.47, 293.75 70.11"/><path d="M122.02 409.31 C323.51 180.00, 300.00 396.00, 309.66 70.27"/><path d="M111.82 393.97 C320.72 181.33, 301.33 394.53, 325.51 71.90"/><path d="M102.94 377.82 C317.79 182.67, 302.67 393.07, 341.17 74.99"/><path d="M95.45 360.99 C314.72 184.00, 304.00 391.60, 356.55 79.52"/><path d="M89.39 343.59 C311.56 185.33, 305.33 390.13, 371.53 85.45"/><path d="M84.81 325.74 C308.32 186.67, 306.67 388.67, 386.01 92.75"/><path d="M81.73 307.57 C305.01 188.00, 308.00 387.20, 399.88 101.36"/><path d="M80.19 289.21 C301.68 189.33, 309.33 385.73, 413.06 111.22"/><path d="M80.19 270.79 C298.32 190.67, 310.67 384.27, 425.44 122.27"/><path d="M81.73 252.43 C294.99 192.00, 312.00 382.80, 436.94 134.43"/><path d="M84.81 234.26 C291.68 193.33, 313.33 381.33, 447.48 147.60"/><path d="M89.39 216.41 C288.44 194.67, 314.67 379.87, 456.99 161.71"/><path d="M95.45 199.01 C285.28 196.00, 316.00 378.40, 465.39 176.64"/><path d="M102.94 182.18 C282.21 197.33, 317.33 376.93, 472.64 192.30"/><path d="M111.82 166.03 C279.28 198.67, 318.67 375.47, 478.67 208.57"/><path d="M122.02 150.69 C276.49 200.00, 320.00 374.00, 483.45 225.35"/><path d="M133.46 136.25 C273.86 201.33, 321.33 372.53, 486.95 242.51"/><path d="M146.07 122.82 C271.42 202.67, 322.67 371.07, 489.13 259.93"/><path d="M159.77 110.49 C269.18 204.00, 324.00 369.60, 489.99 277.49"/><path d="M174.44 99.35 C267.15 205.33, 325.33 368.13, 489.51 295.07"/><path d="M190.00 89.47 C265.36 206.67, 326.67 366.67, 487.70 312.55"/><path d="M206.33 80.94 C263.81 208.00, 328.00 365.20, 484.58 329.79"/><path d="M223.31 73.80 C262.51 209.33, 329.33 363.73, 480.17 346.69"/><path d="M240.84 68.10 C261.47 210.67, 330.67 362.27, 474.48 363.12"/><path d="M258.78 63.90 C260.71 212.00, 332.00 360.80, 467.58 378.96"/><path d="M277.00 61.21 C260.22 213.33, 333.33 359.33, 459.50 394.11"/><path d="M295.39 60.05 C260.01 214.67, 334.67 357.87, 450.30 408.47"/><path d="M313.81 60.43 C260.08 216.00, 336.00 356.40, 440.05 421.92"/><path d="M332.14 62.36 C260.43 217.33, 337.33 354.93, 428.81 434.37"/><path d="M350.24 65.81 C261.06 218.67, 338.67 353.47, 416.67 445.74"/><path d="M367.98 70.77 C261.96 220.00, 340.00 352.00, 403.72 455.95"/><path d="M385.25 77.19 C263.13 221.33, 341.33 350.53, 390.03 464.93"/><path d="M401.93 85.04 C264.55 222.67, 342.67 349.07, 375.72 472.61"/><path d="M417.88 94.25 C266.23 224.00, 344.00 347.60, 360.87 478.93"/><path d="M433.01 104.76 C268.14 225.33, 345.33 346.13, 345.59 483.86"/><path d="M447.21 116.51 C270.27 226.67, 346.67 344.67, 330.00 487.37"/><path d="M460.37 129.40 C272.62 228.00, 348.00 343.20, 314.19 489.41"/><path d="M472.41 143.35 C275.15 229.33, 349.33 341.73, 298.29 489.99"/><path d="M483.24 158.25 C277.86 230.67, 350.67 340.27, 282.40 489.10"/><path d="M492.79 174.01 C280.73 232.00, 352.00 338.80, 266.63 486.74"/><path d="M500.98 190.52 C283.73 233.33, 353.33 337.33, 251.10 482.92"/><path d="M507.76 207.65 C286.85 234.67, 354.67 335.87, 235.90 477.69"/><path d="M513.09 225.29 C290.05 236.00, 356.00 334.40, 221.16 471.07"/><path d="M516.92 243.31 C293.33 237.33, 357.33 332.93, 206.97 463.11"/><path d="M519.23 261.59 C296.65 238.67, 358.67 331.47, 193.44 453.86"/><path d="M520.00 280.00 C300.00 240.00, 360.00 330.00, 180.65 443.40"/></svg><div class="art-footer"><span>Many moving parts.<br>One coherent system.</span><span class="art-star">✳</span></div></div>
+</div></section>
 
     <div class="tape" aria-label="Engineering evidence ticker">
       <div class="tape-track">
@@ -281,7 +277,7 @@
     <section class="section atlas" id="atlas">
       <div class="wrap">
         <div class="section-kicker reveal">01 / system map</div>
-        <h2 class="section-title reveal">Not a list of projects.<br>An <em>engineering map.</em></h2>
+        <h2 class="section-title reveal">A connected body<br>of <em>work.</em></h2>
         <p class="lead reveal">Each product exists because a different kind of real-world failure matters: money, stock, repair state, recoverability, release confidence, or human workflow.</p>
 
         <div class="atlas-shell reveal" id="atlasShell">
@@ -427,7 +423,7 @@
     </section>
   </main>
 
-  <footer><div class="wrap footer-row"><span>Asad Abbas / Software Engineer</span><span>Built as an interactive engineering artifact — not a template.</span></div></footer>
+  <footer><div class="wrap footer-row"><span>Asad Abbas / Software Engineer</span><span>Correctness · Recovery · Delivery</span></div></footer>
 
   <script>
     const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -528,5 +524,10 @@
       navCluster.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');
     }));
   </script>
-</body>
+<script>
+const themeToggle=document.getElementById('themeToggle');
+function syncTheme(){const dark=document.documentElement.dataset.theme==='dark';document.getElementById('themeLabel').textContent=dark?'Light':'Dark';themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');document.querySelector('meta[name="theme-color"]').content=dark?'#141917':'#f4f2ea'}
+themeToggle.addEventListener('click',()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('folio-theme',document.documentElement.dataset.theme)}catch(e){}syncTheme()});syncTheme();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',e=>{try{if(localStorage.getItem('folio-theme'))return}catch(_){}document.documentElement.dataset.theme=e.matches?'dark':'light';syncTheme()});
+</script></body>
 </html>
