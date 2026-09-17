@@ -20,6 +20,7 @@
     syncTheme();
   });
   syncTheme();
+
   const menu = document.getElementById('menu');
   const navigation = document.getElementById('navigation');
   function closeMenu() {
@@ -36,6 +37,7 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && navigation.classList.contains('open')) { closeMenu(); menu.focus(); }
   });
+
   const tabs = [...document.querySelectorAll('[role="tab"]')];
   function selectProject(tab, focus = false) {
     tabs.forEach(item => {
@@ -66,6 +68,7 @@
   }
   addEventListener('hashchange', resolveProjectHash);
   if (location.hash) resolveProjectHash();
+
   const sculpture = document.getElementById('sculpture');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   sculpture.addEventListener('pointermove', e => {
@@ -78,4 +81,82 @@
     sculpture.style.setProperty('--px', '0px');
     sculpture.style.setProperty('--py', '0px');
   });
+
+  // Conversion layer: make the portfolio easy to act on for recruiters and businesses.
+  const hero = document.getElementById('top');
+  const signalStrip = document.createElement('div');
+  signalStrip.className = 'availability-strip';
+  signalStrip.setAttribute('aria-label', 'Availability and focus');
+  signalStrip.innerHTML = `
+    <span><b>AVAILABLE FOR</b> SOFTWARE ENGINEERING ROLES</span>
+    <span><b>FOCUS</b> BACKEND + PYTHON</span>
+    <span><b>STRENGTH</b> DESKTOP BUSINESS SOFTWARE</span>
+    <span><b>ALSO</b> SYSTEM MODERNIZATION</span>`;
+  hero.insertAdjacentElement('afterend', signalStrip);
+
+  const contact = document.getElementById('contact');
+  const contactTop = contact.querySelector('.section-top');
+  const pathGrid = document.createElement('div');
+  pathGrid.className = 'conversion-grid';
+  pathGrid.innerHTML = `
+    <article class="conversion-card recruiter-card">
+      <span class="conversion-label">FOR HIRING TEAMS</span>
+      <h3>Need an engineer who can build <em>and</em> improve real systems?</h3>
+      <p>I’m open to Software Engineer, Backend/Python, Desktop Application, and product-engineering opportunities in Pakistan.</p>
+      <div class="conversion-proof"><span>Qashoryx</span><span>PhishGuard</span><span>Vendiqo</span><span>Fixloom</span></div>
+      <div class="conversion-actions">
+        <a href="https://www.linkedin.com/in/asadabbas717" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a href="mailto:asadabbasbusiness@gmail.com">Email ↗</a>
+        <a href="https://github.com/asadabbas717" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </article>
+    <article class="conversion-card business-card">
+      <span class="conversion-label">FOR BUSINESSES</span>
+      <h3>Have operational software to build—or an existing system that needs serious modernization?</h3>
+      <p>I can discuss desktop business software, Python/Django backends, workflow automation, reliability hardening, and modernization work grounded in tests and release evidence.</p>
+      <div class="conversion-proof"><span>Business workflows</span><span>Backend modernization</span><span>Recovery</span><span>Delivery</span></div>
+      <div class="conversion-actions">
+        <a href="mailto:asadabbasbusiness@gmail.com">Start a conversation ↗</a>
+        <a href="tel:+923000473399">Call ↗</a>
+      </div>
+    </article>`;
+  contactTop.insertAdjacentElement('afterend', pathGrid);
+
+  const contactTitle = contact.querySelector('.contact-title');
+  contactTitle.href = 'mailto:asadabbasbusiness@gmail.com';
+  contactTitle.removeAttribute('target');
+  contactTitle.removeAttribute('rel');
+
+  const contactBottom = contact.querySelector('.contact-bottom');
+  contactBottom.innerHTML = `
+    <p>Open to Software Engineer, Backend/Python, Desktop Developer<br>and related product-engineering opportunities.</p>
+    <div class="contact-directory" aria-label="Contact details">
+      <a href="mailto:asadabbasbusiness@gmail.com"><span>Email</span>asadabbasbusiness@gmail.com</a>
+      <a href="tel:+923000473399"><span>Phone</span>+92 300 0473399</a>
+      <a href="https://www.linkedin.com/in/asadabbas717" target="_blank" rel="noreferrer"><span>LinkedIn</span>/in/asadabbas717 ↗</a>
+      <a href="https://github.com/asadabbas717" target="_blank" rel="noreferrer"><span>GitHub</span>@asadabbas717 ↗</a>
+      <span class="contact-location"><span>Location</span>Pakistan</span>
+    </div>`;
+
+  const dock = document.createElement('aside');
+  dock.className = 'contact-dock';
+  dock.setAttribute('aria-label', 'Quick contact');
+  dock.innerHTML = `
+    <a href="mailto:asadabbasbusiness@gmail.com" aria-label="Email Asad Abbas">EMAIL</a>
+    <a href="https://www.linkedin.com/in/asadabbas717" target="_blank" rel="noreferrer" aria-label="Asad Abbas on LinkedIn">IN</a>`;
+  document.body.appendChild(dock);
+
+  const footer = document.querySelector('footer');
+  const footerMiddle = footer.querySelector('span:not(.monogram)');
+  if (footerMiddle) footerMiddle.textContent = 'PRODUCT / BACKEND / DESKTOP / MOBILE / WEB';
+
+  // Keep structured profile data aligned with the visible contact surface.
+  try {
+    const schemaNode = document.querySelector('script[type="application/ld+json"]');
+    const schema = JSON.parse(schemaNode.textContent);
+    schema.sameAs = ['https://github.com/asadabbas717', 'https://www.linkedin.com/in/asadabbas717'];
+    schema.email = 'mailto:asadabbasbusiness@gmail.com';
+    schema.telephone = '+923000473399';
+    schemaNode.textContent = JSON.stringify(schema);
+  } catch (_) {}
 })();
