@@ -1,6 +1,6 @@
 # Private Engineering Projects
 
-Some of my strongest software projects are intentionally kept private to protect client/business information, proprietary implementation, and reusable business logic. This page documents verified product scope and engineering outcomes without publishing private source code, credentials, databases, invoices, logs, or customer data.
+Some of my strongest software projects are intentionally kept private to protect client/business information, proprietary implementation, reusable business logic, and—in products that may handle sensitive information—future user data. This page documents verified product scope and engineering outcomes without publishing private source code, credentials, databases, invoices, logs, customer records, or health data.
 
 ## Qashoryx POS
 
@@ -122,12 +122,79 @@ Vendiqo demonstrates financial and inventory transaction design, immutable recor
 
 ---
 
+## Nourentra
+
+**Responsive nutrition and fitness journey platform designed around professional review**
+
+**Status:** Private beta-development foundation  
+**Role:** Software Engineer  
+**Technology:** React, TypeScript, Vite, Tailwind CSS, React Router, React Hook Form, Zod, Recharts, Vitest, Supabase
+
+### Current engineering scope
+
+- Eight-step client assessment with validation, consent, and safety-conscious language
+- Client dashboard, journey timeline, nutrition plan, daily engagement, progress tracking, and weekly check-ins
+- Nutritionist client-detail workspace with assessment review, planning, check-ins, notes, and revision history
+- Shared/private food library and meal-by-meal planning workflow
+- Atomic assessment, check-in, and meal-plan persistence
+- Supabase-backed ownership boundaries and Row Level Security-oriented schema
+- Database-guarded plan approval that blocks publication while unresolved safety flags remain
+- Typed health-calculation and centralized safety-screening modules
+- Responsive layouts, keyboard focus, reduced-motion support, and PWA metadata
+- Type checking, linting, domain tests, production build, and critical desktop/mobile browser journey commands in the development quality gate
+
+### Deliberate boundaries
+
+Nourentra is not presented as a medically or legally complete production health service. Professional credentials, legal/privacy terms, clinical thresholds, production authorization flows, RLS integration coverage, and operational deletion procedures require review before real-client launch. Demo mode uses fictional data and must not be used for real health information.
+
+### Portfolio value
+
+Nourentra demonstrates typed frontend architecture, structured multi-step forms, database authorization boundaries, workflow persistence, safety-aware product design, professional-review gates, and responsive cross-device experience design.
+
+**Source policy:** Private. No real client health records, credentials, privileged Supabase keys, or private implementation are published.
+
+---
+
+## PyNivo
+
+**Offline-first beginner Python IDE intended to remove the initial setup barrier**
+
+**Status:** Active development · editor/learning/runtime foundation  
+**Role:** Software Engineer  
+**Technology:** Python, PySide6, Qt, pytest, Ruff
+
+### Current engineering scope
+
+- Multi-tab Python editor with line numbers, syntax highlighting, automatic indentation, undo/redo, scrolling, and familiar editing shortcuts
+- Safe UTF-8 New/Open/Save/Save As workflows with atomic writes, dirty-state tracking, unsaved-change prompts, and recent files
+- Separate-process program execution with streamed stdout/stderr, keyboard input for `input()`, exit status, duplicate-run prevention, and Stop with forced-kill fallback
+- Beginner-friendly explanations for common Python tracebacks while preserving the complete original traceback
+- First-run welcome flow, editable offline examples, and a structured 18-lesson beginner course
+- Bundled-runtime discovery and validation compatible with an official Windows CPython embeddable distribution
+- Development-interpreter fallback without hard-coded machine paths
+- Execution requests built as executable + argument lists rather than shell command strings
+- Rotating logs that do not include learner source code
+- Unit tests for file operations, runtime discovery, validation, and execution-request construction
+- Persistent dark/light interface with synchronized editor, syntax, console, dialogs, and controls
+
+### Deliberate boundaries
+
+The current repository is not yet presented as a finished bundled Python distribution. Runtime binaries are not stored in Git or downloaded automatically, Windows production packaging remains a later milestone, and separate-process execution improves GUI reliability but is not a security sandbox for arbitrary Python code.
+
+### Portfolio value
+
+PyNivo demonstrates desktop-editor engineering, child-process management, beginner-focused developer tooling, offline curriculum design, error interpretation, safe file operations, runtime abstraction, and product design aimed at reducing setup friction.
+
+**Source policy:** Private during active development while packaging, licensing, runtime redistribution, and contribution policies are finalized.
+
+---
+
 ## Private-source policy
 
 These projects follow a **show the engineering, protect the implementation** approach:
 
-- Production and product source repositories remain private.
-- Customer databases, credentials, API secrets, invoices, backups, logs, runtime data, and private business information are never published as portfolio material.
+- Production and product source repositories remain private unless deliberately opened later.
+- Customer databases, health records, credentials, API secrets, invoices, backups, logs, runtime data, and private business information are never published as portfolio material.
 - Proprietary implementation files are not mirrored into public showcase repositories.
 - Public descriptions focus on verified outcomes, technology choices, architecture-level decisions, testing, data safety, and product scope.
 - Private source access should only be granted deliberately to trusted reviewers when there is a genuine need.
