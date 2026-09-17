@@ -82,7 +82,6 @@
     sculpture.style.setProperty('--py', '0px');
   });
 
-  // Conversion layer: make the portfolio easy to act on for recruiters and businesses.
   const hero = document.getElementById('top');
   const signalStrip = document.createElement('div');
   signalStrip.className = 'availability-strip';
@@ -147,10 +146,9 @@
   document.body.appendChild(dock);
 
   const footer = document.querySelector('footer');
-  const footerMiddle = footer.querySelector('span:not(.monogram)');
+  const footerMiddle = [...footer.children].find(node => node.tagName === 'SPAN');
   if (footerMiddle) footerMiddle.textContent = 'PRODUCT / BACKEND / DESKTOP / MOBILE / WEB';
 
-  // Keep structured profile data aligned with the visible contact surface.
   try {
     const schemaNode = document.querySelector('script[type="application/ld+json"]');
     const schema = JSON.parse(schemaNode.textContent);
