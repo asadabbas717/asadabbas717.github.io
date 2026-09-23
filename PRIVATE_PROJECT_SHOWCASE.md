@@ -155,40 +155,6 @@ Nourentra demonstrates typed frontend architecture, structured multi-step forms,
 
 ---
 
-## PyNivo
-
-**Offline-first beginner Python IDE intended to remove the initial setup barrier**
-
-**Status:** Active development · editor/learning/runtime foundation  
-**Role:** Software Engineer  
-**Technology:** Python, PySide6, Qt, pytest, Ruff
-
-### Current engineering scope
-
-- Multi-tab Python editor with line numbers, syntax highlighting, automatic indentation, undo/redo, scrolling, and familiar editing shortcuts
-- Safe UTF-8 New/Open/Save/Save As workflows with atomic writes, dirty-state tracking, unsaved-change prompts, and recent files
-- Separate-process program execution with streamed stdout/stderr, keyboard input for `input()`, exit status, duplicate-run prevention, and Stop with forced-kill fallback
-- Beginner-friendly explanations for common Python tracebacks while preserving the complete original traceback
-- First-run welcome flow, editable offline examples, and a structured 18-lesson beginner course
-- Bundled-runtime discovery and validation compatible with an official Windows CPython embeddable distribution
-- Development-interpreter fallback without hard-coded machine paths
-- Execution requests built as executable + argument lists rather than shell command strings
-- Rotating logs that do not include learner source code
-- Unit tests for file operations, runtime discovery, validation, and execution-request construction
-- Persistent dark/light interface with synchronized editor, syntax, console, dialogs, and controls
-
-### Deliberate boundaries
-
-The current repository is not yet presented as a finished bundled Python distribution. Runtime binaries are not stored in Git or downloaded automatically, Windows production packaging remains a later milestone, and separate-process execution improves GUI reliability but is not a security sandbox for arbitrary Python code.
-
-### Portfolio value
-
-PyNivo demonstrates desktop-editor engineering, child-process management, beginner-focused developer tooling, offline curriculum design, error interpretation, safe file operations, runtime abstraction, and product design aimed at reducing setup friction.
-
-**Source policy:** Private during active development while packaging, licensing, runtime redistribution, and contribution policies are finalized.
-
----
-
 ## Private-source policy
 
 These projects follow a **show the engineering, protect the implementation** approach:
@@ -198,6 +164,8 @@ These projects follow a **show the engineering, protect the implementation** app
 - Proprietary implementation files are not mirrored into public showcase repositories.
 - Public descriptions focus on verified outcomes, technology choices, architecture-level decisions, testing, data safety, and product scope.
 - Private source access should only be granted deliberately to trusted reviewers when there is a genuine need.
+
+For publicly inspectable developer tooling, see [PyNivo](https://github.com/asadabbas717/pynivo), which is now available under Apache License 2.0 with a Windows preview release.
 
 ## Developer
 
