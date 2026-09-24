@@ -6,52 +6,60 @@ Some of my strongest software projects are intentionally kept private to protect
 
 **Offline-first wholesale point-of-sale and business operations application for Windows**
 
-**Status:** Version 2.1.1 · real-world business software / advanced production-oriented build  
+**Status:** Version 2.1.3 · real-world business software / advanced production-oriented build  
 **Role:** Software Engineer  
 **Technology:** Python, PySide6, SQLite, ReportLab, PyInstaller, Inno Setup
 
 ### Current engineering evidence
 
-- 133-test suite plus 26 parameterized subtests across database initialization, migrations, authentication, transactions, customer balances, invoice editing/returns, reporting, restore, runtime paths, packaging, UI interaction regressions, and release protection
-- Seven ordered schema migrations with backup-first upgrade behavior, integrity verification, atomic publication, and restore rehearsal
+- 141-test suite plus 26 parameterized subtests across database initialization, migrations, authentication, transactions, customer balances, invoice editing/returns, reporting, restore, runtime paths, packaging, UI interaction regressions, customer previous-due accounting, and release protection
+- Eight ordered schema migrations, now including explicit customer-account transaction purposes, with backup-first upgrade behavior, integrity verification, atomic publication, and restore rehearsal
 - Cross-module business regression covering owner setup, authentication, catalog/stock creation, salesman/customer creation, sale/payment/edit/return flows, reports, PDF output, backup, mutation, restore, reopen, and state recovery
 - Read-only financial and inventory reconciliation with zero findings across a verified backup containing 568 invoices, 463 active customers, and 255 products
 - Database startup checks for integrity, foreign keys, schema/migration revision, indexes, writability, WAL, and busy-timeout behavior
 - Transaction-safe invoice, customer, payment, and stock operations with rollback protection
+- Previous/opening debt is audited separately from product sales: invoice collections, previous-due recovery, and Total Cash Received are reported distinctly so legacy debt activity does not inflate sales or gross profit
+- Guarded **Move Payment to Invoice** correction can reclassify all or part of a payment accidentally recorded against Previous Due to one outstanding invoice without changing Total Cash Received, Total Due, products, or stock; the reason and responsible user remain auditable
+- Invoice creation, editing, reprinting, A4 output, and thermal output derive Previous Balance and Total Due from the same current account snapshot, avoiding stale or double-counted balances
 - PBKDF2-HMAC-SHA256 authentication with 600,000 iterations for current hashes, first-run private owner setup, supported legacy-hash upgrade, and persistent failed-login delay
 - Explicit Decimal half-up cent rounding at current invoice calculation boundaries while preserving compatible historical storage
 - Release tooling with exact dependency locking, clean-build enforcement, packaged `--verify-installation`, release manifests, source/dependency evidence, and SHA-256 artifact hashes
 - Controlled one-page 80 mm hardware test successfully rendered and spooled to a connected BC-80POS thermal printer
 - Privacy-safe structured operational logging with automatic redaction of secret-like fields
-- Non-blocking Google Drive authorization/upload architecture so integration work does not freeze the Qt GUI thread
 - Measured performance baseline with removal of table/theme reflow bottlenecks and protected lazy/debounced operator workflows
 
 ### Product scope
 
 - Product, inventory, customer, invoice, payment, expense, warranty, salesman, and reporting workflows
 - Transaction-safe sales, invoice editing, returns, payment replacement, and stock reconciliation
-- Reusable customer profiles, searchable invoice histories, balances, duplicate review/merge, account sales, and customer payments
+- Reusable customer profiles with searchable invoice histories, balances, duplicate review/merge, opening/previous dues, previous-debt payments, and audited balance corrections
 - Owner/staff roles and permission-controlled actions
 - Quick and Detailed Invoice workflows with payment/balance handling
 - A4 and thermal invoice generation and printing
-- Sales, inventory, profitability, Sales by City/Town, and best-selling-product reports
+- Sales, inventory, profitability, Sales by City/Town, previous-due recovery, total-cash, and best-selling-product reports
 - Verified local backups, in-app restore validation, emergency pre-restore backup, and migration safety
 - Windows executable and installer packaging
 - Persistent Light, Dark, Ocean Blue, and Emerald Green themes with responsive operator workflows
 
+### Version 2.1.3 accounting correction
+
+Version 2.1.3 adds a narrowly guarded correction for a real operator mistake: cash intended for an outstanding invoice may have been recorded in the Previous Due ledger instead. Rather than deleting and recreating financial history, Qashoryx can move all or part of that existing payment to one outstanding invoice while preserving overall cash received and the customer's combined Total Due. The correction is permission-controlled and retains responsible-user/reason evidence in the audit history.
+
+The release also removes the unused Daily Drive reporting integration and redundant dashboard status cards, while preserving existing local report files during upgrade.
+
 ### Engineering approach
 
-Qashoryx was modernized without replacing its working persistence architecture or rewriting historical business data speculatively. The current process uses tests, reconciliation, profiling, backups, and reversible release evidence to decide what should change and what should remain compatible.
+Qashoryx is modernized without replacing its working persistence architecture or rewriting historical business data speculatively. The current process uses tests, reconciliation, profiling, backups, and reversible release evidence to decide what should change and what should remain compatible.
 
 The verified pre-modernization production-data backup reconciled with zero findings, so risky historical-money or inventory-authority rewrites remain deliberately deferred until there is evidence that such a migration is necessary.
 
 ### Remaining production gates
 
-The repository explicitly separates automated engineering evidence from acceptance work that still requires people, hardware, policy, or external systems. Remaining gates include full Windows UI/scaling review, clean-machine installer/upgrade acceptance, broader live Google Drive failure-mode testing, commercial code signing, independent security review, and optional encrypted off-device backup design.
+The repository explicitly separates automated engineering evidence from acceptance work that still requires people, hardware, policy, or external systems. Remaining gates include full Windows UI/scaling/theme review, keyboard-only and destructive-confirmation acceptance across operator screens, clean-machine installer/upgrade acceptance using a verified data copy, antivirus/SmartScreen review, commercial code signing, independent security review, and optional encrypted off-device backup design.
 
 ### Portfolio value
 
-Qashoryx demonstrates the ability to evolve substantial business software while protecting financial correctness, inventory integrity, historical compatibility, recoverability, operator usability, release reproducibility, and real business data.
+Qashoryx demonstrates the ability to evolve substantial business software while protecting financial correctness, inventory integrity, historical compatibility, recoverability, operator usability, release reproducibility, and real business data. The 2.1.2/2.1.3 accounting work also demonstrates a preference for correcting classification and workflow errors without fabricating sales, rewriting history, or altering cash totals merely to make the interface simpler.
 
 **Source policy:** Private. Architecture, workflows, verification strategy, engineering decisions, and sanitized demonstrations can be discussed without distributing unrestricted source code.
 
