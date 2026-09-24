@@ -106,6 +106,7 @@
       <div class="conversion-actions">
         <a href="https://www.linkedin.com/in/asadabbas717" target="_blank" rel="noreferrer">LinkedIn ↗</a>
         <a href="mailto:asadabbasbusiness@gmail.com">Email ↗</a>
+        <a href="https://wa.me/923000473399" target="_blank" rel="noreferrer">WhatsApp ↗</a>
         <a href="https://github.com/asadabbas717" target="_blank" rel="noreferrer">GitHub ↗</a>
       </div>
     </article>
@@ -116,6 +117,7 @@
       <div class="conversion-proof"><span>Business workflows</span><span>Backend modernization</span><span>Developer tools</span><span>Recovery</span><span>Delivery</span></div>
       <div class="conversion-actions">
         <a href="mailto:asadabbasbusiness@gmail.com">Start a conversation ↗</a>
+        <a href="https://wa.me/923000473399" target="_blank" rel="noreferrer">WhatsApp ↗</a>
         <a href="tel:+923000473399">Call ↗</a>
       </div>
     </article>`;
@@ -132,6 +134,7 @@
     <div class="contact-directory" aria-label="Contact details">
       <a href="mailto:asadabbasbusiness@gmail.com"><span>Email</span>asadabbasbusiness@gmail.com</a>
       <a href="tel:+923000473399"><span>Phone</span>+92 300 0473399</a>
+      <a href="https://wa.me/923000473399" target="_blank" rel="noreferrer"><span>WhatsApp</span>+92 300 0473399 ↗</a>
       <a href="https://www.linkedin.com/in/asadabbas717" target="_blank" rel="noreferrer"><span>LinkedIn</span>/in/asadabbas717 ↗</a>
       <a href="https://github.com/asadabbas717" target="_blank" rel="noreferrer"><span>GitHub</span>@asadabbas717 ↗</a>
       <span class="contact-location"><span>Location</span>Pakistan</span>
@@ -142,6 +145,7 @@
   dock.setAttribute('aria-label', 'Quick contact');
   dock.innerHTML = `
     <a href="mailto:asadabbasbusiness@gmail.com" aria-label="Email Asad Abbas">EMAIL</a>
+    <a href="https://wa.me/923000473399" target="_blank" rel="noreferrer" aria-label="WhatsApp Asad Abbas">WA</a>
     <a href="https://www.linkedin.com/in/asadabbas717" target="_blank" rel="noreferrer" aria-label="Asad Abbas on LinkedIn">IN</a>`;
   document.body.appendChild(dock);
 
@@ -155,6 +159,12 @@
     schema.sameAs = ['https://github.com/asadabbas717', 'https://www.linkedin.com/in/asadabbas717'];
     schema.email = 'mailto:asadabbasbusiness@gmail.com';
     schema.telephone = '+923000473399';
+    schema.contactPoint = [{
+      '@type': 'ContactPoint',
+      contactType: 'business inquiries',
+      telephone: '+923000473399',
+      url: 'https://wa.me/923000473399'
+    }];
     schemaNode.textContent = JSON.stringify(schema);
   } catch (_) {}
 })();
