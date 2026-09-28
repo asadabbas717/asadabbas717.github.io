@@ -107,7 +107,7 @@
       <span class="conversion-label">FOR HIRING TEAMS</span>
       <h3>Need an engineer who can build <em>and</em> improve real systems?</h3>
       <p>I’m open to Software Engineer, Backend/Python, Desktop Application, developer-tooling, and product-engineering opportunities in Pakistan.</p>
-      <div class="conversion-proof"><span>Qashoryx</span><span>PhishGuard</span><span>PyNivo</span><span>Vendiqo</span><span>Fixloom</span></div>
+      <div class="conversion-proof"><span>Qashoryx</span><span>PhishGuard</span><span>PyNivo</span><span>Cineyra</span><span>Vendiqo</span><span>Fixloom</span></div>
       <div class="conversion-actions">
         <a href="https://www.linkedin.com/in/asadabbas717" target="_blank" rel="noreferrer">LinkedIn ↗</a>
         <a href="mailto:asadabbasbusiness@gmail.com">Email ↗</a>
@@ -118,8 +118,8 @@
     <article class="conversion-card business-card">
       <span class="conversion-label">FOR BUSINESSES</span>
       <h3>Have operational software to build—or an existing system that needs serious modernization?</h3>
-      <p>I can discuss desktop business software, Python/Django backends, workflow automation, developer tooling, reliability hardening, and modernization work grounded in tests and release evidence.</p>
-      <div class="conversion-proof"><span>Business workflows</span><span>Backend modernization</span><span>Developer tools</span><span>Recovery</span><span>Delivery</span></div>
+      <p>I can discuss desktop business software, Python/Django backends, Supabase-backed web products, recommendation systems, workflow automation, developer tooling, reliability hardening, and modernization work grounded in tests and release evidence.</p>
+      <div class="conversion-proof"><span>Business workflows</span><span>Backend modernization</span><span>Recommendation systems</span><span>Developer tools</span><span>Recovery</span><span>Delivery</span></div>
       <div class="conversion-actions">
         <a href="mailto:asadabbasbusiness@gmail.com">Start a conversation ↗</a>
         <a href="${whatsappBusiness}" target="_blank" rel="noreferrer">WhatsApp ↗</a>
