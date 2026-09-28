@@ -1,6 +1,6 @@
 # Private Engineering Projects
 
-Some of my strongest software projects are intentionally kept private to protect client/business information, proprietary implementation, reusable business logic, and—in products that may handle sensitive information—future user data. This page documents verified product scope and engineering outcomes without publishing private source code, credentials, databases, invoices, logs, customer records, or health data.
+Some of my strongest software projects are intentionally kept private to protect client/business information, proprietary implementation, reusable business logic, and—in products that may handle sensitive information—future user data. This page documents verified product scope and engineering outcomes without publishing private source code, credentials, databases, invoices, logs, customer records, health data, or private recommendation histories.
 
 ## Qashoryx POS
 
@@ -130,6 +130,46 @@ Vendiqo demonstrates financial and inventory transaction design, immutable recor
 
 ---
 
+## Cineyra
+
+**Personal film and television discovery system built around durable taste and temporary viewing context**
+
+**Status:** Private pre-launch active build  
+**Role:** Software Engineer  
+**Technology:** React 19, TypeScript, Vite, Supabase Auth/PostgreSQL, Supabase Edge Functions, TanStack Query, Zod, TMDb, optional Gemini reasoning, Vitest
+
+### Current engineering scope
+
+- Durable **Taste DNA** is kept separate from a temporary **Tonight Context**, so long-term preferences are not overwritten by one evening's mood, runtime, genre, language, or theme constraints
+- TMDb search, detail, discovery, genres, languages, ratings, paging, watch-provider metadata, and candidate retrieval are kept behind a server-side media Edge Function
+- Recommendation flow parses Tonight Context, obtains TMDb candidates, excludes watched/rejected titles, applies hard constraints, assigns a deterministic match score, and returns three titles
+- Gemini reasoning is optional and explicitly gated; deterministic recommendation selection remains available when AI processing is disabled or unavailable
+- Supabase Auth-backed sessions with private profiles, interactions, conversations, recommendations, feedback, preference evidence, and Taste DNA under row-level-security boundaries
+- Recommendation sessions, scored results, feedback, and AI-usage records are server-controlled rather than trusted to direct browser writes
+- Recommendation feedback is applied through an authenticated PostgreSQL function that validates ownership and writes interaction, feedback, and preference evidence atomically
+- Rating edits use an atomic database function to reconcile preference evidence instead of repeatedly overweighting the same title
+- Per-user recommendation requests are rate-limited
+- Watchlist, watched/rating/note workflows, recommendation history, Discover filters, detail navigation, and Ask Yra conversation persistence
+- Account-data export to JSON has been downloaded and manually verified on a live account; large-export QA remains
+- Password-confirmed account-deletion UI and server endpoint are implemented; successful disposable-account deletion still requires end-to-end QA
+- Privacy and Terms routes have operator-approved text; independent legal review remains a pre-launch check
+- Light-theme and narrow-screen navigation checks are recorded, while keyboard and screen-reader acceptance remain open
+- Standard project gate includes TypeScript checking, ESLint, Vitest, and production build
+
+### Deliberate boundaries
+
+Cineyra is not presented as publicly launched. Independent legal review, full two-account RLS/integration testing, successful disposable-account deletion, large-export testing, automated browser coverage for critical discovery/recommendation journeys, production redirect/origin checks, password-reset/email-confirmation acceptance, keyboard operation, and screen-reader labels remain release gates.
+
+Gemini is not treated as the authority for recommendation correctness. Hard constraints and deterministic ranking remain explicit system behavior; AI usage is optional and gated behind reviewed billing/data terms.
+
+### Portfolio value
+
+Cineyra demonstrates recommendation-system design, deterministic-plus-AI fallback architecture, user-preference modeling, privacy-aware data ownership, RLS and Edge Function boundaries, server-controlled writes, transactional feedback learning, third-party media integration, account data portability, deletion design, and disciplined pre-launch quality mapping.
+
+**Source policy:** Private during pre-launch development. No API secrets, private user profiles, recommendation histories, conversations, or account exports are published.
+
+---
+
 ## Nourentra
 
 **Responsive nutrition and fitness journey platform designed around professional review**
@@ -141,23 +181,28 @@ Vendiqo demonstrates financial and inventory transaction design, immutable recor
 ### Current engineering scope
 
 - Eight-step client assessment with validation, consent, and safety-conscious language
-- Client dashboard, journey timeline, nutrition plan, daily engagement, progress tracking, and weekly check-ins
-- Nutritionist client-detail workspace with assessment review, planning, check-ins, notes, and revision history
-- Shared/private food library and meal-by-meal planning workflow
-- Atomic assessment, check-in, and meal-plan persistence
-- Supabase-backed ownership boundaries and Row Level Security-oriented schema
-- Database-guarded plan approval that blocks publication while unresolved safety flags remain
+- Client dashboard, journey timeline, nutrition plan, daily engagement, progress tracking, weekly check-ins, measurement history, and activity completion
+- Nutritionist client-detail workspace with assessment review, safety review, measurement trends, plan editing, check-ins, persistent notes, and combined revision history
+- Shared/private food library and meal-by-meal nutrition-plan editing
+- Professionally reviewed activity plans with adaptable sessions, safety-gated publication, and client completion tracking
+- Atomic assessment and weekly-check-in persistence with synchronized weight records
+- Atomic meal-plan draft saving with bounded payload validation and revision snapshots
+- Optional client measurement logging with owner-scoped access policies
+- Daily habit completion, activity logging, and client-controlled notification preferences
+- Database-guarded nutrition-plan approval that blocks publication while unresolved safety flags remain
 - Typed health-calculation and centralized safety-screening modules
-- Responsive layouts, keyboard focus, reduced-motion support, and PWA metadata
+- Supabase migration with ownership boundaries and Row Level Security policies
+- Clearly labelled fictional demo mode when Supabase credentials are not configured; live client access remains behind an unavailable state until real client records are wired in
+- Responsive layouts, keyboard focus states, reduced-motion support, PWA metadata, and static security/privacy headers
 - Type checking, linting, domain tests, production build, and critical desktop/mobile browser journey commands in the development quality gate
 
 ### Deliberate boundaries
 
-Nourentra is not presented as a medically or legally complete production health service. Professional credentials, legal/privacy terms, clinical thresholds, production authorization flows, RLS integration coverage, and operational deletion procedures require review before real-client launch. Demo mode uses fictional data and must not be used for real health information.
+Nourentra is not presented as a medically or legally complete production health service. Professional credentials, contact information, legal/privacy language, clinical thresholds, server-controlled role assignment, production authentication flows, RLS integration coverage, audit history, accessibility/security review, and operational data-deletion procedures require review before accepting real client data. Fictional demo mode must not be used for real health information.
 
 ### Portfolio value
 
-Nourentra demonstrates typed frontend architecture, structured multi-step forms, database authorization boundaries, workflow persistence, safety-aware product design, professional-review gates, and responsive cross-device experience design.
+Nourentra demonstrates typed frontend architecture, structured multi-step forms, database authorization boundaries, workflow persistence, nutrition and activity planning, safety-aware product design, professional-review gates, responsive cross-device experience design, and disciplined separation between demo functionality and real-client readiness.
 
 **Source policy:** Private. No real client health records, credentials, privileged Supabase keys, or private implementation are published.
 
@@ -168,12 +213,12 @@ Nourentra demonstrates typed frontend architecture, structured multi-step forms,
 These projects follow a **show the engineering, protect the implementation** approach:
 
 - Production and product source repositories remain private unless deliberately opened later.
-- Customer databases, health records, credentials, API secrets, invoices, backups, logs, runtime data, and private business information are never published as portfolio material.
+- Customer databases, health records, credentials, API secrets, invoices, backups, logs, runtime data, recommendation histories, conversations, account exports, and private business information are never published as portfolio material.
 - Proprietary implementation files are not mirrored into public showcase repositories.
 - Public descriptions focus on verified outcomes, technology choices, architecture-level decisions, testing, data safety, and product scope.
 - Private source access should only be granted deliberately to trusted reviewers when there is a genuine need.
 
-For publicly inspectable developer tooling, see [PyNivo](https://github.com/asadabbas717/pynivo), which is now available under Apache License 2.0 with a Windows preview release.
+For publicly inspectable developer tooling, see [PyNivo](https://github.com/asadabbas717/pynivo), which is available under Apache License 2.0 with a Windows preview release.
 
 ## Developer
 
