@@ -1,4 +1,4 @@
-# Asad Abbas — Software Engineer
+# Asad Abbas â€” Software Engineer
 
 A static portfolio presenting product engineering, modernization, desktop tooling,
 backend work and current mobile/web builds through inspectable engineering evidence.
