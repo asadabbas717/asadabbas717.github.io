@@ -2,20 +2,22 @@
 
 Some of my strongest software projects are intentionally kept private to protect client/business information, proprietary implementation, reusable business logic, and—in products that may handle sensitive information—future user data. This page documents verified product scope and engineering outcomes without publishing private source code, credentials, databases, invoices, logs, customer records, health data, or private recommendation histories.
 
+Reviewed against repository snapshots on **1 October 2026**. Implementation, recorded QA, and fresh portfolio checks are distinct evidence. The repository-only audit ledger at `docs/portfolio-audit-2026-10-01.md` records revisions, sources and limitations. Private-source code is not mirrored here.
+
 ## Qashoryx POS
 
 **Offline-first wholesale point-of-sale and business operations application for Windows**
 
-**Status:** Version 2.1.3 · real-world business software / advanced production-oriented build  
+**Status:** Version 2.1.3 · active internal release; production acceptance pending\
 **Role:** Software Engineer  
 **Technology:** Python, PySide6, SQLite, ReportLab, PyInstaller, Inno Setup
 
 ### Current engineering evidence
 
-- 141-test suite plus 26 parameterized subtests across database initialization, migrations, authentication, transactions, customer balances, invoice editing/returns, reporting, restore, runtime paths, packaging, UI interaction regressions, customer previous-due accounting, and release protection
+- 144 tests plus 26 subtests reported passing in the 1 October 2026 repository validation across database initialization, migrations, authentication, transactions, customer balances, invoice editing/returns, reporting, restore, runtime paths, packaging, UI interaction regressions, customer previous-due accounting, and release protection
 - Eight ordered schema migrations, now including explicit customer-account transaction purposes, with backup-first upgrade behavior, integrity verification, atomic publication, and restore rehearsal
 - Cross-module business regression covering owner setup, authentication, catalog/stock creation, salesman/customer creation, sale/payment/edit/return flows, reports, PDF output, backup, mutation, restore, reopen, and state recovery
-- Read-only financial and inventory reconciliation with zero findings across a verified backup containing 568 invoices, 463 active customers, and 255 products
+- Historical read-only financial and inventory reconciliation with zero findings across a verified backup containing 568 invoices, 463 active customers, and 255 products
 - Database startup checks for integrity, foreign keys, schema/migration revision, indexes, writability, WAL, and busy-timeout behavior
 - Transaction-safe invoice, customer, payment, and stock operations with rollback protection
 - Previous/opening debt is audited separately from product sales: invoice collections, previous-due recovery, and Total Cash Received are reported distinctly so legacy debt activity does not inflate sales or gross profit
@@ -69,20 +71,24 @@ Qashoryx demonstrates the ability to evolve substantial business software while 
 
 **Offline-first repair workflow manager for Windows repair shops**
 
-**Status:** Feature-complete first-release implementation  
+**Status:** Version 0.1.0 · implemented first-release/demo build; clean-machine acceptance pending\
 **Role:** Software Engineer  
 **Technology:** Python, PySide6, SQLite, SQLAlchemy 2.x, Alembic, ReportLab, pytest, Ruff, mypy, PyInstaller
 
 ### Engineering scope
 
 - Customer, device, technician, and guided repair-intake management
-- Controlled repair-state transitions with immutable status history
+- Seven validated repair statuses with service-appended chronological history; no directed transition policy or database immutability guarantee
 - Exact monetary handling for charges, payments, and outstanding balances
 - Repair photographs and managed attachment workflows
-- Branded repair job sheets and customer receipt PDFs
+- Branded repair job-sheet PDFs containing customer receipt content in the same document
 - Alembic schema migrations and compatibility handling
 - Checksummed backup/restore workflows with SQLite integrity verification
 - Automated tests, linting, static typing, dependency checks, and repeatable Windows packaging
+
+### Verification and limits
+
+The 1 October repository review reports 48 passing tests, Ruff, strict mypy and dependency checks. Windows installer acceptance was not rerun. There is no application login or encryption. Checksums detect corruption, not archive authorship; schema compatibility and restore resource limits need further review.
 
 ### Portfolio value
 
@@ -96,7 +102,7 @@ Fixloom demonstrates structured application architecture, migration-managed pers
 
 **Offline-first Windows point-of-sale application for Pakistani small retailers, wholesalers, and trading businesses**
 
-**Status:** Completed release-candidate product (0.1.0)  
+**Status:** Version 0.1.0 · implemented release candidate; owner and target-machine acceptance pending\
 **Role:** Software Engineer  
 **Technology:** Python, Qt/PySide desktop stack, SQLite, migration-managed persistence, Ruff, mypy, pytest, PyInstaller, Inno Setup
 
@@ -115,6 +121,10 @@ Fixloom demonstrates structured application architecture, migration-managed pers
 - Per-user Inno Setup installer produced by the Windows release workflow
 - SHA-256 release artifacts for the portable distribution and installer outputs
 - Automated quality gate covering formatting, linting, static typing, tests, and packaged self-checks
+
+### Recorded verification
+
+The 1 October repository review reports 116 passing tests, Ruff formatting/lint and strict mypy. Those checks do not prove physical printing or a live FBR integration. Startup composes the queue service without a transmission gateway or worker.
 
 ### Deliberate boundaries
 
@@ -143,18 +153,22 @@ Vendiqo demonstrates financial and inventory transaction design, immutable recor
 - Durable **Taste DNA** is kept separate from a temporary **Tonight Context**, so long-term preferences are not overwritten by one evening's mood, runtime, genre, language, or theme constraints
 - TMDb search, detail, discovery, genres, languages, ratings, paging, watch-provider metadata, and candidate retrieval are kept behind a server-side media Edge Function
 - Recommendation flow parses Tonight Context, obtains TMDb candidates, excludes watched/rejected titles, applies hard constraints, assigns a deterministic match score, and returns three titles
-- Gemini reasoning is optional and explicitly gated; deterministic recommendation selection remains available when AI processing is disabled or unavailable
+- Gemini reasoning is optional and explicitly gated; ordinary deterministic matching remains available without AI; explicit tone/theme exclusions fail closed when verification is unavailable
 - Supabase Auth-backed sessions with private profiles, interactions, conversations, recommendations, feedback, preference evidence, and Taste DNA under row-level-security boundaries
 - Recommendation sessions, scored results, feedback, and AI-usage records are server-controlled rather than trusted to direct browser writes
 - Recommendation feedback is applied through an authenticated PostgreSQL function that validates ownership and writes interaction, feedback, and preference evidence atomically
 - Rating edits use an atomic database function to reconcile preference evidence instead of repeatedly overweighting the same title
-- Per-user recommendation requests are rate-limited
+- Recommendation requests use a best-effort count-before-processing quota; it is not an atomic abuse-control guarantee
 - Watchlist, watched/rating/note workflows, recommendation history, Discover filters, detail navigation, and Ask Yra conversation persistence
 - Account-data export to JSON has been downloaded and manually verified on a live account; large-export QA remains
 - Password-confirmed account-deletion UI and server endpoint are implemented; successful disposable-account deletion still requires end-to-end QA
 - Privacy and Terms routes have operator-approved text; independent legal review remains a pre-launch check
 - Light-theme and narrow-screen navigation checks are recorded, while keyboard and screen-reader acceptance remain open
 - Standard project gate includes TypeScript checking, ESLint, Vitest, and production build
+
+### Current validation and limits
+
+The 1 October repository review reports 21 unit tests, typecheck, lint and build passing; this portfolio session did not rerun that application suite. The deterministic scorer currently uses genre signals and request metadata, not every stored Taste DNA dimension. Gemini is recorded as disabled behind an explicit paid-service confirmation gate. Account-cache isolation and edited-note evidence reconciliation remain documented pre-launch concerns.
 
 ### Deliberate boundaries
 
@@ -181,8 +195,8 @@ Cineyra demonstrates recommendation-system design, deterministic-plus-AI fallbac
 ### Current engineering scope
 
 - Eight-step client assessment with validation, consent, and safety-conscious language
-- Client dashboard, journey timeline, nutrition plan, daily engagement, progress tracking, weekly check-ins, measurement history, and activity completion
-- Nutritionist client-detail workspace with assessment review, safety review, measurement trends, plan editing, check-ins, persistent notes, and combined revision history
+- Client routes for dashboard, journey, plans, engagement, check-ins, measurements and activity completion; dashboard/journey summaries still contain sample data
+- Demo nutritionist workspace with assessment/safety review, trends, plan editing, check-ins, notes and revisions; live roster/detail pages explicitly remain unavailable
 - Shared/private food library and meal-by-meal nutrition-plan editing
 - Professionally reviewed activity plans with adaptable sessions, safety-gated publication, and client completion tracking
 - Atomic assessment and weekly-check-in persistence with synchronized weight records
@@ -190,11 +204,15 @@ Cineyra demonstrates recommendation-system design, deterministic-plus-AI fallbac
 - Optional client measurement logging with owner-scoped access policies
 - Daily habit completion, activity logging, and client-controlled notification preferences
 - Database-guarded nutrition-plan approval that blocks publication while unresolved safety flags remain
-- Typed health-calculation and centralized safety-screening modules
+- Typed health-calculation and safety-screening modules; assessment-to-safety-flag integration is incomplete
 - Supabase migration with ownership boundaries and Row Level Security policies
 - Clearly labelled fictional demo mode when Supabase credentials are not configured; live client access remains behind an unavailable state until real client records are wired in
 - Responsive layouts, keyboard focus states, reduced-motion support, PWA metadata, and static security/privacy headers
 - Type checking, linting, domain tests, production build, and critical desktop/mobile browser journey commands in the development quality gate
+
+### Recorded verification
+
+The 1 October repository review reports typecheck, lint, 9 unit tests, build and 26 demo desktop/mobile E2E tests passing. No live Supabase database was verified. Assessment safety-flag generation, direct-write policy review, imperial input conversion and remaining sample summaries require work before real-client use.
 
 ### Deliberate boundaries
 
@@ -205,6 +223,37 @@ Nourentra is not presented as a medically or legally complete production health 
 Nourentra demonstrates typed frontend architecture, structured multi-step forms, database authorization boundaries, workflow persistence, nutrition and activity planning, safety-aware product design, professional-review gates, responsive cross-device experience design, and disciplined separation between demo functionality and real-client readiness.
 
 **Source policy:** Private. No real client health records, credentials, privileged Supabase keys, or private implementation are published.
+
+---
+
+## Spenvera
+
+**Offline personal budgeting across monthly cycles, native devices and web**
+
+**Status:** Private local budgeting MVP in active development; release/device acceptance pending\
+**Role:** Software Engineer\
+**Technology:** Expo Router, React Native, TypeScript, expo-sqlite, localStorage, Expo notifications/file sharing, React Native SVG, Node domain tests
+
+### Implemented scope
+
+- Resumable setup for currency, cycle start, planned income, essentials, savings and flexible budget
+- Actual income/expenses with history, search, ordinary-entry edits and confirmed removal
+- Essential payments, savings contributions and debt repayments linked to transactions
+- Actual-data charts, spending pace, deterministic insights and conditional forecast scenarios
+- Cycle reports/comparisons, financial calendar and versioned closed-cycle snapshots
+- Opt-in local native bill reminders; web scheduling explicitly disabled
+- Versioned local backup export, confirmation, integrity checks and guarded restore
+- Native SQLite migrations through schema version 7; web JSON adapters use versioned localStorage keys
+
+### Recorded validation and boundaries
+
+The 1 October repository review reports 28 domain/model tests, typecheck, lint and static web export passing. Storage/migration/backup integration and native-device acceptance are not established. Backups are unencrypted; checksums do not establish trusted authorship. Native/web formats are incompatible, web restore spans multiple writes, and closed-cycle protection differs across linked-payment adapters. Linked-payment correction, full theme application and optional Drive backup remain unfinished. No store publication or live web deployment is claimed.
+
+### Portfolio value
+
+Spenvera demonstrates pure financial calculations, integer-money accounting, platform-specific local persistence, linked records, stable reporting snapshots, device integrations and explicit recovery limits.
+
+**Source policy:** Private. No personal financial records, backups or private implementation are published.
 
 ---
 

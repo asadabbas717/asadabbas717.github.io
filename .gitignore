@@ -1,0 +1,21 @@
+# Local credentials and private operational data; dist/ is intentionally tracked.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+credentials.json
+service-account*.json
+service_account*.json
+.aws/
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+*.log
+*.sqlite
+*.sqlite3
+*.db
+work/
