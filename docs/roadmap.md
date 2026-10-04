@@ -32,19 +32,20 @@ promised product features or evidence of an assigned developer/schedule.
 
 ## Later
 
-- [ ] Consider a small deterministic asset-sync/verification command if manual drift recurs.
-- [ ] Consider making contact essentials available without JavaScript, preserving design.
+- [x] Added allowlisted asset synchronization and parity/structure/contact checks.
+- [x] Moved all contact content/metadata to HTML; added no-script navigation/projects.
 - [ ] Measure font/image loading before making performance changes.
 
 ## Technical debt
 
-- [ ] Root/dist duplicate assets require manual maintenance.
+- [x] Added repeatable sync and a CI drift gate; tracked copies remain intentionally.
 - [ ] JavaScript DOM bindings assume the authored structure; changing IDs can break initialization.
 - [ ] Historical numbers/release gates require dated reviews rather than automated popularity data.
 
 ## Testing improvements
 
-- [ ] Consider repeatable browser checks for keyboard tabs, mobile menu, themes and hash aliases.
+- [x] Added interaction regression tests using a DOM/event fake.
+- [ ] Add real-browser CI if further interaction complexity warrants it.
 - [ ] Record screen-reader and keyboard-only acceptance; existing ARIA is not certification.
 - [ ] Verify no-script content and case-study navigation on the chosen production host.
 

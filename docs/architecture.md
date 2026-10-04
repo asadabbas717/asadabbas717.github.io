@@ -16,7 +16,7 @@ flowchart LR
     HTML --> Fonts[Google Fonts]
     JS --> Preference[Browser theme preference]
     HTML --> Showcase[Public case-study Markdown]
-    JS --> Links[Visitor-initiated contact links]
+    HTML --> Links[Visitor-initiated contact links]
 ```
 
 ## Frontend structure
@@ -29,19 +29,23 @@ about and contact. Five tab buttons map to five panels through `aria-controls` a
 `folio.css` establishes typography, electric-blue/monochrome surfaces, base layout,
 themes, mobile breakpoints, focus styles and reduced-motion behavior.
 `portfolio-2026.css` loads second and overrides/extends featured tabs, visuals,
-current-build cards and injected availability/contact elements. The third current
-card reuses existing card styling and the existing two-column grid; CSS is unchanged.
+current-build cards and static availability/contact elements. Existing grid/card
+styling is retained; fallback rules expose content without successful enhancement.
 
-`exhibition.js` is a deferred strict-mode IIFE. It binds existing DOM elements,
-creates availability/recruiter/business/contact elements, rewrites the main contact
-link to email and enriches Person JSON-LD. No module system or router is involved.
+`exhibition.js` is a deferred strict-mode IIFE containing interaction behavior only.
+Availability, recruiter/business cards, contact directory/dock and Person JSON-LD
+are static HTML. No module system or router is involved. The `enhanced` class is
+added after initialization; without it CSS exposes all projects/navigation and
+hides inactive controls.
 
 ## State, data and navigation
 
 - The only local persisted state is `exhibition-theme` in localStorage. Inline
-  startup chooses stored preference or system preference, with a dark fallback
-  on storage failure. JavaScript keeps button text and theme-color in sync.
-- Theme toggling stores a preference. System changes apply if no preference exists.
+  startup chooses stored preference or system preference, with system preference fallback
+  when storage fails. Stored values are allowlisted to light/dark. JavaScript keeps
+  button text and theme-color in sync.
+- Theme toggling stores a preference if possible and remembers the choice in memory.
+  System changes apply only without an explicit choice, including when storage fails.
 - The mobile menu toggles `.open` and ARIA state; link activation/Escape closes it.
 - Project tabs maintain selection, roving tabindex and panel visibility; arrows,
   Home and End move selection/focus.
@@ -62,12 +66,11 @@ The local PNG is decorative. No analytics, payment SDK or tracking code was foun
 
 ## Error handling and security architecture
 
-Storage and JSON-LD enrichment failures are caught. Font loading can fall back to
+Storage failures are caught; JSON-LD needs no runtime enrichment. Font loading can fall back to
 local fonts. The main DOM bindings assume this specific HTML structure; missing
 elements can stop subsequent script initialization. There is no global error handler.
 
-`innerHTML` templates contain authored strings and URLs, without query-string,
-network or user-input interpolation. Current `location.hash` use is lookup only.
+There is no runtime HTML injection or network data ingestion. Current `location.hash` use is lookup only.
 External new-window links have `rel="noreferrer"`. No credentials or authenticated
 server boundary are required. Public contact details are intentionally visible.
 
@@ -78,10 +81,11 @@ lightweight security findings; it is not a vulnerability certification.
 
 ## Testing architecture
 
-There is no committed automated suite, test directory, lint/format configuration
-or CI. Validation currently consists of JS syntax, static HTML/JSON/link relationships,
-root/dist byte parity, whitespace and browser interaction/layout checks. This
-session's disposable validation utilities stay outside the repository.
+Node interaction tests execute the shipped scripts with a small DOM/event fake.
+Python contract tests check deployment parity/allowlist, local references, HTML/ARIA
+relationships, static contact messages and JSON-LD. A read-only GitHub Actions
+quality gate runs tests, syntax and whitespace checks. No browser E2E, linter or
+formatter is configured. See [testing](testing.md) for limits and manual acceptance.
 
 ## Deployment architecture
 
@@ -89,7 +93,8 @@ Root assets are the editing source; `dist/` contains tracked static mirrors of
 HTML, both CSS files, JS, artwork and public case study. The unused Sites manifest
 was removed on 5 October 2026. New continuity documents are repository-only and
 do not need deployed copies.
-There is no bundler or sync script; copies must be verified before publication.
+There is no bundler. `scripts/sync_dist.py` copies the explicit seven public assets;
+`check_site.py` rejects drift or unexpected deployed files before publication.
 GitHub Pages at https://asadabbas717.github.io/ is the active hosting destination.
 The homepage ownership notice and permission page returned HTTP 200 and their
 expected content on 5 October 2026. Hosting settings and response headers were
@@ -98,8 +103,8 @@ its owning account remains inaccessible through the connected account.
 
 ## Technical limitations
 
-Manual duplication can cause deployment drift. JavaScript injects substantive
-contact content, so it is incomplete when scripts fail/are disabled. Google Fonts
+Tracked duplication remains, with repeatable sync and parity checks. Contact content
+and all projects remain available when scripts fail/are disabled. Google Fonts
 adds an external request. Case-study Markdown display depends on the host/browser.
 Historical test/release numbers need periodic audited refreshes. Browser checks do
 not establish accessibility certification or exhaustively cover old browsers.

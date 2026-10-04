@@ -10,10 +10,11 @@ The site serves hiring teams and prospective business clients. It contains:
 - Five featured systems: Qashoryx, PhishGuard, PyNivo, Vendiqo and Fixloom.
 - Three current builds: Cineyra, Nourentra and Spenvera, with explicit maturity limits.
 - Four public-lab repositories, engineering principles and contact actions.
+- Static contact content and a no-script navigation/project fallback.
 - Light/dark preference, mobile navigation, keyboard-operable project tabs,
   older hash aliases and reduced-motion styling.
 - Context-specific WhatsApp messages prepared for the visitor to review/send.
-- Search/social metadata and Person structured data; JavaScript adds contact details.
+- Search/social metadata and static Person structured data.
 
 Private project summaries are in [the showcase](PRIVATE_PROJECT_SHOWCASE.md).
 The [1 October 2026 audit](docs/portfolio-audit-2026-10-01.md) records sources,
@@ -34,6 +35,9 @@ exhibition.js
 assets/sculpture.png
 PRIVATE_PROJECT_SHOWCASE.md
 dist/                       # tracked copies for static hosting
+scripts/                    # public-asset sync and repository checks
+tests/                      # interaction regression tests
+.github/workflows/          # read-only quality gate
 AGENTS.md
 PROJECT_CONTEXT.md
 docs/                       # architecture, decisions, roadmap, dated audit
@@ -54,15 +58,14 @@ credentials, package manager or environment file are required.
 
 ## Build and deployment
 
-There is no build command. Edit the root static files, then copy each changed
-deployment asset to its matching path under `dist/`. For this refresh in PowerShell:
+There is no build command. Edit the root static files, then synchronize the explicit public asset list:
 
-```powershell
-Copy-Item index.html dist/index.html
-Copy-Item PRIVATE_PROJECT_SHOWCASE.md dist/PRIVATE_PROJECT_SHOWCASE.md
+```bash
+python scripts/sync_dist.py
+python scripts/check_site.py
 ```
 
-Copy CSS, JavaScript or artwork too when they change. Repository documentation
+The sync command includes CSS, JavaScript and artwork. Repository documentation
 stays at the root/`docs/`. Do not wipe `dist/` or treat it as disposable build output.
 GitHub Pages is the portfolio's active hosting destination:
 https://asadabbas717.github.io/. Push reviewed changes to GitHub and verify the
@@ -77,11 +80,13 @@ remains unverified because its owning account is inaccessible.
 
 ## Validation
 
-No automated test framework, linter or formatter is configured. Optional Node and
-Git checks from the root are:
+Dependency-free tests use the Node test runner and Python unittest. CI uses Node 22
+and Python 3.13; the page itself needs only a modern browser. Run from the root:
 
 ```bash
 node --check exhibition.js
+node --test tests/interactions.test.cjs
+python scripts/check_site.py
 git diff --check
 ```
 
@@ -95,7 +100,11 @@ hashes, unique IDs, tab relationships and structured JSON. In a browser check:
    sending messages or opening external applications.
 5. Root and `dist/` previews for matching content and console/resource errors.
 
-Latest validation results and remaining gaps are in [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md).
+See [testing](docs/testing.md), [security](docs/security.md),
+[deployment](docs/deployment.md) and [engineering audit](ENGINEERING_AUDIT.md)
+for current checks, scorecards and limits. No linter, formatter, compilation or
+committed browser E2E suite is configured. Google Fonts is an external dependency;
+full accessibility acceptance and live-host security headers remain unverified.
 
 ## Architecture and development
 

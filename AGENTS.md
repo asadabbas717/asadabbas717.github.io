@@ -26,7 +26,9 @@ manifest, application server, database, authentication or build dependency.
 - Preserve older project/section hash aliases and backward compatibility where practical.
 - Maintain exact root/deployment byte parity for `index.html`, `folio.css`,
   `portfolio-2026.css`, `exhibition.js`, `PRIVATE_PROJECT_SHOWCASE.md` and sculpture.
-  Root files are edited first; `dist/` is a tracked static copy, not generated output.
+  Root files are edited first; `dist/` is a tracked static copy, not disposable output.
+  Use `python scripts/sync_dist.py` and verify with `python scripts/check_site.py`.
+  Also preserve parity for `usage.html`, making seven public asset pairs.
 - Do not copy repository-only continuity docs or private source into `dist/`.
 - Audit current repository code and dated verification records before refreshing
   claims. Record repository revisions and distinguish implementation, recorded QA,
@@ -54,8 +56,9 @@ python -m http.server 8000 --bind 127.0.0.1
 ```
 
 Preview `http://127.0.0.1:8000/` and `/dist/`. Stop the server with Ctrl+C.
-There is no build/test/lint/format script or automated suite. If Node is available,
-`node --check exhibition.js` checks JavaScript syntax. `git diff --check` checks
+There is no build, linter or formatter. Run `python scripts/check_site.py`,
+`node --test tests/interactions.test.cjs` and `node --check exhibition.js`.
+CI uses Python 3.13 and Node 22; no installation of packages is required. `git diff --check` checks
 tracked-change whitespace. Browser acceptance and parity/link checks are described
 in `README.md`; do not invent npm commands or fake source/test directories.
 
@@ -64,7 +67,7 @@ in `README.md`; do not invent npm commands or fake source/test directories.
 - `index.html`: metadata, six main sections, five project panels, current builds/lab.
 - `folio.css`: base visual language, themes, responsive and reduced-motion styling.
 - `portfolio-2026.css`: featured extensions, current-build cards, contact enhancements.
-- `exhibition.js`: theme, menu, tabs/hash aliases, pointer artwork, injected contact UI.
+- `exhibition.js`: theme, menu, tabs/hash aliases and pointer artwork. Contact UI is static HTML.
 - `assets/sculpture.png`: decorative hero bitmap; empty alt text is intentional.
 - `PRIVATE_PROJECT_SHOWCASE.md`: public-safe case studies of private projects.
 - `dist/`: deployment copies of the preceding static files.

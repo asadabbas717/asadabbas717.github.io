@@ -1,5 +1,33 @@
 # Project Context
 
+## Current engineering audit — 5 October 2026
+
+Baseline: clean `main` at `5e13ca0`. The static portfolio was audited and improved
+locally. See [ENGINEERING_AUDIT.md](ENGINEERING_AUDIT.md) for original/final scores,
+findings, verification and remaining risks. No commit, push or publication was
+performed in this audit. Existing historical publication authorizations below
+are records of previous sessions, not a current publishing instruction.
+
+Contact/availability/dock content and JSON-LD now reside in HTML. JavaScript only
+enhances themes, menu, tabs, hash aliases and artwork. Explicit theme choices
+survive blocked storage within the page. No-script CSS exposes all project panels
+and mobile navigation. Design, contact messages and product claims are preserved.
+
+Seven public asset pairs are protected by an allowlisted sync script and Python
+contract tests. Seven Node interaction tests and four Python contract tests pass.
+The read-only CI workflow runs them with syntax and whitespace checks. Node 22
+and Python 3.13 are CI versions; no package installation or build is required.
+No browser E2E suite, linter or formatter exists. See [testing](docs/testing.md),
+[security](docs/security.md) and [deployment](docs/deployment.md).
+
+The following older record is preserved as historical evidence. Statements about
+missing tests/CI, injected content or current session status below describe the
+earlier snapshot and are superseded by this entry.
+
+---
+
+# Historical project context
+
 ## Hosting cleanup — 5 October 2026
 
 GitHub Pages is live at https://asadabbas717.github.io/; homepage ownership text

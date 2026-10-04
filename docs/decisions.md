@@ -115,3 +115,38 @@ deployment files. Do not add frameworks, fake directories or speculative feature
 
 **Consequences:** Future sessions have an accurate starting point. Publishing remains
 a separate explicitly authorized operation; application behavior and CSS stay unchanged.
+
+## Decision 007 — Static content with progressive enhancement — 5 October 2026
+
+**Status:** Current engineering decision; supersedes runtime injection details above.
+
+**Context:** Contact paths, public metadata and non-selected project content must
+remain usable if scripting/storage fails. The existing script combined authored
+content with interaction handlers without a need for dynamic data.
+
+**Decision:** Move unchanged authored content and JSON-LD into HTML. Keep a single
+small interaction script and activate enhanced styling after successful binding.
+Validate theme values and remember an explicit choice even without persistence.
+
+**Alternatives:** Retain templates plus a duplicate no-script contact block, or add
+a framework/build pipeline. Both add unnecessary content duplication or tooling.
+
+**Consequences:** Static content has one authoring location; disabled scripting
+shows all projects. Tests verify authored DOM contracts rather than making every
+DOM access silently optional. A broken contract falls back to usable content.
+
+## Decision 008 — Dependency-free quality gate and explicit sync — 5 October 2026
+
+**Status:** Current engineering decision.
+
+**Context:** Seven tracked deployment copies and interactive behavior had no
+repeatable checks. Replacing the deployment layout could disrupt hosting.
+
+**Decision:** Retain copies, provide an allowlisted non-destructive sync command,
+and run Python repository contracts plus Node interaction tests in read-only CI.
+
+**Alternatives:** Remove dist, introduce a bundler, or rely on manual checks alone.
+The chosen approach protects compatibility with no package dependencies.
+
+**Trade-offs:** Python and Node are development tools only. DOM fakes cannot replace
+browser acceptance; mutable action version tags and lack of browser CI remain debt.
