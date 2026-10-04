@@ -103,4 +103,11 @@ Read [architecture](docs/architecture.md), [technical decisions](docs/decisions.
 and [roadmap](docs/roadmap.md). Future agents should start with [AGENTS.md](AGENTS.md)
 and [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md), inspect Git status and preserve local work.
 Keep public claims current, attributed and traceable; never publish private data.
-No repository license file is present; this README grants no new license.
+## Ownership and reuse
+
+This is Asad Abbas's personal portfolio, not a reusable website template.
+See [LICENSE](LICENSE) and the public [usage notice](usage.html) for permission
+requests and restrictions on original portfolio material. Third-party rights and
+linked project licenses remain separate. Public GitHub repositories can still be
+viewed, downloaded and forked; these notices do not technically prevent copying.
+Keep `usage.html` synchronized with `dist/usage.html` alongside the existing assets.

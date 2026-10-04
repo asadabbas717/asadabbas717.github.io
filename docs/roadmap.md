@@ -5,6 +5,8 @@ promised product features or evidence of an assigned developer/schedule.
 
 ## Completed
 
+- [x] 5 October 2026: original-material reuse restrictions and visible permission notice.
+
 - [x] Static six-section portfolio, five featured tabs, four public-lab entries.
 - [x] Responsive themes, keyboard tab/menu controls and reduced-motion styling.
 - [x] Recruiter/business contact actions and prefilled WhatsApp messages.
