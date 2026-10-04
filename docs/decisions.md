@@ -1,5 +1,14 @@
 # Technical decisions
 
+## Retire the unused Sites integration — 5 October 2026
+
+At the user's request, remove `.openai/hosting.json` and active instructions to
+publish to Sites. Keep GitHub Pages as the active portfolio host and preserve all
+public assets. The connected Sites account lists no sites and the old project
+returns project-not-found. Remote deletion and billing cannot be verified with
+that account; configuration removal is not cancellation or remote deletion.
+Earlier Sites decisions below are historical and superseded by this entry.
+
 ## Ownership notice — 5 October 2026
 
 Added an all-rights-reserved notice for original portfolio material, a public
@@ -36,10 +45,10 @@ Future documentation must not invent npm/test/server commands.
 
 **Context:** Existing commits pair source changes with deployment copies.
 
-**Decision:** Keep public assets synchronized at root and `dist/`; Sites configuration
-selects `dist/`. Keep continuity docs in the repository only.
+**Decision:** Keep public assets synchronized at root and `dist/`. Keep continuity
+docs in the repository only. The former Sites integration is retired.
 
-**Evidence:** `.openai/hosting.json`; source/deploy pairs `34dcf73`/`f1467ef`,
+**Evidence:** Former `.openai/hosting.json`; source/deploy pairs `34dcf73`/`f1467ef`,
 `aa626af`/`cc76e87`, `29f4ba2`/`84f8c74`.
 
 **Consequences:** Either static path can be previewed; copying/checking parity is required.

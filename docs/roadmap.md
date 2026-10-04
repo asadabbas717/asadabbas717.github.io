@@ -5,6 +5,9 @@ promised product features or evidence of an assigned developer/schedule.
 
 ## Completed
 
+- [x] 5 October 2026: verified GitHub Pages ownership notice and permission page live.
+- [x] Removed unused Sites hosting configuration and publishing instructions.
+
 - [x] 5 October 2026: original-material reuse restrictions and visible permission notice.
 
 - [x] Static six-section portfolio, five featured tabs, four public-lab entries.
@@ -17,13 +20,13 @@ promised product features or evidence of an assigned developer/schedule.
 
 ## Current / in progress
 
-- [ ] Publish the validated portfolio and verify both hosting destinations.
-      The user explicitly authorized commit/push/deployment on 1 October 2026.
+- [ ] Delete the old remote Sites copy from its owning account if still present;
+      connected account has no accessible sites. Billing and deletion are unverified.
 
 ## Next
 
 - [x] User authorized commit/push/publication after the local review.
-- [ ] Verify actual Sites/Pages deployment and canonical URL routing before publishing.
+- [ ] Verify GitHub Pages content after subsequent publications.
 - [ ] Record live case-study Markdown behavior and hosting response headers.
 - [ ] Refresh evidence after meaningful upstream releases or acceptance checks.
 

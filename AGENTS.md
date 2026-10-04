@@ -68,7 +68,8 @@ in `README.md`; do not invent npm commands or fake source/test directories.
 - `assets/sculpture.png`: decorative hero bitmap; empty alt text is intentional.
 - `PRIVATE_PROJECT_SHOWCASE.md`: public-safe case studies of private projects.
 - `dist/`: deployment copies of the preceding static files.
-- `.openai/hosting.json`: existing Sites configuration selecting `dist/`.
+- GitHub Pages is the active host. The unused Sites manifest was removed at the
+  user's request on 5 October 2026; do not recreate the integration.
 - `docs/`: architecture, decisions, roadmap and dated audit/security evidence.
 
 ## After making changes
