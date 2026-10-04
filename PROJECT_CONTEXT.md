@@ -1,5 +1,14 @@
 # Project Context
 
+## Ownership update — 5 October 2026
+
+Started from GitHub main `48873a447cacf69bd0e273979ec3dff8c02381b0` in a clean clone.
+Added `LICENSE`, `usage.html`, footer ownership text and author/copyright metadata.
+The new page and changed HTML/CSS are mirrored into `dist/`. Notices apply only
+to original owned material; third-party rights and linked project licenses remain
+separate. No navigation/contact JavaScript changed. Repository visibility and
+hosting are unchanged; copying remains technically possible for a public site.
+
 Reviewed **1 October 2026** (Asia/Karachi). Starting branch: `main`; HEAD and
 `origin/main`: `84f8c744d979d6173eb263d2e1a8848dc6d0fbb4`. The fresh local clone
 was clean. Recheck Git/code/upstream state before relying on this snapshot later.
@@ -213,3 +222,9 @@ and do not equate recorded upstream tests with fresh production verification.
 The initial local review passed: four tracked files changed and eight repository
 files were created. The later explicit publishing authorization supersedes the
 uploaded specification's default prohibition on unsolicited commits/pushes.
+
+Validation for this update: JavaScript syntax and whitespace checks passed; all
+seven root/dist asset pairs match byte-for-byte. Browser preview confirmed the
+permission link, email target, and usage-page layout at desktop and 390px mobile
+widths; the mobile footer remains visible. Existing contact targets were inspected.
+No live deployment or repository-visibility change was performed.

@@ -1,5 +1,15 @@
 # Technical decisions
 
+## Ownership notice — 5 October 2026
+
+Added an all-rights-reserved notice for original portfolio material, a public
+permission page, author/copyright metadata and a footer notice visible on mobile
+and desktop. Third-party rights and project licenses are explicitly excluded.
+No right-click, selection, keyboard or developer-tools blocking is introduced:
+client-side blocking cannot stop copying and would impair normal use. Public
+repository visibility still permits downloads/forks. Visibility and hosting
+settings have not been changed.
+
 These entries document observed current choices. The original rationale is not
 recorded unless a cited commit explicitly supplies it; consequences are analysis,
 not invented historical intent.
