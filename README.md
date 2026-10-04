@@ -34,7 +34,6 @@ exhibition.js
 assets/sculpture.png
 PRIVATE_PROJECT_SHOWCASE.md
 dist/                       # tracked copies for static hosting
-.openai/hosting.json         # selects dist/
 AGENTS.md
 PROJECT_CONTEXT.md
 docs/                       # architecture, decisions, roadmap, dated audit
@@ -65,15 +64,16 @@ Copy-Item PRIVATE_PROJECT_SHOWCASE.md dist/PRIVATE_PROJECT_SHOWCASE.md
 
 Copy CSS, JavaScript or artwork too when they change. Repository documentation
 stays at the root/`docs/`. Do not wipe `dist/` or treat it as disposable build output.
-`.openai/hosting.json` configures Sites to serve `dist/`. Canonical/social URLs
-point to `https://asadabbas717.github.io/`, but the repository contains no Pages
-workflow, CNAME or evidence of current hosting settings. Verify platform/domain
-state separately before publishing. The user authorized publication on 1 October 2026.
-The existing public Sites destination is
-https://asad-abbas-software-exhibition.asadabbasbusiness.chatgpt.site.
-Push the exact reviewed commit to GitHub and the existing Sites source; use the
-Sites workflow to package `dist/`, save that commit as a version, and deploy it.
-Check terminal Sites deployment status and GitHub Pages build status separately.
+GitHub Pages is the portfolio's active hosting destination:
+https://asadabbas717.github.io/. Push reviewed changes to GitHub and verify the
+live page after publication. The homepage ownership notice and `usage.html`
+were verified live on 5 October 2026. Platform settings and billing are managed
+separately from this repository.
+
+The unused Sites hosting manifest was removed on 5 October 2026 at the user's
+request. Do not recreate that hosting integration. Removing configuration does
+not delete an existing remote site or cancel charges; deletion of the old copy
+remains unverified because its owning account is inaccessible.
 
 ## Validation
 

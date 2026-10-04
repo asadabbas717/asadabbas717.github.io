@@ -86,12 +86,15 @@ session's disposable validation utilities stay outside the repository.
 ## Deployment architecture
 
 Root assets are the editing source; `dist/` contains tracked static mirrors of
-HTML, both CSS files, JS, artwork and public case study. The Sites manifest selects
-`dist/`. New continuity documents are repository-only and do not need deployed copies.
+HTML, both CSS files, JS, artwork and public case study. The unused Sites manifest
+was removed on 5 October 2026. New continuity documents are repository-only and
+do not need deployed copies.
 There is no bundler or sync script; copies must be verified before publication.
-Repository naming/canonical URLs imply a GitHub Pages identity but do not prove
-Pages is configured. Current live deployment, response headers and domain routing
-were not verified or changed in this session.
+GitHub Pages at https://asadabbas717.github.io/ is the active hosting destination.
+The homepage ownership notice and permission page returned HTTP 200 and their
+expected content on 5 October 2026. Hosting settings and response headers were
+not audited. Removing the Sites manifest does not delete the remote Sites copy;
+its owning account remains inaccessible through the connected account.
 
 ## Technical limitations
 

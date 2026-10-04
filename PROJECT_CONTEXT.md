@@ -1,5 +1,15 @@
 # Project Context
 
+## Hosting cleanup — 5 October 2026
+
+GitHub Pages is live at https://asadabbas717.github.io/; homepage ownership text
+and `usage.html` were verified with HTTP 200 and expected content. User requested
+removal of unnecessary hosting. Removed the unused Sites manifest and active
+publishing instructions. Preserve GitHub Pages and all public assets.
+Connected Sites account lists no sites and the old project returns not-found.
+The remote copy has NOT been deleted and its billing is unknown; removal of
+repository configuration does not cancel charges. Do not recreate the integration.
+
 ## Ownership update — 5 October 2026
 
 Started from GitHub main `48873a447cacf69bd0e273979ec3dff8c02381b0` in a clean clone.
@@ -25,10 +35,8 @@ execute the products described or hold their users' data.
 
 Established static portfolio in active content maintenance. The user explicitly
 authorized commit, push and deployment on 1 October 2026 after the local review.
-The existing Sites destination is public: https://asad-abbas-software-exhibition.asadabbasbusiness.chatgpt.site.
-Its source history stopped at ebed984; GitHub contained newer portfolio changes.
-Publication reconciles that older history while preserving the audited GitHub tree.
-Use native deployment status and GitHub Pages status for live acceptance.
+GitHub Pages is the active host. The old Sites integration is retired; see the
+5 October hosting cleanup above for the remaining remote-account limitation.
 
 ## Technology stack
 
@@ -44,7 +52,7 @@ Python 3 serves local files; optional Node checks JS syntax.
 `portfolio-2026.css` extends featured/current/contact styling. Deferred
 `exhibition.js` controls theme, navigation, tabs/hash aliases, artwork movement
 and contact/structured-data enhancements. Root public assets are manually mirrored
-under `dist/`, selected by `.openai/hosting.json`. See [architecture](docs/architecture.md).
+under `dist/`. See [architecture](docs/architecture.md).
 
 ## Implemented features
 
@@ -160,12 +168,12 @@ evidence for public copy without claiming fresh application acceptance.
 
 ## Deployment status
 
-Static files are already tracked under `dist/`; the existing Sites manifest
-selects that directory. Root/dist HTML, CSS, JS, showcase and sculpture must match
+Static files are already tracked under `dist/`. Root/dist HTML, CSS, JS,
+showcase and sculpture must match
 byte-for-byte. This session copies updated HTML/showcase only. Repository docs
 stay outside dist. No hosted API, environment setup or compilation is needed.
-The canonical URL is GitHub Pages, but Pages settings, custom routing, live Sites
-deployment and headers were not verified. At the initial review stage, nothing had been deployed.
+The canonical URL is GitHub Pages. Ownership notices were verified live on
+5 October 2026; platform settings, custom routing and headers remain unaudited.
 
 ## Security/documentation review
 
@@ -214,9 +222,8 @@ upstream changes since the dated evidence before refreshing claims.
 
 Static portfolio now has three current builds and more precise maturity/test claims.
 The full uploaded continuity specification was recovered and applied locally.
-Publication was subsequently authorized. Push the reviewed source to GitHub and
-the existing Sites source repository, save an exact-commit version and deploy it.
-Verify terminal deployment status; inspect GitHub Pages separately.
+Publication was subsequently authorized. Push reviewed source to GitHub and
+verify GitHub Pages. The former Sites integration is retired.
 Major warning: never copy private product source/data into this public repository,
 and do not equate recorded upstream tests with fresh production verification.
 The initial local review passed: four tracked files changed and eight repository
