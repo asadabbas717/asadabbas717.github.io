@@ -37,4 +37,3 @@ Reviewed all 21 owned repository default heads and recent commits through the co
 ## Publication decisions
 
 Preserved PhishGuard attribution and historical verification. Kept older Cineyra, Nourentra and Fixloom results explicitly dated; no new execution claimed. Refreshed Qashoryx, Vendiqo, PyNivo, Spenvera and Loopnest scope. Added readable private-project case studies with release boundaries. No private code, logs, database contents or financial/health records were published.
-
