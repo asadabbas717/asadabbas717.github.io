@@ -1,5 +1,28 @@
 # Project Context
 
+## UI polish and audit publication — 5 October 2026
+
+The user requested committing/pushing the audit before UI polishing. Audit commit
+`5b7cd7a` was pushed to main. Remote Node 22/Python checks passed, but the whitespace
+step failed because a one-commit checkout treated old Markdown hard breaks as
+new additions. Follow-up `c3c9160` fetches the parent revision and was also pushed.
+The initial audit revision's GitHub Pages deployment completed successfully.
+The follow-up revision's remote quality gate and Pages deployment both completed
+successfully: Actions runs `37244116856` and `37244115917` respectively.
+
+UI polishing is a separate local change: shorter summaries, eight native
+engineering-detail disclosures, visible status labels/caveats, compact mobile
+hero/spacing and a primary email action above smaller audience paths. Removed the
+floating dock. All three WhatsApp messages and all directory channels remain.
+Product scope details and PhishGuard attribution are preserved. A full redesign
+has not been requested or implemented.
+
+Local tests pass (7 interaction + 4 repository), including byte parity. Browser
+checks sampled desktop/mobile/narrow layouts, themes, keyboard disclosure controls,
+mobile navigation, dist hash selection and no-script panels/disclosures. Key light
+theme text contrast samples measured at least 5.25:1; this is not full accessibility
+acceptance. No page overflow was observed at 390px/360px. See the audit follow-up.
+
 ## Current engineering audit — 5 October 2026
 
 Baseline: clean `main` at `5e13ca0`. The static portfolio was audited and improved
@@ -263,3 +286,8 @@ seven root/dist asset pairs match byte-for-byte. Browser preview confirmed the
 permission link, email target, and usage-page layout at desktop and 390px mobile
 widths; the mobile footer remains visible. Existing contact targets were inspected.
 No live deployment or repository-visibility change was performed.
+
+
+## October 5 redesign and content refresh
+
+The owner authorized a project-led editorial redesign after GitHub review. The compact split hero, project entry links, smaller section typography, rounded project diagrams and readable `case-studies.html` replace the previous oversized name-led presentation. Six sections, five accessible tabs, theme/menu/contact behavior and no-script content remain. Loopnest replaces the outdated Social Connect lab entry and is explicitly paused. Qashoryx 2.1.4, Vendiqo recovery/build evidence, PyNivo current CI versus older preview, and Spenvera backup tests are refreshed. See `docs/portfolio-audit-2026-10-05.md` for revision evidence and limitations. Eight public assets now have exact root/dist parity. No packages or runtime GitHub calls were added. The owner authorized committing, pushing and deploying this redesign on 5 October 2026. GitHub Pages publishes from the main branch; verify its deployment separately from local checks.

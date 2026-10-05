@@ -17,7 +17,7 @@ manifest, application server, database, authentication or build dependency.
 
 ## Agent operating rules
 
-- Preserve the established visual design, six sections, five featured tabs,
+- The owner authorized the October 2026 redesign. Preserve its six sections, five featured tabs,
   responsive breakpoints, keyboard navigation, theme preference and contact flows.
 - Inspect callers and related files before shared changes. Prefer readable,
   maintainable changes; avoid rewrites, duplicated logic and unnecessary dependencies.
@@ -28,7 +28,7 @@ manifest, application server, database, authentication or build dependency.
   `portfolio-2026.css`, `exhibition.js`, `PRIVATE_PROJECT_SHOWCASE.md` and sculpture.
   Root files are edited first; `dist/` is a tracked static copy, not disposable output.
   Use `python scripts/sync_dist.py` and verify with `python scripts/check_site.py`.
-  Also preserve parity for `usage.html`, making seven public asset pairs.
+  Also preserve parity for `usage.html`, and `case-studies.html`, making eight public asset pairs.
 - Do not copy repository-only continuity docs or private source into `dist/`.
 - Audit current repository code and dated verification records before refreshing
   claims. Record repository revisions and distinguish implementation, recorded QA,

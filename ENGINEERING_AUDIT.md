@@ -230,3 +230,35 @@ Intentionally unchanged: technology stack, visual design, product maturity claim
 public contact messages, artwork, historical evidence, license/attribution, hosting
 integration retirement and tracked deployment layout. No commit, push or deployment
 was performed. These choices preserve intended behavior and avoid unsupported scope.
+
+## Follow-up — publication and UI polish, 5 October 2026
+
+The user subsequently authorized commit/push of the completed audit, then UI
+polishing. `5b7cd7a` was pushed. Its remote Node 22/Python checks passed; GitHub
+Pages deployment succeeded. The overall quality job failed at whitespace checking
+because the default depth-one checkout lacked the parent and scanned unchanged
+Markdown hard breaks. `c3c9160` fetches two revisions and was pushed as a separate
+CI correction. The earlier no-publication statements describe the audit snapshot.
+The correction's [quality run](https://github.com/asadabbas717/asadabbas717.github.io/actions/runs/37244116856)
+and [Pages deployment](https://github.com/asadabbas717/asadabbas717.github.io/actions/runs/37244115917)
+both completed successfully. The pipeline now has verified remote execution.
+
+UI changes remain a separate local review: shorter project/hero copy, eight native
+disclosures preserving engineering scope, consistent status labels and visible
+release caveats, smaller mobile hero/artwork/spacing, email-first contact hierarchy,
+smaller contextual cards and removal of the competing dock. PhishGuard attribution
+and the three exact WhatsApp messages remain. Focus outlines now stay legible on
+the blue contact background and selected tabs; disclosures have explicit focus styling.
+
+Seven Node tests and four Python contract tests passed again. Browser checks
+sampled both themes, desktop/mobile/narrow widths, native keyboard disclosure
+toggle, mobile link-close, dist PyNivo hash selection and no-script disclosure/all
+panel access. Key light-theme text contrast samples were 5.25:1 or better; these
+samples exclude comprehensive contrast, gradients and full screen-reader acceptance.
+No page overflow was observed at 390px or 360px; sampled console errors were empty.
+A full redesign is an option for a future content/layout direction, not implemented.
+
+
+## October 5 redesign and content refresh
+
+The owner authorized a project-led editorial redesign after GitHub review. The compact split hero, project entry links, smaller section typography, rounded project diagrams and readable `case-studies.html` replace the previous oversized name-led presentation. Six sections, five accessible tabs, theme/menu/contact behavior and no-script content remain. Loopnest replaces the outdated Social Connect lab entry and is explicitly paused. Qashoryx 2.1.4, Vendiqo recovery/build evidence, PyNivo current CI versus older preview, and Spenvera backup tests are refreshed. See `docs/portfolio-audit-2026-10-05.md` for revision evidence and limitations. Eight public assets now have exact root/dist parity. No packages or runtime GitHub calls were added. The owner authorized committing, pushing and deploying this redesign on 5 October 2026. GitHub Pages publishes from the main branch; verify its deployment separately from local checks.

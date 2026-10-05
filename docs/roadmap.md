@@ -5,6 +5,10 @@ promised product features or evidence of an assigned developer/schedule.
 
 ## Completed
 
+- [x] 5 October 2026: concise project previews with native detail disclosures and status labels.
+- [x] Simplified contact hierarchy and compact mobile spacing; preserved all contact channels.
+- [x] Pushed engineering audit; corrected shallow-checkout whitespace validation.
+
 - [x] 5 October 2026: verified GitHub Pages ownership notice and permission page live.
 - [x] Removed unused Sites hosting configuration and publishing instructions.
 
@@ -63,3 +67,8 @@ Recommendations from this repository's architecture, with no exploit claimed:
 - [ ] Record actual publish procedure, host/domain ownership and live verification after inspection.
 - [ ] Update the dated audit/context when claim evidence or upstream state changes.
 - [ ] Keep future decisions evidence-backed and label unknown historical rationale.
+
+
+## October 5 redesign and content refresh
+
+The owner authorized a project-led editorial redesign after GitHub review. The compact split hero, project entry links, smaller section typography, rounded project diagrams and readable `case-studies.html` replace the previous oversized name-led presentation. Six sections, five accessible tabs, theme/menu/contact behavior and no-script content remain. Loopnest replaces the outdated Social Connect lab entry and is explicitly paused. Qashoryx 2.1.4, Vendiqo recovery/build evidence, PyNivo current CI versus older preview, and Spenvera backup tests are refreshed. See `docs/portfolio-audit-2026-10-05.md` for revision evidence and limitations. Eight public assets now have exact root/dist parity. No packages or runtime GitHub calls were added. The owner authorized committing, pushing and deploying this redesign on 5 October 2026. GitHub Pages publishes from the main branch; verify its deployment separately from local checks.

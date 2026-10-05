@@ -47,3 +47,8 @@ See ENGINEERING_AUDIT.md for checks actually performed on 5 October 2026. No
 committed browser E2E suite, screen-reader acceptance or automated contrast audit
 exists. Product test counts in portfolio copy belong to other repositories and
 were not rerun by this suite.
+
+
+## Redesign acceptance — 5 October 2026
+
+Desktop 1280 px: both themes, hero rendering and no horizontal overflow. Mobile 390 px: no overflow; menu Escape closes and restores focus. Mobile 360 px: case-study headings and content render without overflow. Project rail selects PyNivo; keyboard End selects Fixloom. Static checks cover all three HTML pages and cross-page case-study fragments. All seven interaction tests and four static contracts pass. Browser checks are a focused manual review, not accessibility certification. Private-project results are repository/CI evidence, not local reruns.

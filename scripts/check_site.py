@@ -7,7 +7,7 @@ import re
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-PUBLIC = ('index.html', 'usage.html', 'folio.css', 'portfolio-2026.css',
+PUBLIC = ('index.html', 'usage.html', 'case-studies.html', 'folio.css', 'portfolio-2026.css',
           'exhibition.js', 'PRIVATE_PROJECT_SHOWCASE.md', 'assets/sculpture.png')
 
 
@@ -34,7 +34,7 @@ class SiteContracts(unittest.TestCase):
 
     def test_html_references_and_accessible_relationships(self):
         for folder in (ROOT, ROOT / 'dist'):
-            for filename in ('index.html', 'usage.html'):
+            for filename in ('index.html', 'usage.html', 'case-studies.html'):
                 with self.subTest(folder=folder.name, page=filename):
                     page = Page((folder / filename).read_text(encoding='utf-8'))
                     ids = [a['id'] for _, a in page.tags if 'id' in a]
@@ -58,8 +58,14 @@ class SiteContracts(unittest.TestCase):
                                 resolved = (folder / unquote(target.path)).resolve()
                                 self.assertTrue(resolved.is_relative_to(ROOT))
                                 self.assertTrue(resolved.is_file(), target.path)
+                                if resolved.suffix == '.html' and target.fragment:
+                                    target_page = Page(resolved.read_text(encoding='utf-8'))
+                                    target_ids = {a['id'] for _, a in target_page.tags if 'id' in a}
+                                    aliases = {a['data-project'] for _, a in target_page.tags if 'data-project' in a}
+                                    self.assertIn(unquote(target.fragment), target_ids | aliases)
                             elif target.fragment:
-                                self.assertIn(unquote(target.fragment), ids)
+                                aliases = {a['data-project'] for _, a in page.tags if 'data-project' in a}
+                                self.assertIn(unquote(target.fragment), set(ids) | aliases)
                     tabs = [a for _, a in page.tags if a.get('role') == 'tab']
                     panels = {a['id']: a for _, a in page.tags if a.get('role') == 'tabpanel'}
                     if filename == 'index.html':

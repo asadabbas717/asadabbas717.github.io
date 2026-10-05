@@ -2,17 +2,19 @@
 
 Some of my strongest software projects are intentionally kept private to protect client/business information, proprietary implementation, reusable business logic, and—in products that may handle sensitive information—future user data. This page documents verified product scope and engineering outcomes without publishing private source code, credentials, databases, invoices, logs, customer records, health data, or private recommendation histories.
 
-Reviewed against repository snapshots on **1 October 2026**. Implementation, recorded QA, and fresh portfolio checks are distinct evidence. The repository-only audit ledger at `docs/portfolio-audit-2026-10-01.md` records revisions, sources and limitations. Private-source code is not mirrored here.
+Refreshed against repository snapshots on **5 October 2026**. Older verification is explicitly dated; readable summaries are available in [the case studies](case-studies.html). Implementation, recorded QA, and fresh portfolio checks are distinct evidence. The repository-only audit ledger at `docs/portfolio-audit-2026-10-01.md` records revisions, sources and limitations. Private-source code is not mirrored here.
 
 ## Qashoryx POS
 
 **Offline-first wholesale point-of-sale and business operations application for Windows**
 
-**Status:** Version 2.1.3 · active internal release; production acceptance pending\
+**Status:** Version 2.1.4 · active internal release; production acceptance pending\
 **Role:** Software Engineer  
 **Technology:** Python, PySide6, SQLite, ReportLab, PyInstaller, Inno Setup
 
 ### Current engineering evidence
+
+- Windows CI on 5 October 2026: 162 tests plus 54 subtests; isolated executable build and self-verification succeeded. Version 2.1.4 restricts customer management to the owner and allows staff to invoice saved customers, with service/controller checks and transaction-time customer validation.
 
 - 144 tests plus 26 subtests reported passing in the 1 October 2026 repository validation across database initialization, migrations, authentication, transactions, customer balances, invoice editing/returns, reporting, restore, runtime paths, packaging, UI interaction regressions, customer previous-due accounting, and release protection
 - Eight ordered schema migrations, now including explicit customer-account transaction purposes, with backup-first upgrade behavior, integrity verification, atomic publication, and restore rehearsal
@@ -124,7 +126,7 @@ Fixloom demonstrates structured application architecture, migration-managed pers
 
 ### Recorded verification
 
-The 1 October repository review reports 116 passing tests, Ruff formatting/lint and strict mypy. Those checks do not prove physical printing or a live FBR integration. Startup composes the queue service without a transmission gateway or worker.
+Windows CI on 5 October 2026 reports 130 passing tests; Python 3.13/3.14 jobs succeeded, including portable build and frozen self-verification. Recovery now validates archive metadata before mutation, checks WAL checkpoint completion and keeps a rollback copy before atomic replacement. The earlier 1 October review recorded 116 tests, Ruff and strict mypy. Those checks do not prove physical printing or a live FBR integration. Startup composes the queue service without a transmission gateway or worker.
 
 ### Deliberate boundaries
 
@@ -247,7 +249,7 @@ Nourentra demonstrates typed frontend architecture, structured multi-step forms,
 
 ### Recorded validation and boundaries
 
-The 1 October repository review reports 28 domain/model tests, typecheck, lint and static web export passing. Storage/migration/backup integration and native-device acceptance are not established. Backups are unencrypted; checksums do not establish trusted authorship. Native/web formats are incompatible, web restore spans multiple writes, and closed-cycle protection differs across linked-payment adapters. Linked-payment correction, full theme application and optional Drive backup remain unfinished. No store publication or live web deployment is claimed.
+The 3 October repository record reports 45 tests across 19 files, including backup-envelope validation, nested web payload validation and web restore failure/rollback tests. Restore revalidates before replacement; failed rollback is explicitly reported. Android file-picker access was reported verified on the owner’s phone. Wider device and release acceptance remain open. Backups are unencrypted; checksums do not establish trusted authorship. Native/web formats are incompatible and web restore is not transactional. System/light/dark themes are implemented; optional Drive backup is not. Web reminders are disabled and Expo Go Android reminders require a development build. No store publication or live web deployment is claimed.
 
 ### Portfolio value
 

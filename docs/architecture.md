@@ -33,10 +33,16 @@ current-build cards and static availability/contact elements. Existing grid/card
 styling is retained; fallback rules expose content without successful enhancement.
 
 `exhibition.js` is a deferred strict-mode IIFE containing interaction behavior only.
-Availability, recruiter/business cards, contact directory/dock and Person JSON-LD
+Availability, recruiter/business cards, contact directory and Person JSON-LD
 are static HTML. No module system or router is involved. The `enhanced` class is
 added after initialization; without it CSS exposes all projects/navigation and
 hides inactive controls.
+
+Project previews lead with short summaries and visible maturity labels. Native
+`details`/`summary` controls contain the complete engineering scope; they remain
+keyboard-operable without scripting. Release caveats remain outside disclosures.
+The contact section leads with email, followed by smaller audience-specific paths
+and a full directory. The floating contact dock was removed during UI polishing.
 
 ## State, data and navigation
 
@@ -108,3 +114,8 @@ and all projects remain available when scripts fail/are disabled. Google Fonts
 adds an external request. Case-study Markdown display depends on the host/browser.
 Historical test/release numbers need periodic audited refreshes. Browser checks do
 not establish accessibility certification or exhaustively cover old browsers.
+
+
+## October 5 redesign and content refresh
+
+The owner authorized a project-led editorial redesign after GitHub review. The compact split hero, project entry links, smaller section typography, rounded project diagrams and readable `case-studies.html` replace the previous oversized name-led presentation. Six sections, five accessible tabs, theme/menu/contact behavior and no-script content remain. Loopnest replaces the outdated Social Connect lab entry and is explicitly paused. Qashoryx 2.1.4, Vendiqo recovery/build evidence, PyNivo current CI versus older preview, and Spenvera backup tests are refreshed. See `docs/portfolio-audit-2026-10-05.md` for revision evidence and limitations. Eight public assets now have exact root/dist parity. No packages or runtime GitHub calls were added. The owner authorized committing, pushing and deploying this redesign on 5 October 2026. GitHub Pages publishes from the main branch; verify its deployment separately from local checks.

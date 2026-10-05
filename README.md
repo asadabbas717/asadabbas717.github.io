@@ -11,6 +11,7 @@ The site serves hiring teams and prospective business clients. It contains:
 - Three current builds: Cineyra, Nourentra and Spenvera, with explicit maturity limits.
 - Four public-lab repositories, engineering principles and contact actions.
 - Static contact content and a no-script navigation/project fallback.
+- Concise project previews, visible maturity labels and expandable engineering details.
 - Light/dark preference, mobile navigation, keyboard-operable project tabs,
   older hash aliases and reduced-motion styling.
 - Context-specific WhatsApp messages prepared for the visitor to review/send.
@@ -120,3 +121,8 @@ requests and restrictions on original portfolio material. Third-party rights and
 linked project licenses remain separate. Public GitHub repositories can still be
 viewed, downloaded and forked; these notices do not technically prevent copying.
 Keep `usage.html` synchronized with `dist/usage.html` alongside the existing assets.
+
+
+## October 5 redesign and content refresh
+
+The owner authorized a project-led editorial redesign after GitHub review. The compact split hero, project entry links, smaller section typography, rounded project diagrams and readable `case-studies.html` replace the previous oversized name-led presentation. Six sections, five accessible tabs, theme/menu/contact behavior and no-script content remain. Loopnest replaces the outdated Social Connect lab entry and is explicitly paused. Qashoryx 2.1.4, Vendiqo recovery/build evidence, PyNivo current CI versus older preview, and Spenvera backup tests are refreshed. See `docs/portfolio-audit-2026-10-05.md` for revision evidence and limitations. Eight public assets now have exact root/dist parity. No packages or runtime GitHub calls were added. The owner authorized committing, pushing and deploying this redesign on 5 October 2026. GitHub Pages publishes from the main branch; verify its deployment separately from local checks.

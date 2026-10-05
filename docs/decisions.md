@@ -150,3 +150,27 @@ The chosen approach protects compatibility with no package dependencies.
 
 **Trade-offs:** Python and Node are development tools only. DOM fakes cannot replace
 browser acceptance; mutable action version tags and lack of browser CI remain debt.
+
+## Decision 009 — Scan-first project and contact hierarchy — 5 October 2026
+
+**Status:** Current, requested by the user after audit publication.
+
+**Context:** Dense project copy, tall mobile hero and repeated contact actions
+made scanning difficult despite a distinctive established visual identity.
+
+**Decision:** Keep the visual direction and six sections. Lead with short project
+summaries and status labels; retain detailed evidence in native disclosures, with
+release caveats visible. Make email the primary contact action, reduce audience
+cards and remove the floating dock. Preserve all directory channels and messages.
+
+**Alternatives:** Redesign the whole site, delete engineering detail, or add a
+JavaScript accordion. These increase scope, lose evidence or add avoidable behavior.
+
+**Consequences:** Less visible text and shorter mobile presentation; evidence
+requires expanding a disclosure or visiting the case study. Native keyboard and
+no-script behavior remain available. No product maturity upgrade is implied.
+
+
+## October 5 redesign and content refresh
+
+The owner authorized a project-led editorial redesign after GitHub review. The compact split hero, project entry links, smaller section typography, rounded project diagrams and readable `case-studies.html` replace the previous oversized name-led presentation. Six sections, five accessible tabs, theme/menu/contact behavior and no-script content remain. Loopnest replaces the outdated Social Connect lab entry and is explicitly paused. Qashoryx 2.1.4, Vendiqo recovery/build evidence, PyNivo current CI versus older preview, and Spenvera backup tests are refreshed. See `docs/portfolio-audit-2026-10-05.md` for revision evidence and limitations. Eight public assets now have exact root/dist parity. No packages or runtime GitHub calls were added. The owner authorized committing, pushing and deploying this redesign on 5 October 2026. GitHub Pages publishes from the main branch; verify its deployment separately from local checks.
