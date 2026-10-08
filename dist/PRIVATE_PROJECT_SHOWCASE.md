@@ -90,7 +90,13 @@ Qashoryx demonstrates the ability to evolve substantial business software while 
 
 ### Verification and limits
 
-The 1 October repository review reports 48 passing tests, Ruff, strict mypy and dependency checks. Windows installer acceptance was not rerun. There is no application login or encryption. Checksums detect corruption, not archive authorship; schema compatibility and restore resource limits need further review.
+The 5 October audit at 4110471 records 84 passing pytest cases on Python 3.14.7,
+Ruff, strict mypy, executable/ZIP packaging and Inno compilation. Archive bounds,
+schema-object validation and restore compensation were strengthened. Installer
+execution, clean-machine acceptance and hosted CI remain unverified. There is no
+application login or encryption, and no durable restore crash journal. Checksums
+detect corruption rather than authenticating archive authorship. These are dated
+repository records reviewed on 9 October, not a fresh test run for this portfolio.
 
 ### Portfolio value
 
@@ -114,7 +120,7 @@ Fixloom demonstrates structured application architecture, migration-managed pers
 - Products, categories, units, SKUs, and keyboard-wedge barcode support
 - Immutable inventory movement ledger with calculated stock balances
 - Supplier directory and atomic purchase posting
-- Exact fully paid local sales, customer linkage, payments, and stock issue
+- Exact local sales, partial/unpaid invoices, customer collections and stock issue
 - Receipt preview, printing, PDF export, duplicate/reprint, and referenced sale returns
 - Customer contact directory, operational reporting, and document search
 - Checksummed backups, verification, atomic restore, and rollback protection
@@ -127,6 +133,14 @@ Fixloom demonstrates structured application architecture, migration-managed pers
 ### Recorded verification
 
 Windows CI on 5 October 2026 reports 130 passing tests; Python 3.13/3.14 jobs succeeded, including portable build and frozen self-verification. Recovery now validates archive metadata before mutation, checks WAL checkpoint completion and keeps a rollback copy before atomic replacement. The earlier 1 October review recorded 116 tests, Ruff and strict mypy. Those checks do not prove physical printing or a live FBR integration. Startup composes the queue service without a transmission gateway or worker.
+
+Main integration at `6730820`, reviewed 9 October 2026, adds credit/collections,
+issuance balance snapshots, due-first returns and synchronized cash-flow reporting
+while preserving standard product identity and category/unit controls. The main
+record reports 183 tests on Python 3.14.7, Ruff/strict mypy, frozen verification and
+Inno compilation passing. Delivery is unsigned; target-machine installation and
+physical-printer acceptance remain manual gates. No client records or private
+implementation are included here.
 
 ### Deliberate boundaries
 
@@ -269,7 +283,7 @@ These projects follow a **show the engineering, protect the implementation** app
 - Public descriptions focus on verified outcomes, technology choices, architecture-level decisions, testing, data safety, and product scope.
 - Private source access should only be granted deliberately to trusted reviewers when there is a genuine need.
 
-For publicly inspectable developer tooling, see [PyNivo](https://github.com/asadabbas717/pynivo), which is available under Apache License 2.0 with a Windows preview release.
+For publicly inspectable shipped developer tooling, see [RepoLens](https://github.com/asadabbas717/RepoLens) and its [PyPI package](https://pypi.org/project/repolens-engineering/). For desktop tooling, see [PyNivo](https://github.com/asadabbas717/pynivo), which is available under Apache License 2.0 with a Windows preview release.
 
 ## Developer
 

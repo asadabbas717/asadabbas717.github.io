@@ -39,7 +39,7 @@ function setup({ stored = null, blocked = false, light = true, hash = '' } = {})
   ['theme', 'themeText', 'menu', 'navigation', 'work', 'about', 'sculpture', 'meta'].forEach(element);
   const navLink = element('navLink');
   elements.get('navigation').querySelectorAll = () => [navLink];
-  const tabs = ['qashoryx', 'phishguard', 'pynivo', 'vendiqo', 'fixloom'].map(name => {
+  const tabs = ['repolens', 'qashoryx', 'phishguard', 'pynivo', 'vendiqo'].map(name => {
     const tab = element('tab-' + name);
     tab.dataset.project = name;
     tab.attrs['aria-controls'] = 'panel-' + name;
@@ -117,21 +117,10 @@ test('menu closes on Escape with focus restoration and on link activation', () =
 });
 test('project hashes, legacy aliases and unknown hashes are safe', () => {
   const app = setup({ hash: '#pynivo' });
-  assert.equal(app.tabs[2].attrs['aria-selected'], 'true');
+  assert.equal(app.tabs[3].attrs['aria-selected'], 'true');
   for (const hash of ['#products', '#atlas', '#principles', '#unknown', '#<img>']) {
     app.location.hash = hash; app.window.emit('hashchange');
   }
   assert.ok(app.elements.get('work').scrolled); assert.ok(app.elements.get('about').scrolled);
-  assert.equal(app.tabs[2].attrs['aria-selected'], 'true');
-});
-test('pointer effect excludes touch and reduced motion and resets immediately', () => {
-  const app = setup(); const art = app.elements.get('sculpture');
-  art.emit('pointermove', { pointerType: 'touch', clientX: 100, clientY: 100 });
-  assert.equal(art.style.values['--px'], undefined);
-  art.emit('pointermove', { pointerType: 'mouse', clientX: 100, clientY: 100 });
-  assert.equal(art.style.values['--px'], '11px');
-  app.motion.matches = true; app.motion.emit('change');
-  assert.equal(art.style.values['--px'], '0px');
-  art.emit('pointermove', { pointerType: 'mouse', clientX: 100, clientY: 100 });
-  assert.equal(art.style.values['--px'], '0px');
+  assert.equal(app.tabs[3].attrs['aria-selected'], 'true');
 });

@@ -1,0 +1,382 @@
+{
+  "schema_version": "1",
+  "tool": {
+    "name": "RepoLens",
+    "version": "0.1.1"
+  },
+  "repository": {
+    "name": "poor-python"
+  },
+  "policy": {
+    "identifier": "repolens-python-static-v1",
+    "scope": [
+      "code_quality",
+      "testing",
+      "security",
+      "repository_hygiene",
+      "ci_cd"
+    ],
+    "penalties": [
+      {
+        "severity": "info",
+        "points": 0
+      },
+      {
+        "severity": "low",
+        "points": 5
+      },
+      {
+        "severity": "medium",
+        "points": 15
+      },
+      {
+        "severity": "high",
+        "points": 30
+      },
+      {
+        "severity": "critical",
+        "points": 60
+      }
+    ],
+    "weights": [
+      {
+        "category": "code_quality",
+        "weight": 2
+      },
+      {
+        "category": "testing",
+        "weight": 1
+      },
+      {
+        "category": "security",
+        "weight": 3
+      },
+      {
+        "category": "repository_hygiene",
+        "weight": 1
+      },
+      {
+        "category": "ci_cd",
+        "weight": 1
+      }
+    ]
+  },
+  "assessment": {
+    "state": "available",
+    "overall_score": "92.50",
+    "finding_count": 8,
+    "outside_scope": [
+      "documentation",
+      "maintainability"
+    ],
+    "limitations": [
+      "Scores reflect completed supported observations only; 100 means no deductive findings, not a certification.",
+      "INFO observations remain visible; repeated occurrences do not multiply rule deductions.",
+      "Unavailable work blocks numeric assessment; non-applicable work is excluded from weighting.",
+      "Testing observations do not measure execution, coverage or effectiveness.",
+      "Dependency vulnerability auditing is unavailable and not included in the default assessment.",
+      "Categories outside policy scope are unassessed; static observations do not guarantee correctness or security."
+    ]
+  },
+  "categories": [
+    {
+      "category": "code_quality",
+      "state": "assessed",
+      "value": 90,
+      "deductions": [
+        {
+          "rule_id": "PY001",
+          "severity": "low",
+          "points": 5,
+          "finding_ids": [
+            "python-static:PY001:44b2e2ef7ae3cc9a5563a1c106200523096d1fb059138cb881ed139f0dc8b382"
+          ]
+        },
+        {
+          "rule_id": "PY002",
+          "severity": "low",
+          "points": 5,
+          "finding_ids": [
+            "python-static:PY002:ee58ada324530074d0062ca0a2a34793dc958f4a5ea8e7d68eedcbd05219d183"
+          ]
+        }
+      ],
+      "completed_analyzers": [
+        "python-static"
+      ],
+      "unavailable_analyzers": [],
+      "non_applicable_analyzers": []
+    },
+    {
+      "category": "testing",
+      "state": "assessed",
+      "value": 100,
+      "deductions": [
+        {
+          "rule_id": "TEST001",
+          "severity": "info",
+          "points": 0,
+          "finding_ids": [
+            "testing-static:TEST001"
+          ]
+        }
+      ],
+      "completed_analyzers": [
+        "testing-static"
+      ],
+      "unavailable_analyzers": [],
+      "non_applicable_analyzers": []
+    },
+    {
+      "category": "security",
+      "state": "assessed",
+      "value": 90,
+      "deductions": [
+        {
+          "rule_id": "BANDIT-B105",
+          "severity": "low",
+          "points": 5,
+          "finding_ids": [
+            "python-security:BANDIT-B105:0d9b7c3bf855e97900f616f012a501503201a3c24d1ebc34bfd17b64312f272c"
+          ]
+        },
+        {
+          "rule_id": "BANDIT-B110",
+          "severity": "low",
+          "points": 5,
+          "finding_ids": [
+            "python-security:BANDIT-B110:7cfd2357c602170dc0335f73511df3aef51e7b43b595f5dbf618832535e6b418"
+          ]
+        }
+      ],
+      "completed_analyzers": [
+        "python-security"
+      ],
+      "unavailable_analyzers": [],
+      "non_applicable_analyzers": []
+    },
+    {
+      "category": "repository_hygiene",
+      "state": "assessed",
+      "value": 100,
+      "deductions": [
+        {
+          "rule_id": "RH001",
+          "severity": "info",
+          "points": 0,
+          "finding_ids": [
+            "repository-hygiene:RH001"
+          ]
+        }
+      ],
+      "completed_analyzers": [
+        "repository-hygiene"
+      ],
+      "unavailable_analyzers": [],
+      "non_applicable_analyzers": []
+    },
+    {
+      "category": "ci_cd",
+      "state": "assessed",
+      "value": 90,
+      "deductions": [
+        {
+          "rule_id": "CI002",
+          "severity": "low",
+          "points": 5,
+          "finding_ids": [
+            "ci-static:CI002:d2936af86636905e482f5f46b675106e8c4c7ef25006029df491197dd2b966c4"
+          ]
+        },
+        {
+          "rule_id": "CI003",
+          "severity": "low",
+          "points": 5,
+          "finding_ids": [
+            "ci-static:CI003:88cdbb8e32b19906a8f15b96c34255a29987729e24bb0fead28123fd73e1ec1f"
+          ]
+        }
+      ],
+      "completed_analyzers": [
+        "ci-static"
+      ],
+      "unavailable_analyzers": [],
+      "non_applicable_analyzers": []
+    }
+  ],
+  "analyzers": [
+    {
+      "identifier": "ci-static",
+      "category": "ci_cd",
+      "state": "completed",
+      "reason": null,
+      "finding_count": 2
+    },
+    {
+      "identifier": "python-security",
+      "category": "security",
+      "state": "completed",
+      "reason": null,
+      "finding_count": 2
+    },
+    {
+      "identifier": "python-static",
+      "category": "code_quality",
+      "state": "completed",
+      "reason": null,
+      "finding_count": 2
+    },
+    {
+      "identifier": "repository-hygiene",
+      "category": "repository_hygiene",
+      "state": "completed",
+      "reason": null,
+      "finding_count": 1
+    },
+    {
+      "identifier": "testing-static",
+      "category": "testing",
+      "state": "completed",
+      "reason": null,
+      "finding_count": 1
+    }
+  ],
+  "findings": [
+    {
+      "identifier": "ci-static:CI002:d2936af86636905e482f5f46b675106e8c4c7ef25006029df491197dd2b966c4",
+      "rule_id": "CI002",
+      "category": "ci_cd",
+      "severity": "low",
+      "title": "Remote reference lacks full commit SHA form",
+      "description": "A recognized remote action or reusable workflow reference does not use the full 40-hex commit SHA form. Its version is not fixed by this form.",
+      "evidence": [
+        {
+          "description": "Remote reference lacks full commit SHA form in the eligible snapshot",
+          "file_path": ".github/workflows/check.yml",
+          "line_number": 7
+        }
+      ],
+      "recommendation": "Consider pinning to a reviewed full commit SHA from the intended repository and maintain reviewed updates; a SHA does not establish safety.",
+      "source_analyzer": "ci-static"
+    },
+    {
+      "identifier": "ci-static:CI003:88cdbb8e32b19906a8f15b96c34255a29987729e24bb0fead28123fd73e1ec1f",
+      "rule_id": "CI003",
+      "category": "ci_cd",
+      "severity": "low",
+      "title": "Explicit broad writable permissions declared",
+      "description": "A workflow or job declares literal write-all permissions. Effective access can differ due to job overrides and platform settings.",
+      "evidence": [
+        {
+          "description": "Explicit broad writable permissions declared in the eligible snapshot",
+          "file_path": ".github/workflows/check.yml",
+          "line_number": 2
+        }
+      ],
+      "recommendation": "Review whether narrower named permissions express the intended work; writable permissions may be legitimate.",
+      "source_analyzer": "ci-static"
+    },
+    {
+      "identifier": "python-security:BANDIT-B105:0d9b7c3bf855e97900f616f012a501503201a3c24d1ebc34bfd17b64312f272c",
+      "rule_id": "BANDIT-B105",
+      "category": "security",
+      "severity": "low",
+      "title": "Bandit B105 structural security observation",
+      "description": "Bandit reported a static security pattern. Review its context; this is not proof of exploitability.",
+      "evidence": [
+        {
+          "description": "Bandit B105 observation; source text omitted",
+          "file_path": "app.py",
+          "line_number": 8
+        }
+      ],
+      "recommendation": "Review the documented Bandit B105 check and the intended behavior at this location.",
+      "source_analyzer": "python-security"
+    },
+    {
+      "identifier": "python-security:BANDIT-B110:7cfd2357c602170dc0335f73511df3aef51e7b43b595f5dbf618832535e6b418",
+      "rule_id": "BANDIT-B110",
+      "category": "security",
+      "severity": "low",
+      "title": "Bandit B110 structural security observation",
+      "description": "Bandit reported a static security pattern. Review its context; this is not proof of exploitability.",
+      "evidence": [
+        {
+          "description": "Bandit B110 observation; source text omitted",
+          "file_path": "app.py",
+          "line_number": 6
+        }
+      ],
+      "recommendation": "Review the documented Bandit B110 check and the intended behavior at this location.",
+      "source_analyzer": "python-security"
+    },
+    {
+      "identifier": "python-static:PY001:44b2e2ef7ae3cc9a5563a1c106200523096d1fb059138cb881ed139f0dc8b382",
+      "rule_id": "PY001",
+      "category": "code_quality",
+      "severity": "low",
+      "title": "Bare except handler",
+      "description": "An except handler specifies no exception type; it can intercept process-control exceptions as well as ordinary errors.",
+      "evidence": [
+        {
+          "description": "Bare except handler observed in the AST",
+          "file_path": "app.py",
+          "line_number": 6
+        }
+      ],
+      "recommendation": "Prefer the specific exception types intended here; if catching every exception is deliberate, retain that behavior knowingly.",
+      "source_analyzer": "python-static"
+    },
+    {
+      "identifier": "python-static:PY002:ee58ada324530074d0062ca0a2a34793dc958f4a5ea8e7d68eedcbd05219d183",
+      "rule_id": "PY002",
+      "category": "code_quality",
+      "severity": "low",
+      "title": "Wildcard import",
+      "description": "A source module imports every exported name from another module, obscuring the local origins of names.",
+      "evidence": [
+        {
+          "description": "Wildcard import observed in the AST",
+          "file_path": "app.py",
+          "line_number": 3
+        }
+      ],
+      "recommendation": "Prefer explicit imports where practical; deliberate module re-exports may justify a wildcard import.",
+      "source_analyzer": "python-static"
+    },
+    {
+      "identifier": "repository-hygiene:RH001",
+      "rule_id": "RH001",
+      "category": "repository_hygiene",
+      "severity": "info",
+      "title": "No root .gitignore path in analyzed inventory",
+      "description": "The eligible file inventory contains no exact root .gitignore path; this does not establish whether ignore policies exist elsewhere.",
+      "evidence": [
+        {
+          "description": "No exact root .gitignore path was observed in the eligible inventory",
+          "file_path": null,
+          "line_number": null
+        }
+      ],
+      "recommendation": "Review whether a shared root .gitignore would help collaborators; nested, local or global ignore policies may be intentional.",
+      "source_analyzer": "repository-hygiene"
+    },
+    {
+      "identifier": "testing-static:TEST001",
+      "rule_id": "TEST001",
+      "category": "testing",
+      "severity": "info",
+      "title": "No conventional Python test sources observed",
+      "description": "No conventional Python test sources were observed in the available snapshot. Custom discovery and excluded example/fixture paths may contain tests.",
+      "evidence": [
+        {
+          "description": "No conventional test source paths observed in the available snapshot",
+          "file_path": null,
+          "line_number": null
+        }
+      ],
+      "recommendation": "Review the project's test discovery conventions; this observation does not establish absence of tests.",
+      "source_analyzer": "testing-static"
+    }
+  ]
+}

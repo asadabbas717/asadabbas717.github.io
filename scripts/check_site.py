@@ -8,7 +8,8 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ('index.html', 'usage.html', 'case-studies.html', 'folio.css', 'portfolio-2026.css',
-          'exhibition.js', 'PRIVATE_PROJECT_SHOWCASE.md', 'assets/sculpture.png')
+          'exhibition.js', 'PRIVATE_PROJECT_SHOWCASE.md', 'assets/repolens-report.html',
+          'assets/repolens-report.json', 'assets/favicon.svg')
 
 
 class Page(HTMLParser):

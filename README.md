@@ -7,9 +7,10 @@ backend work and current mobile/web builds through inspectable engineering evide
 
 The site serves hiring teams and prospective business clients. It contains:
 
-- Five featured systems: Qashoryx, PhishGuard, PyNivo, Vendiqo and Fixloom.
-- Three current builds: Cineyra, Nourentra and Spenvera, with explicit maturity limits.
-- Four public-lab repositories, engineering principles and contact actions.
+- Five featured projects: RepoLens (flagship), Qashoryx, PhishGuard, PyNivo and Vendiqo.
+- Grouped evidence-based skills, a six-week Android internship and UMT education.
+- Additional product records in `case-studies.html`, with explicit maturity limits.
+- A real RepoLens 0.1.1 HTML/JSON assessment from a controlled inert fixture.
 - Static contact content and a no-script navigation/project fallback.
 - Concise project previews, visible maturity labels and expandable engineering details.
 - Light/dark preference, mobile navigation, keyboard-operable project tabs,
@@ -26,14 +27,16 @@ implementation and production readiness are separate claims.
 
 Plain HTML, CSS and browser JavaScript. No framework, backend, database, account
 system, dependency installation or compilation is needed. Google Fonts is an
-external resource; the artwork is local.
+external resource. Decorative artwork and pointer motion are no longer loaded.
 
 ```text
 index.html
 folio.css
 portfolio-2026.css
 exhibition.js
-assets/sculpture.png
+assets/favicon.svg
+assets/repolens-report.html
+assets/repolens-report.json
 PRIVATE_PROJECT_SHOWCASE.md
 dist/                       # tracked copies for static hosting
 scripts/                    # public-asset sync and repository checks
@@ -121,6 +124,16 @@ requests and restrictions on original portfolio material. Third-party rights and
 linked project licenses remain separate. Public GitHub repositories can still be
 viewed, downloaded and forked; these notices do not technically prevent copying.
 Keep `usage.html` synchronized with `dist/usage.html` alongside the existing assets.
+
+## Current portfolio upgrade — 9 October 2026
+
+RepoLens is the default featured project, linked to GitHub, PyPI, its latest release
+and architecture. Its test/coverage claims describe dated release evidence, not
+target-repository coverage. See [the upgrade audit](docs/portfolio-audit-2026-10-09.md).
+No current CV file was supplied or found in the reviewed portfolio/profile source;
+the hero offers an explicitly labeled email request instead of a broken download.
+Replace that with one reviewed general Software Engineer CV when provided, adding
+it to the public asset allowlist and synchronizing the deployment copy.
 
 
 ## October 5 redesign and content refresh

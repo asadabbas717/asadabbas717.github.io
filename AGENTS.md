@@ -17,7 +17,7 @@ manifest, application server, database, authentication or build dependency.
 
 ## Agent operating rules
 
-- The owner authorized the October 2026 redesign. Preserve its six sections, five featured tabs,
+- The owner authorized the October 2026 upgrade. Preserve its six sections, five featured tabs,
   responsive breakpoints, keyboard navigation, theme preference and contact flows.
 - Inspect callers and related files before shared changes. Prefer readable,
   maintainable changes; avoid rewrites, duplicated logic and unnecessary dependencies.
@@ -25,10 +25,10 @@ manifest, application server, database, authentication or build dependency.
   quotes/semicolons, compact existing CSS. Do not reformat unrelated styles.
 - Preserve older project/section hash aliases and backward compatibility where practical.
 - Maintain exact root/deployment byte parity for `index.html`, `folio.css`,
-  `portfolio-2026.css`, `exhibition.js`, `PRIVATE_PROJECT_SHOWCASE.md` and sculpture.
+  `portfolio-2026.css`, `exhibition.js`, `PRIVATE_PROJECT_SHOWCASE.md`, report HTML/JSON and favicon.
   Root files are edited first; `dist/` is a tracked static copy, not disposable output.
   Use `python scripts/sync_dist.py` and verify with `python scripts/check_site.py`.
-  Also preserve parity for `usage.html`, and `case-studies.html`, making eight public asset pairs.
+  Also preserve parity for `usage.html` and `case-studies.html`, making ten public asset pairs.
 - Do not copy repository-only continuity docs or private source into `dist/`.
 - Audit current repository code and dated verification records before refreshing
   claims. Record repository revisions and distinguish implementation, recorded QA,
@@ -64,11 +64,13 @@ in `README.md`; do not invent npm commands or fake source/test directories.
 
 ## Repository navigation
 
-- `index.html`: metadata, six main sections, five project panels, current builds/lab.
+- `index.html`: hero, five project panels led by RepoLens, skills, experience, about/education and contact.
 - `folio.css`: base visual language, themes, responsive and reduced-motion styling.
 - `portfolio-2026.css`: featured extensions, current-build cards, contact enhancements.
-- `exhibition.js`: theme, menu, tabs/hash aliases and pointer artwork. Contact UI is static HTML.
-- `assets/sculpture.png`: decorative hero bitmap; empty alt text is intentional.
+- `exhibition.js`: theme, menu and tabs/hash aliases. Contact UI is static HTML.
+- `assets/repolens-report.html` / `.json`: real 0.1.1 output from the inert poor-python fixture.
+  Keep the unmodified report bytes; see the dated audit for generation provenance.
+- `assets/sculpture.png`: historical unused asset, excluded from the deployment mirror.
 - `PRIVATE_PROJECT_SHOWCASE.md`: public-safe case studies of private projects.
 - `dist/`: deployment copies of the preceding static files.
 - GitHub Pages is the active host. The unused Sites manifest was removed at the

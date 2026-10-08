@@ -1,5 +1,28 @@
 # Project Context
 
+## Recruiter portfolio upgrade — 9 October 2026
+
+Baseline clean main: `238a11fc24ec6d11d8aa0db2791e121e8521d4f5`.
+User requested applying the supplied professional-portfolio specification and
+reviewing latest GitHub changes. RepoLens 0.1.1 is now the default flagship, followed
+by Qashoryx, PhishGuard, PyNivo and Loopnest. Six sections remain, with skills and
+experience replacing the less selective current-build/public-lab homepage sections.
+Added the user-provided six-week Android internship and UMT degree; no dates,
+commercial impact or seniority were invented. Existing project records remain in
+case-studies.html; Vendiqo main evidence is refreshed through 6730820.
+
+Installed the published RepoLens package in an isolated review environment and
+generated genuine HTML/JSON from its inert poor-python fixture with Bandit 1.9.4:
+score 92.50, eight findings, no target execution markers or local-path disclosure.
+The report is static; no runtime API or private-source access is added. Removed
+decorative artwork/pointer movement and the PyNivo terminal-style mockup. Added a
+small SVG favicon. Ten public pairs are now allowlisted and synchronized.
+
+CV file remains missing: the hero clearly offers Request CV through email.
+No commit, push or live publication has been performed for this update.
+See docs/portfolio-audit-2026-10-09.md for evidence, selection and validation.
+Earlier session notes below are historical, superseded where this entry differs.
+
 ## UI polish and audit publication — 5 October 2026
 
 The user requested committing/pushing the audit before UI polishing. Audit commit
@@ -291,3 +314,8 @@ No live deployment or repository-visibility change was performed.
 ## October 5 redesign and content refresh
 
 The owner authorized a project-led editorial redesign after GitHub review. The compact split hero, project entry links, smaller section typography, rounded project diagrams and readable `case-studies.html` replace the previous oversized name-led presentation. Six sections, five accessible tabs, theme/menu/contact behavior and no-script content remain. Loopnest replaces the outdated Social Connect lab entry and is explicitly paused. Qashoryx 2.1.4, Vendiqo recovery/build evidence, PyNivo current CI versus older preview, and Spenvera backup tests are refreshed. See `docs/portfolio-audit-2026-10-05.md` for revision evidence and limitations. Eight public assets now have exact root/dist parity. No packages or runtime GitHub calls were added. The owner authorized committing, pushing and deploying this redesign on 5 October 2026. GitHub Pages publishes from the main branch; verify its deployment separately from local checks.
+
+
+## Featured selection revision — 9 October 2026
+
+The owner requested Vendiqo instead of incomplete Loopnest in the five featured tabs. Vendiqo presents audited retail workflows and dated 183-test evidence with unsigned delivery and target-machine/printer acceptance gates visible. Loopnest remains in internship experience and the supporting case study; its old homepage anchor still resolves. Fixloom remains a secondary case study. The owner reviewed the local preview and explicitly authorized committing, pushing and deploying this revision on 9 October 2026. GitHub Pages deployment must be verified after the push.

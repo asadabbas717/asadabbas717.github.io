@@ -103,3 +103,57 @@ html:not(.enhanced) .project-panel[hidden]{display:grid!important}
 
 .hero-editorial h1 span{margin:0;padding:0;letter-spacing:inherit}
 .hero-layout .hero-editorial{min-width:0}
+
+/* Recruiter scan: product evidence replaces decorative artwork. */
+.hero-social{display:flex;gap:24px;margin-top:22px;font:500 13px/1.6 var(--mono)}
+.hero-social a,.skills-grid a,.archive-link a{text-decoration:underline;text-underline-offset:4px}
+.hero-editorial h1{font-size:clamp(2.8rem,4.9vw,5.2rem)}
+.release-card{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:30px;min-width:0}
+.release-card h2{font-size:38px;letter-spacing:-.04em;margin:18px 0 10px;font-weight:500}
+.release-card h2 span{font:12px var(--mono);color:var(--muted)}
+.release-card>p{color:var(--muted)}
+.release-card dl,.report-preview dl{margin:22px 0}
+.release-card dl div,.report-preview dl div{padding:12px 0;border-bottom:1px solid var(--line)}
+.release-card dt,.report-preview dt{font:11px/1.6 var(--mono);color:var(--muted)}
+.release-card dd,.report-preview dd{margin:4px 0 0;font-size:15px;overflow-wrap:anywhere}
+.release-card .evidence-note{font-size:12px;line-height:1.7}
+.section-intro{max-width:760px;color:var(--muted);margin-top:20px}
+.flagship-panel{grid-template-columns:1.1fr 1fr;align-items:start}
+.flagship-copy{padding-top:0}
+.report-preview{padding:30px;border:1px solid var(--line);border-radius:12px;background:var(--surface);min-width:0}
+.report-preview h4{font-size:25px;font-weight:500;letter-spacing:-.035em;margin:14px 0}
+.report-preview>p{color:var(--muted);font-size:13px;line-height:1.75}
+.report-preview>.text-link{display:block;width:fit-content;font-size:12px;margin:18px 0}
+.install-command{border-top:1px solid var(--line);padding:22px 0;margin-top:22px;display:grid;gap:10px}
+.install-command span{font:11px/1.6 var(--mono);color:var(--muted)}
+.install-command code{font:12px/1.8 var(--mono);overflow-wrap:anywhere;color:var(--text)}
+.report-preview .project-links{font-size:12px;gap:16px;text-decoration:underline;text-underline-offset:4px}
+.archive-link{padding-top:24px;color:var(--muted);font-size:13px}
+.skills-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:34px}
+.skills-grid article,.experience-card,.education-card{padding:24px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.skills-grid h3{font-size:20px;font-weight:500;margin-bottom:12px}
+.skills-grid p{font-size:15px;color:var(--muted);margin-bottom:18px}
+.skills-grid a{font:11px/1.6 var(--mono)}
+.experience-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:6%;align-items:start}
+.experience-card h3{font-size:25px;font-weight:500;letter-spacing:-.025em;margin:16px 0}
+.experience-card p{color:var(--muted);margin-top:16px}
+.education-card{margin-top:26px}
+.education-card h3{font-size:19px;margin-bottom:8px}
+.education-card p{margin:0;font-size:15px}
+.education-card span{display:block;font:11px/1.6 var(--mono);color:var(--muted);margin-top:12px}
+.hash-alias{display:block;scroll-margin-top:30px}
+.mobile-visual{background:var(--surface);color:var(--text)}
+.tool-workflow{display:grid;gap:14px;margin:36px 0}
+.tool-workflow span{display:block;padding:18px;border:1px solid currentColor;border-radius:6px;font:13px/1.7 var(--mono)}
+.console-pulse{animation:none}
+.case-study ul{padding-left:24px;color:var(--muted);max-width:860px}
+.case-study li{margin:12px 0}.case-study strong{color:var(--text)}
+@media(max-width:900px){.skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.release-card{padding:24px}.hero-layout{grid-template-columns:1.1fr 1fr}}
+@media(max-width:760px){.flagship-panel,.experience-layout{grid-template-columns:1fr;gap:28px}.report-preview{padding:22px}.project-visual{min-height:0}.experience-card{margin-top:12px}.hero-editorial h1{font-size:clamp(2.6rem,9vw,4rem)}}
+@media(max-width:650px){.hero-layout{grid-template-columns:1fr}.release-card{padding:22px}.release-card h2{font-size:32px}.skills-grid{grid-template-columns:1fr}.hero-social{gap:22px}.project-links{gap:16px}.hero-actions{gap:22px}.skills-grid article{padding:22px}}
+.hero-layout{align-items:start;padding-top:12px;padding-bottom:36px}
+.hero-editorial h1{font-size:clamp(2.8rem,4.5vw,4.4rem);margin-top:18px;margin-bottom:20px}
+.release-card dl{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.release-card dd{font-size:14px}
+@media(max-width:650px){.release-card dl{grid-template-columns:1fr}.hero-editorial h1{font-size:clamp(2.6rem,9vw,3.8rem)}}
+@media(max-width:420px){.principles{grid-template-columns:1fr}.principles article{min-width:0}.principles h3{overflow-wrap:anywhere}}

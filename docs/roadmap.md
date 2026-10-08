@@ -5,6 +5,18 @@ promised product features or evidence of an assigned developer/schedule.
 
 ## Completed
 
+- [x] 9 October: RepoLens-first portfolio, real report examples and source/release links.
+- [x] Grouped skills, six-week Android internship and full UMT education entry.
+- [x] Reduced homepage selection to five projects; preserve other case-study records.
+- [x] Removed decorative image loading/pointer motion; added small SVG favicon.
+
+## Remaining owner assets
+
+- [ ] Supply one current general Software Engineer CV for a downloadable hero action.
+- [ ] Optional: confirm internship and graduation dates; none were invented.
+
+## Earlier completed work
+
 - [x] 5 October 2026: concise project previews with native detail disclosures and status labels.
 - [x] Simplified contact hierarchy and compact mobile spacing; preserved all contact channels.
 - [x] Pushed engineering audit; corrected shallow-checkout whitespace validation.
@@ -72,3 +84,8 @@ Recommendations from this repository's architecture, with no exploit claimed:
 ## October 5 redesign and content refresh
 
 The owner authorized a project-led editorial redesign after GitHub review. The compact split hero, project entry links, smaller section typography, rounded project diagrams and readable `case-studies.html` replace the previous oversized name-led presentation. Six sections, five accessible tabs, theme/menu/contact behavior and no-script content remain. Loopnest replaces the outdated Social Connect lab entry and is explicitly paused. Qashoryx 2.1.4, Vendiqo recovery/build evidence, PyNivo current CI versus older preview, and Spenvera backup tests are refreshed. See `docs/portfolio-audit-2026-10-05.md` for revision evidence and limitations. Eight public assets now have exact root/dist parity. No packages or runtime GitHub calls were added. The owner authorized committing, pushing and deploying this redesign on 5 October 2026. GitHub Pages publishes from the main branch; verify its deployment separately from local checks.
+
+
+## Featured selection revision — 9 October 2026
+
+The owner requested Vendiqo instead of incomplete Loopnest in the five featured tabs. Vendiqo presents audited retail workflows and dated 183-test evidence with unsigned delivery and target-machine/printer acceptance gates visible. Loopnest remains in internship experience and the supporting case study; its old homepage anchor still resolves. Fixloom remains a secondary case study. The owner reviewed the local preview and explicitly authorized committing, pushing and deploying this revision on 9 October 2026. GitHub Pages deployment must be verified after the push.

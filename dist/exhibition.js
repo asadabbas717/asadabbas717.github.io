@@ -72,20 +72,5 @@
   addEventListener('hashchange', resolveProjectHash);
   if (location.hash) resolveProjectHash();
 
-  const sculpture = document.getElementById('sculpture');
-  const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  sculpture.addEventListener('pointermove', e => {
-    if (motion.matches || e.pointerType !== 'mouse') return;
-    const rect = sculpture.getBoundingClientRect();
-    sculpture.style.setProperty('--px', `${((e.clientX - rect.left) / rect.width - .5) * 22}px`);
-    sculpture.style.setProperty('--py', `${((e.clientY - rect.top) / rect.height - .5) * 16}px`);
-  });
-  function resetSculpture() {
-    sculpture.style.setProperty('--px', '0px');
-    sculpture.style.setProperty('--py', '0px');
-  }
-  sculpture.addEventListener('pointerleave', resetSculpture);
-  motion.addEventListener('change', resetSculpture);
-
   root.classList.add('enhanced');
 })();

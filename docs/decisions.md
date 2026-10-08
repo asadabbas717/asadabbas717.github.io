@@ -1,5 +1,17 @@
 # Technical decisions
 
+## Decision 010 — RepoLens flagship and recruiter evidence — 9 October 2026
+
+The supplied upgrade brief prioritizes RepoLens and accurate junior positioning.
+Keep the established static site, six sections and five keyboard-operable tabs.
+Select RepoLens, Qashoryx, PhishGuard, PyNivo and Loopnest for complementary CLI,
+transaction, backend, desktop and Android evidence; move additional products into
+case-study records. Replace decorative imagery and pointer behavior with shipped
+release evidence and real controlled-fixture reports. Add grouped skills,
+user-provided internship/education and preserve attribution/limitations.
+No CV is fabricated: Request CV is explicit until the owner supplies a general
+downloadable version. No private source, new dependency or runtime fetch is added.
+
 ## Retire the unused Sites integration — 5 October 2026
 
 At the user's request, remove `.openai/hosting.json` and active instructions to
@@ -174,3 +186,8 @@ no-script behavior remain available. No product maturity upgrade is implied.
 ## October 5 redesign and content refresh
 
 The owner authorized a project-led editorial redesign after GitHub review. The compact split hero, project entry links, smaller section typography, rounded project diagrams and readable `case-studies.html` replace the previous oversized name-led presentation. Six sections, five accessible tabs, theme/menu/contact behavior and no-script content remain. Loopnest replaces the outdated Social Connect lab entry and is explicitly paused. Qashoryx 2.1.4, Vendiqo recovery/build evidence, PyNivo current CI versus older preview, and Spenvera backup tests are refreshed. See `docs/portfolio-audit-2026-10-05.md` for revision evidence and limitations. Eight public assets now have exact root/dist parity. No packages or runtime GitHub calls were added. The owner authorized committing, pushing and deploying this redesign on 5 October 2026. GitHub Pages publishes from the main branch; verify its deployment separately from local checks.
+
+
+## Featured selection revision — 9 October 2026
+
+The owner requested Vendiqo instead of incomplete Loopnest in the five featured tabs. Vendiqo presents audited retail workflows and dated 183-test evidence with unsigned delivery and target-machine/printer acceptance gates visible. Loopnest remains in internship experience and the supporting case study; its old homepage anchor still resolves. Fixloom remains a secondary case study. The owner reviewed the local preview and explicitly authorized committing, pushing and deploying this revision on 9 October 2026. GitHub Pages deployment must be verified after the push.

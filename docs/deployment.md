@@ -4,7 +4,7 @@ Root public files are authoritative. `dist/` is a tracked deployment mirror;
 there is no compiler, package installation, database migration or server setup.
 
 1. Review content, attribution and the dated evidence behind project claims.
-2. Run `python scripts/sync_dist.py` to copy the explicit seven public assets.
+2. Run `python scripts/sync_dist.py` to copy the explicit ten public assets.
    It does not delete files or copy repository docs, tests, workflows or private data.
 3. Run all commands in [testing](testing.md). The allowlist test rejects unexpected
    files in `dist/`; investigate additions rather than silently deleting them.

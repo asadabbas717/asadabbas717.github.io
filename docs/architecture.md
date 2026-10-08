@@ -1,5 +1,20 @@
 # Architecture
 
+## Current content structure — 9 October 2026
+
+Six sections: hero, selected work, skills, experience, about/education and contact.
+RepoLens is the default of five tabs, followed by Qashoryx, PhishGuard, PyNivo and
+Loopnest. Legacy current/lab anchors still exist; vendiqo/fixloom hashes lead to
+additional case-study links. Native disclosures, theme/menu, keyboard tabs and
+no-script fallback remain. Pointer artwork behavior has been removed.
+The hero release card and report summary are authored evidence, not simulated
+console output. Actual HTML/JSON report bytes are public assets, generated from
+the inert RepoLens fixture using PyPI 0.1.1 and optional Bandit 1.9.4. They contain
+no absolute local paths or private repository content. The ten-item public asset
+allowlist replaces the earlier eight-item list; sculpture is no longer deployed
+or loaded. The general CV is still an unsupplied manual asset.
+Earlier architecture notes below describe the previous structure where different.
+
 ## System overview
 
 This repository is a static portfolio, not the applications it describes. It has
