@@ -7,7 +7,7 @@ backend work and current mobile/web builds through inspectable engineering evide
 
 The site serves hiring teams and prospective business clients. It contains:
 
-- Five featured projects: RepoLens (flagship), Qashoryx, PhishGuard, PyNivo and Vendiqo.
+- Five featured projects: RepoLens (flagship), Vendiqo, Cineyra, PhishGuard and SafarWise.
 - Grouped evidence-based skills, a six-week Android internship and UMT education.
 - Additional product records in `case-studies.html`, with explicit maturity limits.
 - A real RepoLens 0.1.1 HTML/JSON assessment from a controlled inert fixture.

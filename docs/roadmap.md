@@ -89,3 +89,11 @@ The owner authorized a project-led editorial redesign after GitHub review. The c
 ## Featured selection revision — 9 October 2026
 
 The owner requested Vendiqo instead of incomplete Loopnest in the five featured tabs. Vendiqo presents audited retail workflows and dated 183-test evidence with unsigned delivery and target-machine/printer acceptance gates visible. Loopnest remains in internship experience and the supporting case study; its old homepage anchor still resolves. Fixloom remains a secondary case study. The owner reviewed the local preview and explicitly authorized committing, pushing and deploying this revision on 9 October 2026. GitHub Pages deployment must be verified after the push.
+
+## 15 October 2026 — Agreed five-project selection
+
+Implemented RepoLens, Vendiqo, Cineyra, PhishGuard and SafarWise in order after verifying SafarWise's successful full Quality workflow. This broadens evidence across developer tools, desktop business software, full-stack applications, backend collaboration and public-source mobile work. Preserve Qashoryx/PyNivo/Spenvera/Fixloom as supporting cases. Profile README uses the same selection; private projects link to public cases. Updated dated evidence and owner-reported Android checks. The owner subsequently authorized publication on 15 October 2026.
+
+## Internship evidence — 15 October 2026
+
+Owner authorized adding Kaizen Hive and Internee.pk after review of supplied certificates. Kaizen certifies completed Web Development internship and is issued 28 August 2026; it supplies no tenure/duration. Internee.pk participation certificate explicitly states completed two-month virtual React Native internship, without dates. Assignment READMEs support task-based web work and React Native prototypes (local profiles/QR, mock-data dashboard/PDF and local LMS progress), not commercial deployments. Existing Developers Hub evidence remains. Added a stacked three-entry experience list and compact profile README list. Source PDFs remain outside the repositories; no certificate ID/signature or new public document upload. The owner subsequently authorized publication on 15 October 2026.

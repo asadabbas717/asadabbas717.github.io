@@ -2,7 +2,7 @@
 
 Some of my strongest software projects are intentionally kept private to protect client/business information, proprietary implementation, reusable business logic, and—in products that may handle sensitive information—future user data. This page documents verified product scope and engineering outcomes without publishing private source code, credentials, databases, invoices, logs, customer records, health data, or private recommendation histories.
 
-Refreshed against repository snapshots on **5 October 2026**. Older verification is explicitly dated; readable summaries are available in [the case studies](case-studies.html). Implementation, recorded QA, and fresh portfolio checks are distinct evidence. The repository-only audit ledger at `docs/portfolio-audit-2026-10-01.md` records revisions, sources and limitations. Private-source code is not mirrored here.
+Vendiqo, Cineyra and Spenvera refreshed against repository snapshots on **15 October 2026**; other records retain their stated dates. Older verification is explicitly dated; readable summaries are available in [the case studies](case-studies.html). Implementation, recorded QA, and fresh portfolio checks are distinct evidence. The repository-only audit ledger at `docs/portfolio-audit-2026-10-01.md` records revisions, sources and limitations. Private-source code is not mirrored here.
 
 ## Qashoryx POS
 
@@ -108,95 +108,45 @@ Fixloom demonstrates structured application architecture, migration-managed pers
 
 ## Vendiqo
 
-**Offline-first Windows point-of-sale application for Pakistani small retailers, wholesalers, and trading businesses**
+### The problem
 
-**Status:** Version 0.1.0 · implemented release candidate; owner and target-machine acceptance pending\
-**Role:** Software Engineer  
-**Technology:** Python, Qt/PySide desktop stack, SQLite, migration-managed persistence, Ruff, mypy, pytest, PyInstaller, Inno Setup
+Keep offline retail purchases, stock, sales, customer dues and supplier payments traceable.
 
-### Completed release-candidate scope
+### Engineering decisions
 
-- Professional Windows navigation shell with persistent light/dark mode
-- Products, categories, units, SKUs, and keyboard-wedge barcode support
-- Immutable inventory movement ledger with calculated stock balances
-- Supplier directory and atomic purchase posting
-- Exact local sales, partial/unpaid invoices, customer collections and stock issue
-- Receipt preview, printing, PDF export, duplicate/reprint, and referenced sale returns
-- Customer contact directory, operational reporting, and document search
-- Checksummed backups, verification, atomic restore, and rollback protection
-- Versioned FBR contract boundary with a provider-neutral durable compliance queue
-- Reproducible Windows portable PyInstaller build with smoke-tested first-launch migration and backup checks
-- Per-user Inno Setup installer produced by the Windows release workflow
-- SHA-256 release artifacts for the portable distribution and installer outputs
-- Automated quality gate covering formatting, linting, static typing, tests, and packaged self-checks
+An immutable inventory movement ledger supports atomic posting. Held invoices/reservations, weighted-average gross profit, supplier payments and statements now complement credit/collections, issuance balance snapshots and due-first returns. Recovery validates archives and WAL checkpoint completion, retaining a rollback copy before atomic database replacement.
 
-### Recorded verification
+### Verification
 
-Windows CI on 5 October 2026 reports 130 passing tests; Python 3.13/3.14 jobs succeeded, including portable build and frozen self-verification. Recovery now validates archive metadata before mutation, checks WAL checkpoint completion and keeps a rollback copy before atomic replacement. The earlier 1 October review recorded 116 tests, Ruff and strict mypy. Those checks do not prove physical printing or a live FBR integration. Startup composes the queue service without a transmission gateway or worker.
+Reviewed at d71d9c9 on 15 October 2026. The 14 October record reports 252 tests across the full run and one authorized environment-related rerun; Ruff, strict mypy, frozen startup/resources/schema/backup checks and installer compilation passed. Latest hosted Windows quality CI also passed. These are inspected repository records, not application tests rerun for this portfolio.
 
-Main integration at `6730820`, reviewed 9 October 2026, adds credit/collections,
-issuance balance snapshots, due-first returns and synchronized cash-flow reporting
-while preserving standard product identity and category/unit controls. The main
-record reports 183 tests on Python 3.14.7, Ruff/strict mypy, frozen verification and
-Inno compilation passing. Delivery is unsigned; target-machine installation and
-physical-printer acceptance remain manual gates. No client records or private
-implementation are included here.
+### Release boundaries
 
-### Deliberate boundaries
+Delivery remains unsigned; current clean-machine and physical-printer acceptance remain manual gates. No application authentication, live FBR transmission or regulatory certification is claimed. Private code, client customization and business records are not published.
 
-The current release candidate does **not** claim features that are not implemented. Tax calculation, customer credit/receivables, damaged-return disposition, live FBR transmission, and automatic compliance-queue processing remain outside the completed 0.1.0 release-candidate scope. Code signing and final physical-printer acceptance remain deployment gates.
-
-The Compliance workspace represents an integration foundation, not a claim of FBR compliance.
-
-### Portfolio value
-
-Vendiqo demonstrates financial and inventory transaction design, immutable records, recovery engineering, release automation, keyboard-driven retail workflows, provider-neutral integration boundaries, Windows installer delivery, and careful separation between implemented behavior and future regulatory integration.
-
-**Source policy:** Private. The completed product is presented through verified capabilities and engineering evidence while unfinished or regulatory-dependent work is stated explicitly.
+[Read the case study](case-studies.html#vendiqo). Private source and user records are not published.
 
 ---
 
 ## Cineyra
 
-**Personal film and television discovery system built around durable taste and temporary viewing context**
+### Problem and contribution
 
-**Status:** Private pre-launch active build  
-**Role:** Software Engineer  
-**Technology:** React 19, TypeScript, Vite, Supabase Auth/PostgreSQL, Supabase Edge Functions, TanStack Query, Zod, TMDb, optional Gemini reasoning, Vitest
+I built a film and TV discovery app that separates durable Taste DNA from temporary Tonight Context, producing three focused recommendations from TMDb candidates.
 
-### Current engineering scope
+### Engineering decisions
 
-- Durable **Taste DNA** is kept separate from a temporary **Tonight Context**, so long-term preferences are not overwritten by one evening's mood, runtime, genre, language, or theme constraints
-- TMDb search, detail, discovery, genres, languages, ratings, paging, watch-provider metadata, and candidate retrieval are kept behind a server-side media Edge Function
-- Recommendation flow parses Tonight Context, obtains TMDb candidates, excludes watched/rejected titles, applies hard constraints, assigns a deterministic match score, and returns three titles
-- Gemini reasoning is optional and explicitly gated; ordinary deterministic matching remains available without AI; explicit tone/theme exclusions fail closed when verification is unavailable
-- Supabase Auth-backed sessions with private profiles, interactions, conversations, recommendations, feedback, preference evidence, and Taste DNA under row-level-security boundaries
-- Recommendation sessions, scored results, feedback, and AI-usage records are server-controlled rather than trusted to direct browser writes
-- Recommendation feedback is applied through an authenticated PostgreSQL function that validates ownership and writes interaction, feedback, and preference evidence atomically
-- Rating edits use an atomic database function to reconcile preference evidence instead of repeatedly overweighting the same title
-- Recommendation requests use a best-effort count-before-processing quota; it is not an atomic abuse-control guarantee
-- Watchlist, watched/rating/note workflows, recommendation history, Discover filters, detail navigation, and Ask Yra conversation persistence
-- Account-data export to JSON has been downloaded and manually verified on a live account; large-export QA remains
-- Password-confirmed account-deletion UI and server endpoint are implemented; successful disposable-account deletion still requires end-to-end QA
-- Privacy and Terms routes have operator-approved text; independent legal review remains a pre-launch check
-- Light-theme and narrow-screen navigation checks are recorded, while keyboard and screen-reader acceptance remain open
-- Standard project gate includes TypeScript checking, ESLint, Vitest, and production build
+Hard filters and deterministic ranking remain explicit alongside optional OpenRouter context parsing and reasoning. Server-side Edge Functions keep integration credentials out of the browser. PostgreSQL ownership policies, protected writes and transactional rating/note reconciliation preserve account and preference boundaries. Gemini was removed.
 
-### Current validation and limits
+### Verification
 
-The 1 October repository review reports 21 unit tests, typecheck, lint and build passing; this portfolio session did not rerun that application suite. The deterministic scorer currently uses genre signals and request metadata, not every stored Taste DNA dimension. Gemini is recorded as disabled behind an explicit paid-service confirmation gate. Account-cache isolation and edited-note evidence reconciliation remain documented pre-launch concerns.
+Reviewed at 71248af on 15 October 2026. The 12 October record reports 64 tests, typecheck, lint, production build and Deno media checking passing; the latest hosted CI passed. Recorded QA covers private account-cache separation, simulated-owner database isolation, JSON export and disposable-account deletion. Synthetic DOM and SQL tests have narrower scope than real browser/JWT checks.
 
-### Deliberate boundaries
+### Result and boundaries
 
-Cineyra is not presented as publicly launched. Independent legal review, full two-account RLS/integration testing, successful disposable-account deletion, large-export testing, automated browser coverage for critical discovery/recommendation journeys, production redirect/origin checks, password-reset/email-confirmation acceptance, keyboard operation, and screen-reader labels remain release gates.
+Private learning MVP and reusable application foundation. Public frontend launch is unconfirmed. Broader browser automation, accessibility and production acceptance remain open. AI provider availability is variable, and note transfer requires explicit operator authorization. No private profiles, prompts, viewing histories or exports are published.
 
-Gemini is not treated as the authority for recommendation correctness. Hard constraints and deterministic ranking remain explicit system behavior; AI usage is optional and gated behind reviewed billing/data terms.
-
-### Portfolio value
-
-Cineyra demonstrates recommendation-system design, deterministic-plus-AI fallback architecture, user-preference modeling, privacy-aware data ownership, RLS and Edge Function boundaries, server-controlled writes, transactional feedback learning, third-party media integration, account data portability, deletion design, and disciplined pre-launch quality mapping.
-
-**Source policy:** Private during pre-launch development. No API secrets, private user profiles, recommendation histories, conversations, or account exports are published.
+[Read the case study](case-studies.html#cineyra). Private source and user records are not published.
 
 ---
 
@@ -244,32 +194,23 @@ Nourentra demonstrates typed frontend architecture, structured multi-step forms,
 
 ## Spenvera
 
-**Offline personal budgeting across monthly cycles, native devices and web**
+### The problem
 
-**Status:** Private local budgeting MVP in active development; release/device acceptance pending\
-**Role:** Software Engineer\
-**Technology:** Expo Router, React Native, TypeScript, expo-sqlite, localStorage, Expo notifications/file sharing, React Native SVG, Node domain tests
+Plan monthly money, essentials, savings and debts without an account or application server.
 
-### Implemented scope
+### Engineering decisions
 
-- Resumable setup for currency, cycle start, planned income, essentials, savings and flexible budget
-- Actual income/expenses with history, search, ordinary-entry edits and confirmed removal
-- Essential payments, savings contributions and debt repayments linked to transactions
-- Actual-data charts, spending pace, deterministic insights and conditional forecast scenarios
-- Cycle reports/comparisons, financial calendar and versioned closed-cycle snapshots
-- Opt-in local native bill reminders; web scheduling explicitly disabled
-- Versioned local backup export, confirmation, integrity checks and guarded restore
-- Native SQLite migrations through schema version 7; web JSON adapters use versioned localStorage keys
+Pure financial/date calculations sit behind separate native SQLite and browser-storage adapters. Reviewed cycle carry-forward separates opening money from income. Linked-payment corrections preserve parent relationships; backup imports reject invalid cumulative payment totals before replacement.
 
-### Recorded validation and boundaries
+### Verification
 
-The 3 October repository record reports 45 tests across 19 files, including backup-envelope validation, nested web payload validation and web restore failure/rollback tests. Restore revalidates before replacement; failed rollback is explicitly reported. Android file-picker access was reported verified on the owner’s phone. Wider device and release acceptance remain open. Backups are unencrypted; checksums do not establish trusted authorship. Native/web formats are incompatible and web restore is not transactional. System/light/dark themes are implemented; optional Drive backup is not. Web reminders are disabled and Expo Go Android reminders require a development build. No store publication or live web deployment is claimed.
+Reviewed at 20effa3 on 15 October 2026. Repository records list 66 behavioral tests, including real migration/trigger SQL in Node SQLite; latest hosted quality CI passed. The owner reports successful physical Android testing. Recorded Galaxy A07 checks cover carry-forward, payment correction/removal, backup/restore and scheduled reminder delivery. The general phone report is not exhaustive device certification.
 
-### Portfolio value
+### Release boundaries
 
-Spenvera demonstrates pure financial calculations, integer-money accounting, platform-specific local persistence, linked records, stable reporting snapshots, device integrations and explicit recovery limits.
+Private Android preview; Play Store publication is on hold. Full Expo adapter/concurrency and native restore-failure injection remain open. Backups are unencrypted, native/web formats differ, and web rollback is not a database transaction. Web and Android Expo Go reminders remain unavailable.
 
-**Source policy:** Private. No personal financial records, backups or private implementation are published.
+[Read the case study](case-studies.html#spenvera). Private source and user records are not published.
 
 ---
 

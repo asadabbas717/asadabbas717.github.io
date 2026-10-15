@@ -1,5 +1,10 @@
 # Project Context
 
+## Current selection — 15 October 2026
+
+Featured order: RepoLens, Vendiqo, Cineyra, PhishGuard, SafarWise. Qashoryx and PyNivo remain supporting cases with homepage hash anchors; Spenvera stays a substantial supporting mobile case. The owner authorized these edits after SafarWise Quality run 38778011432 passed at 2016fa4. Security evidence describes pinned backports, not zero raw registry findings. Android testing is owner-reported, with no exact SafarWise build identification or comprehensive device claim. No private implementation/data is copied. The owner explicitly authorized pushing and deploying this revision on 15 October 2026; older entries below are history.
+
+
 ## Recruiter portfolio upgrade — 9 October 2026
 
 Baseline clean main: `238a11fc24ec6d11d8aa0db2791e121e8521d4f5`.
@@ -319,3 +324,7 @@ The owner authorized a project-led editorial redesign after GitHub review. The c
 ## Featured selection revision — 9 October 2026
 
 The owner requested Vendiqo instead of incomplete Loopnest in the five featured tabs. Vendiqo presents audited retail workflows and dated 183-test evidence with unsigned delivery and target-machine/printer acceptance gates visible. Loopnest remains in internship experience and the supporting case study; its old homepage anchor still resolves. Fixloom remains a secondary case study. The owner reviewed the local preview and explicitly authorized committing, pushing and deploying this revision on 9 October 2026. GitHub Pages deployment must be verified after the push.
+
+## Internship evidence — 15 October 2026
+
+Owner authorized adding Kaizen Hive and Internee.pk after review of supplied certificates. Kaizen certifies completed Web Development internship and is issued 28 August 2026; it supplies no tenure/duration. Internee.pk participation certificate explicitly states completed two-month virtual React Native internship, without dates. Assignment READMEs support task-based web work and React Native prototypes (local profiles/QR, mock-data dashboard/PDF and local LMS progress), not commercial deployments. Existing Developers Hub evidence remains. Added a stacked three-entry experience list and compact profile README list. Source PDFs remain outside the repositories; no certificate ID/signature or new public document upload. The owner subsequently authorized publication on 15 October 2026.

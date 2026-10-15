@@ -1,5 +1,10 @@
 # Architecture
 
+## Current selection — 15 October 2026
+
+Featured order: RepoLens, Vendiqo, Cineyra, PhishGuard, SafarWise. Qashoryx and PyNivo remain supporting cases with homepage hash anchors; Spenvera stays a substantial supporting mobile case. The owner authorized these edits after SafarWise Quality run 38778011432 passed at 2016fa4. Security evidence describes pinned backports, not zero raw registry findings. Android testing is owner-reported, with no exact SafarWise build identification or comprehensive device claim. No private implementation/data is copied. The owner explicitly authorized pushing and deploying this revision on 15 October 2026; older entries below are history.
+
+
 ## Current content structure — 9 October 2026
 
 Six sections: hero, selected work, skills, experience, about/education and contact.
