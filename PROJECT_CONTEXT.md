@@ -338,3 +338,7 @@ Owner authorized adding Kaizen Hive and Internee.pk after review of supplied cer
 ## 29 October 2026 — CV and public contact milestone
 
 Owner authorizes reviewed milestone commits/pushes. Added a one-page, text-selectable general Software Engineer CV from verified education, projects and internships, without invented dates or an unemployment job title. Optional ReportLab generator is scripts/build_cv.py; it is not required to serve or check the site. Public contact is email/LinkedIn; phone/WhatsApp removed from the page and Person metadata to reduce scraping exposure. CV is the eleventh root/dist public pair. PDF page, extraction, links and visual render reviewed.
+
+## 30 October 2026 — SurfaceDiff release refresh
+
+Verified v1.0.0 GitHub release at 507f4a5: alpha/pre-release, not PyPI. Release-source CI 40969929111 and latest documentation CI 40970540793 passed. Added a standalone case study and homepage release callout, keeping the focused five tabs. Profile README adds concise descriptions for six additional projects. Product limitations remain proportionate; no application release or runtime behavior changed.

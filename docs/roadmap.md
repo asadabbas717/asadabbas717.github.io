@@ -106,3 +106,7 @@ Owner authorizes reviewed milestone commits/pushes. Added a one-page, text-selec
 ## 29 October — Contribution-led project stories
 
 Delivered the agreed five-project selection, shorter homepage/profile and case narratives, verified archived internship link, client-delivery experience and real public app screenshot. Keep material security/release boundaries accurate without repeating internal verification mechanics. Preserve secondary cases and old anchors. Private app visuals await sanitized genuine captures; no reconstruction is represented as a screenshot.
+
+## 30 October 2026 — SurfaceDiff release refresh
+
+Verified v1.0.0 GitHub release at 507f4a5: alpha/pre-release, not PyPI. Release-source CI 40969929111 and latest documentation CI 40970540793 passed. Added a standalone case study and homepage release callout, keeping the focused five tabs. Profile README adds concise descriptions for six additional projects. Product limitations remain proportionate; no application release or runtime behavior changed.
