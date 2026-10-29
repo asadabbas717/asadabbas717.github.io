@@ -18,6 +18,7 @@ jobs:
         with:
           python-version: '3.13'
       - run: node --check exhibition.js
+      - run: node --check case-studies.js
       - run: node --test tests/interactions.test.cjs
       - run: python scripts/check_site.py
       - run: git show --format= --check HEAD

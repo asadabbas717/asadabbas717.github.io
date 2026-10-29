@@ -2,6 +2,8 @@
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote, parse_qs
+import base64
+import hashlib
 import json
 import re
 import unittest
@@ -9,7 +11,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ('index.html', 'usage.html', 'case-studies.html', 'folio.css', 'portfolio-2026.css',
           'exhibition.js', 'PRIVATE_PROJECT_SHOWCASE.md', 'assets/repolens-report.html',
-          'assets/repolens-report.json', 'assets/favicon.svg', 'assets/Asad-Abbas-Software-Engineer-CV.pdf')
+          'assets/repolens-report.json', 'assets/favicon.svg', 'assets/Asad-Abbas-Software-Engineer-CV.pdf', 'assets/internlog-overview.png', 'case-studies.js')
 
 
 class Page(HTMLParser):
@@ -94,6 +96,19 @@ class SiteContracts(unittest.TestCase):
         self.assertEqual(len(schema['sameAs']), 2)
         self.assertIn('html:not(.enhanced) .project-panel[hidden]{display:grid!important}',
                       (ROOT / 'portfolio-2026.css').read_text(encoding='utf-8'))
+
+    def test_static_page_security_policy(self):
+        for filename in ('index.html', 'case-studies.html', 'usage.html'):
+            text = (ROOT / filename).read_text(encoding='utf-8')
+            page = Page(text)
+            policy = next(a['content'] for tag, a in page.tags
+                          if a.get('http-equiv') == 'Content-Security-Policy')
+            self.assertNotIn("'unsafe-inline'", policy)
+            for script in re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>', text, re.S):
+                digest = base64.b64encode(hashlib.sha256(script.encode()).digest()).decode()
+                self.assertIn("'sha256-" + digest + "'", policy)
+            for rule in ("object-src 'none'", "base-uri 'self'", "connect-src 'none'"):
+                self.assertIn(rule, policy)
 
     def test_css_and_markdown_local_references(self):
         for folder in (ROOT, ROOT / 'dist'):

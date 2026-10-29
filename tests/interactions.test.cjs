@@ -39,7 +39,7 @@ function setup({ stored = null, blocked = false, light = true, hash = '' } = {})
   ['theme', 'themeText', 'menu', 'navigation', 'work', 'about', 'sculpture', 'meta'].forEach(element);
   const navLink = element('navLink');
   elements.get('navigation').querySelectorAll = () => [navLink];
-  const tabs = ['repolens', 'vendiqo', 'cineyra', 'phishguard', 'safarwise'].map(name => {
+  const tabs = ['repolens', 'vendiqo', 'loopnest', 'internlog', 'cineyra'].map(name => {
     const tab = element('tab-' + name);
     tab.dataset.project = name;
     tab.attrs['aria-controls'] = 'panel-' + name;
@@ -116,7 +116,7 @@ test('menu closes on Escape with focus restoration and on link activation', () =
   assert.equal(menu.attrs['aria-expanded'], 'false');
 });
 test('project hashes, legacy aliases and unknown hashes are safe', () => {
-  const app = setup({ hash: '#phishguard' });
+  const app = setup({ hash: '#internlog' });
   assert.equal(app.tabs[3].attrs['aria-selected'], 'true');
   for (const hash of ['#products', '#atlas', '#principles', '#unknown', '#<img>']) {
     app.location.hash = hash; app.window.emit('hashchange');

@@ -204,3 +204,7 @@ Owner authorized adding Kaizen Hive and Internee.pk after review of supplied cer
 ## 29 October 2026 — CV and public contact milestone
 
 Owner authorizes reviewed milestone commits/pushes. Added a one-page, text-selectable general Software Engineer CV from verified education, projects and internships, without invented dates or an unemployment job title. Optional ReportLab generator is scripts/build_cv.py; it is not required to serve or check the site. Public contact is email/LinkedIn; phone/WhatsApp removed from the page and Person metadata to reduce scraping exposure. CV is the eleventh root/dist public pair. PDF page, extraction, links and visual render reviewed.
+
+## 29 October — Contribution-led project stories
+
+Delivered the agreed five-project selection, shorter homepage/profile and case narratives, verified archived internship link, client-delivery experience and real public app screenshot. Keep material security/release boundaries accurate without repeating internal verification mechanics. Preserve secondary cases and old anchors. Private app visuals await sanitized genuine captures; no reconstruction is represented as a screenshot.

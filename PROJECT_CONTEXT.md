@@ -1,5 +1,10 @@
 # Project Context
 
+## Current recruiter presentation — 29 October 2026
+
+Featured order: RepoLens, Vendiqo, Loopnest, InternLog PK, Cineyra. Public case stories focus on problem, contribution, decision and result, with one material status note. Secondary cases use a native disclosure; case-studies.js reveals hash-linked entries. Old homepage project anchors remain. CV is downloadable; supplied CV/certificates establish Karachi, July 2025 graduation, Qashoryx client work since June 2026 and Developers Hub dates. Email/LinkedIn replace public phone/WhatsApp. Real InternLog screenshot has no personal records; private UI screenshots were not invented. Public summaries omit exact business dataset counts. Owner authorizes passing milestone commits/pushes. Historical notes below may describe earlier content.
+
+
 ## Current selection — 15 October 2026
 
 Featured order: RepoLens, Vendiqo, Cineyra, PhishGuard, SafarWise. Qashoryx and PyNivo remain supporting cases with homepage hash anchors; Spenvera stays a substantial supporting mobile case. The owner authorized these edits after SafarWise Quality run 38778011432 passed at 2016fa4. Security evidence describes pinned backports, not zero raw registry findings. Android testing is owner-reported, with no exact SafarWise build identification or comprehensive device claim. No private implementation/data is copied. The owner explicitly authorized pushing and deploying this revision on 15 October 2026; older entries below are history.

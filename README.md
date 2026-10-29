@@ -7,7 +7,7 @@ backend work and current mobile/web builds through inspectable engineering evide
 
 The site serves hiring teams and prospective business clients. It contains:
 
-- Five featured projects: RepoLens (flagship), Vendiqo, Cineyra, PhishGuard and SafarWise.
+- Five featured projects: RepoLens (flagship), Vendiqo, Loopnest, InternLog PK and Cineyra.
 - Grouped evidence-based skills, a six-week Android internship and UMT education.
 - Additional product records in `case-studies.html`, with explicit maturity limits.
 - A real RepoLens 0.1.1 HTML/JSON assessment from a controlled inert fixture.
@@ -139,3 +139,7 @@ it to the public asset allowlist and synchronizing the deployment copy.
 ## October 5 redesign and content refresh
 
 The owner authorized a project-led editorial redesign after GitHub review. The compact split hero, project entry links, smaller section typography, rounded project diagrams and readable `case-studies.html` replace the previous oversized name-led presentation. Six sections, five accessible tabs, theme/menu/contact behavior and no-script content remain. Loopnest replaces the outdated Social Connect lab entry and is explicitly paused. Qashoryx 2.1.4, Vendiqo recovery/build evidence, PyNivo current CI versus older preview, and Spenvera backup tests are refreshed. See `docs/portfolio-audit-2026-10-05.md` for revision evidence and limitations. Eight public assets now have exact root/dist parity. No packages or runtime GitHub calls were added. The owner authorized committing, pushing and deploying this redesign on 5 October 2026. GitHub Pages publishes from the main branch; verify its deployment separately from local checks.
+
+## Current presentation — 29 October 2026
+
+The general Software Engineer CV is downloadable from assets/Asad-Abbas-Software-Engineer-CV.pdf. Regenerate with optional ReportLab using scripts/build_cv.py; serving and CI do not require ReportLab. The five primary case studies emphasize contribution, decisions and product results; secondary stories remain in a disclosure with direct-link support. The actual InternLog screenshot contains no personal records. Thirteen explicit assets have root/dist parity. Public contact uses email and LinkedIn.

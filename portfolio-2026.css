@@ -159,3 +159,5 @@ html:not(.enhanced) .project-panel[hidden]{display:grid!important}
 @media(max-width:420px){.principles{grid-template-columns:1fr}.principles article{min-width:0}.principles h3{overflow-wrap:anywhere}}
 
 .experience-list{display:grid;gap:22px;min-width:0}.experience-list .experience-card{min-width:0;margin-top:0}.experience-list .text-link{display:inline-block;margin-top:16px}
+
+.product-preview{margin:0;min-width:0;align-self:start}.product-preview img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px}.product-preview figcaption,.case-footnote{font-size:12px;line-height:1.7;color:var(--muted);margin-top:12px}.supporting-cases{margin-top:50px;border-top:1px solid var(--line);padding-top:24px}.supporting-cases>summary{cursor:pointer;font-size:22px}.supporting-cases .case-study{padding:28px 0}.case-study .project-links{margin-top:22px}
