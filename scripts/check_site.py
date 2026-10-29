@@ -9,7 +9,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ('index.html', 'usage.html', 'case-studies.html', 'folio.css', 'portfolio-2026.css',
           'exhibition.js', 'PRIVATE_PROJECT_SHOWCASE.md', 'assets/repolens-report.html',
-          'assets/repolens-report.json', 'assets/favicon.svg')
+          'assets/repolens-report.json', 'assets/favicon.svg', 'assets/Asad-Abbas-Software-Engineer-CV.pdf')
 
 
 class Page(HTMLParser):
@@ -84,16 +84,13 @@ class SiteContracts(unittest.TestCase):
         title = next(a for a in links if a.get('class') == 'contact-title')
         self.assertEqual(title['href'], 'mailto:asadabbasbusiness@gmail.com')
         self.assertNotIn('target', title)
-        self.assertTrue(any(a.get('href') == 'tel:+923000473399' for a in links))
-        messages = {parse_qs(urlsplit(a.get('href', '')).query).get('text', [''])[0]
-                    for a in links if urlsplit(a.get('href', '')).netloc == 'wa.me'}
-        self.assertEqual(messages, {
-            'Hi Asad, I found your portfolio and would like to discuss a software engineering opportunity with you.',
-            'Hi Asad, I found your portfolio and would like to discuss a software project or modernization requirement with you.',
-            'Hi Asad, I found your portfolio and would like to connect with you.'})
+        self.assertFalse(any(urlsplit(a.get('href', '')).scheme == 'tel' or
+                             urlsplit(a.get('href', '')).netloc == 'wa.me' for a in links))
+        self.assertTrue(any(a.get('href') == 'assets/Asad-Abbas-Software-Engineer-CV.pdf'
+                            and 'download' in a for a in links))
         schema = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', text, re.S)[1])
         self.assertEqual(schema['@type'], 'Person')
-        self.assertEqual(schema['telephone'], '+923000473399')
+        self.assertNotIn('telephone', schema)
         self.assertEqual(len(schema['sameAs']), 2)
         self.assertIn('html:not(.enhanced) .project-panel[hidden]{display:grid!important}',
                       (ROOT / 'portfolio-2026.css').read_text(encoding='utf-8'))

@@ -199,3 +199,8 @@ Implemented RepoLens, Vendiqo, Cineyra, PhishGuard and SafarWise in order after 
 ## Internship evidence — 15 October 2026
 
 Owner authorized adding Kaizen Hive and Internee.pk after review of supplied certificates. Kaizen certifies completed Web Development internship and is issued 28 August 2026; it supplies no tenure/duration. Internee.pk participation certificate explicitly states completed two-month virtual React Native internship, without dates. Assignment READMEs support task-based web work and React Native prototypes (local profiles/QR, mock-data dashboard/PDF and local LMS progress), not commercial deployments. Existing Developers Hub evidence remains. Added a stacked three-entry experience list and compact profile README list. Source PDFs remain outside the repositories; no certificate ID/signature or new public document upload. The owner subsequently authorized publication on 15 October 2026.
+
+
+## 29 October 2026 — CV and public contact milestone
+
+Owner authorizes reviewed milestone commits/pushes. Added a one-page, text-selectable general Software Engineer CV from verified education, projects and internships, without invented dates or an unemployment job title. Optional ReportLab generator is scripts/build_cv.py; it is not required to serve or check the site. Public contact is email/LinkedIn; phone/WhatsApp removed from the page and Person metadata to reduce scraping exposure. CV is the eleventh root/dist public pair. PDF page, extraction, links and visual render reviewed.
